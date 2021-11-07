@@ -31,7 +31,7 @@ void OpenGLWindow::initializeGL() {
                                     getAssetsPath() + "loadmodel.frag");
 
   // Load model
-  loadModelFromFile(getAssetsPath() + "bunny.obj");
+  loadModelFromFile(getAssetsPath() + "mustang.obj");
   standardize();
 
   m_verticesToDraw = m_indices.size();
