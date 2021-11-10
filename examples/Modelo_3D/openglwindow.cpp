@@ -150,7 +150,7 @@ void OpenGLWindow::standardize() {
 void OpenGLWindow::paintGL() {
   // Animate angle by 15 degrees per second
   const float deltaTime{static_cast<float>(getDeltaTime())};
-  m_angle = glm::wrapAngle(m_angle + glm::radians(15.0f) * deltaTime);
+  m_angle = glm::wrapAngle(m_angle + glm::radians(1.0f) * deltaTime);
 
   // Clear color buffer and depth buffer
   abcg::glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -189,6 +189,29 @@ void OpenGLWindow::paintUI() {
       static int n{m_verticesToDraw / 3};
       ImGui::SliderInt("", &n, 0, m_indices.size() / 3, "%d triangles");
       m_verticesToDraw = n * 3;
+
+      ImGui::PopItemWidth();
+    }
+
+    ImGui::End();
+  }
+
+
+  // Create window for slider
+  {
+    ImGui::SetNextWindowPos(ImVec2(5, m_viewportHeight - 50));
+    ImGui::SetNextWindowSize(ImVec2(m_viewportWidth - 5, -1));
+    ImGui::Begin("Controle de Rotação", nullptr, ImGuiWindowFlags_NoDecoration);
+
+    // Controla a velocidade de rotação
+    {
+      // Slider will fill the space of the window
+      ImGui::PushItemWidth(m_viewportWidth - 25);
+
+      static float n2;
+      const float deltaTime2{static_cast<float>(getDeltaTime())};
+      ImGui::SliderFloat("", &n2, -500.f, 500.f, "%.1f Radianos");
+      m_angle = glm::wrapAngle(m_angle + glm::radians(n2) * deltaTime2);
 
       ImGui::PopItemWidth();
     }
