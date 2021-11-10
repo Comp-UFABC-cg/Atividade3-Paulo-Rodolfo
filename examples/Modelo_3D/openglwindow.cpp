@@ -1,4 +1,5 @@
 #include "openglwindow.hpp"
+#include "appData.hpp"
 
 #include <fmt/core.h>
 #include <imgui.h>
@@ -8,7 +9,7 @@
 #include <glm/gtx/fast_trigonometry.hpp>
 #include <glm/gtx/hash.hpp>
 #include <unordered_map>
-
+#include "abcg.hpp"
 // Explicit specialization of std::hash for Vertex
 namespace std {
 template <>
@@ -252,3 +253,31 @@ void OpenGLWindow::terminateGL() {
   abcg::glDeleteBuffers(1, &m_VBO);
   abcg::glDeleteVertexArrays(1, &m_VAO);
 }
+
+
+void OpenGLWindow::handleEvent(SDL_Event &event) {
+  // Keyboard events
+  if (event.type == SDL_KEYDOWN) {
+    if (event.key.keysym.sym == SDLK_SPACE)
+      m_gameData.m_input.set(static_cast<size_t>(Input::Fire));
+    if (event.key.keysym.sym == SDLK_UP || event.key.keysym.sym == SDLK_w)
+      m_gameData.m_input.set(static_cast<size_t>(Input::Up));
+    if (event.key.keysym.sym == SDLK_DOWN || event.key.keysym.sym == SDLK_s)
+      m_gameData.m_input.set(static_cast<size_t>(Input::Down));
+    if (event.key.keysym.sym == SDLK_LEFT || event.key.keysym.sym == SDLK_a)
+      m_gameData.m_input.set(static_cast<size_t>(Input::Left));
+    if (event.key.keysym.sym == SDLK_RIGHT || event.key.keysym.sym == SDLK_d)
+      m_gameData.m_input.set(static_cast<size_t>(Input::Right));
+  }
+  if (event.type == SDL_KEYUP) {
+    if (event.key.keysym.sym == SDLK_SPACE)
+      m_gameData.m_input.reset(static_cast<size_t>(Input::Fire));
+    if (event.key.keysym.sym == SDLK_UP || event.key.keysym.sym == SDLK_w)
+      m_gameData.m_input.reset(static_cast<size_t>(Input::Up));
+    if (event.key.keysym.sym == SDLK_DOWN || event.key.keysym.sym == SDLK_s)
+      m_gameData.m_input.reset(static_cast<size_t>(Input::Down));
+    if (event.key.keysym.sym == SDLK_LEFT || event.key.keysym.sym == SDLK_a)
+      m_gameData.m_input.reset(static_cast<size_t>(Input::Left));
+    if (event.key.keysym.sym == SDLK_RIGHT || event.key.keysym.sym == SDLK_d)
+      m_gameData.m_input.reset(static_cast<size_t>(Input::Right));
+  }

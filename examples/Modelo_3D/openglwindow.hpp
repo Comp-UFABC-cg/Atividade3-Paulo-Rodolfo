@@ -15,6 +15,7 @@ struct Vertex {
 
 class OpenGLWindow : public abcg::OpenGLWindow {
  protected:
+  void handleEvent(SDL_Event& event) override;
   void initializeGL() override;
   void paintGL() override;
   void paintUI() override;
@@ -32,6 +33,8 @@ class OpenGLWindow : public abcg::OpenGLWindow {
 
   float m_angle{};
   int m_verticesToDraw{};
+
+  appData m_gameData;
 
   std::vector<Vertex> m_vertices;
   std::vector<GLuint> m_indices;
