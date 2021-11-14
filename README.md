@@ -28,7 +28,8 @@ __Link para a aplicação:__
 
 
 <br>__Implementação:__<br>
-Para carregar o Mustang (carro) de nossa aplicação 3D, utilizamos a função "loadModelFromFile". O obj (modelo 3D) foi obtido no site Cgtrader (https://www.cgtrader.com/items/2729539/download-page)
+Para carregar o Mustang (carro) de nossa aplicação 3D, utilizamos a função "loadModelFromFile". O modelo 3d foi obtido no site Cgtrader (https://www.cgtrader.com/items/2729539/download-page).
+A edição do arquivo e transformação em obj foi realizada no MeshLab.
 
 O slider para controle de rotação é implementado a partir do ImGui. O intervalo varia de -500 a +500 radianos (intervalo contínuo, ou seja, tipo float). Ao selecionar uma velocidade positiva o carro rotaciona para a direita (sentido horário), caso contrário, rotaciona para a esquerda (sentido anti-horário).
 
