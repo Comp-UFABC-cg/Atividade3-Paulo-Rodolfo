@@ -221,8 +221,8 @@ void OpenGLWindow::paintUI() {
 
   // Create a window for the other widgets
   {
-    const auto widgetSize{ImVec2(172, 62)};
-    ImGui::SetNextWindowPos(ImVec2(m_viewportWidth - widgetSize.x - 5, 5));
+    const auto widgetSize{ImVec2(183, 62)};
+    ImGui::SetNextWindowPos(ImVec2(m_viewportWidth - widgetSize.x - 20, 10));
     ImGui::SetNextWindowSize(widgetSize);
     ImGui::Begin("Widget window", nullptr, ImGuiWindowFlags_NoDecoration);
 
@@ -238,10 +238,10 @@ void OpenGLWindow::paintUI() {
     // CW/CCW combo box
     {
       static std::size_t currentIndex{};
-      const std::vector<std::string> comboItems{"CW", "CCW"};
+      const std::vector<std::string> comboItems{"Azul", "Amarelo"};
 
       ImGui::PushItemWidth(70);
-      if (ImGui::BeginCombo("Front face",
+      if (ImGui::BeginCombo("Cor do Carro",
                             comboItems.at(currentIndex).c_str())) {
         for (const auto index : iter::range(comboItems.size())) {
           const bool isSelected{currentIndex == index};
