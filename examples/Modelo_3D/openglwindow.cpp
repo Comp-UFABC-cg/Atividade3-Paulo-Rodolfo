@@ -8,7 +8,7 @@
 #include <glm/gtx/fast_trigonometry.hpp>
 #include <glm/gtx/hash.hpp>
 #include <unordered_map>
-#include "abcg.hpp"
+
 // Explicit specialization of std::hash for Vertex
 namespace std {
 template <>

@@ -34,8 +34,6 @@ class OpenGLWindow : public abcg::OpenGLWindow {
   float m_angle{};
   int m_verticesToDraw{};
 
-  appData m_gameData;
-
   std::vector<Vertex> m_vertices;
   std::vector<GLuint> m_indices;
 
