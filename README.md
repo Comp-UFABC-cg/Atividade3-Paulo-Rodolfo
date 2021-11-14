@@ -21,7 +21,7 @@ Slider para controle de rotação:
 
 ![image](https://user-images.githubusercontent.com/30665585/141701203-1e683108-a29b-4c94-82ca-1dcfffdc1bfb.png)
 
-Quantidade de triangulos para renderizar a imagem:
+Quantidade de triangulos para renderizar a imagem: <br>
 ![image](https://user-images.githubusercontent.com/30665585/141701226-26846580-c62c-4aa2-bd80-13e9c3da758f.png)
 
 
