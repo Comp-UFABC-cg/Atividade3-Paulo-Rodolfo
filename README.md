@@ -21,3 +21,5 @@ Slider para controle de rotação:
 - Permite o controle da velocidade no sentido horário (velocidade positiva) e anti horário (velocidade negativa). A velocidade é medida em radianos.
 
 ![image](https://user-images.githubusercontent.com/30665585/141034382-8a2d9000-5aad-4c27-95c6-23c344e81c35.png)
+
+Alterar cor do carro: (TO-DO)
