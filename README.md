@@ -23,7 +23,7 @@ Slider para controle de rotação:
 
 Alterar cor do carro: (TO-DO)
 
-<br>__Implementação:__
+<br>__Implementação:__<br>
 Para carregar o Mustang (carro) de nossa aplicação 3D, utilizamos a função "loadModelFromFile". O obj (modelo 3D) foi obtido no site Cgtrader (https://www.cgtrader.com/items/2729539/download-page)
 
 O slider para controle de rotação é implementado a partir do ImGui. O intervalo varia de -500 a +500 radianos (intervalo contínuo, ou seja, tipo float). Ao selecionar uma velocidade positiva o carro rotaciona para a direita, caso contrário, rotaciona para a esquerda. 
