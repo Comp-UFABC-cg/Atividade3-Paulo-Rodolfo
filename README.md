@@ -32,3 +32,4 @@ Para carregar o Mustang (carro) de nossa aplicação 3D, utilizamos a função "
 
 O slider para controle de rotação é implementado a partir do ImGui. O intervalo varia de -500 a +500 radianos (intervalo contínuo, ou seja, tipo float). Ao selecionar uma velocidade positiva o carro rotaciona para a direita (sentido horário), caso contrário, rotaciona para a esquerda (sentido anti-horário).
 
+O slider para controle de triangulos também é implementado a partir do ImGui. O intervalo aceita números inteiros.
