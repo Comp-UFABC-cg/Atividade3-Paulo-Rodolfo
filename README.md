@@ -21,6 +21,7 @@ __Link para a aplicação:__
  <li>A orientação da superfície é determinada utilizando a pipeline do OpenGL.</li>
  <li>A forma do nosso modelo é composta por n triângulos formados pelos vertíces (x,y,z) que unidos formam a imagem 3D do mustang.</li>
  <li>Face culling: Para otimizar a renderização, habilitamos o face culling através da função abcg::glEnable(GL_CULL_FACE). O Face Culling consiste em descartar todos os triângulos que não estão de frente para a câmera.</li>
+ <li>A orientação dos vértices é no sentido horário. Habilitado através da função abcg::glFrontFace(GL_CW)</li>
 </ul>
 
 
