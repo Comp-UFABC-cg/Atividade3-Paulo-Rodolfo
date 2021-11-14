@@ -16,12 +16,12 @@ __Link para a aplicação:__
 
 <br>__Funcionalidades:__
 
-Slider para controle de rotação:
+1) Slider para controle de rotação:
 - Permite o controle da velocidade no sentido horário (velocidade positiva) e anti horário (velocidade negativa). A velocidade é medida em radianos.
 
 ![image](https://user-images.githubusercontent.com/30665585/141701203-1e683108-a29b-4c94-82ca-1dcfffdc1bfb.png)
 
-Quantidade de triangulos para renderizar a imagem: <br>
+2) Quantidade de triangulos para renderizar a imagem: <br>
 - Permite selecionar a quantidade de triângulos da aplicação 3D.
 ![image](https://user-images.githubusercontent.com/30665585/141701226-26846580-c62c-4aa2-bd80-13e9c3da758f.png)
 
