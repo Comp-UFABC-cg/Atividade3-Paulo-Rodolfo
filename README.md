@@ -14,6 +14,17 @@ __Link para a aplicação:__
 
 <br>__Aplicação:__ Mustang 3D
 
+<br> <b>Teoria: </b>
+
+<ul>
+ <li>O modelo 3D desenvolvido com a biblioteca ABCG utiliza conceitos de álgebra linear para a construção e renderização do objeto.</li>
+ <li>A orientação da superfície é determinada utilizando a pipeline do OpenGL.</li>
+ <li>A forma do nosso modelo é composta por n triângulos formados pelos vertíces (x,y,z) que unidos formam a imagem 3D do mustang.</li>
+</ul>
+
+
+
+
 <br>__Funcionalidades:__
 
 1) Slider para controle de rotação:
