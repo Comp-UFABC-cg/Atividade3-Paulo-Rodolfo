@@ -19,9 +19,12 @@ __Link para a aplicação:__
 Slider para controle de rotação:
 - Permite o controle da velocidade no sentido horário (velocidade positiva) e anti horário (velocidade negativa). A velocidade é medida em radianos.
 
-![image](https://user-images.githubusercontent.com/30665585/141034382-8a2d9000-5aad-4c27-95c6-23c344e81c35.png)
+![image](https://user-images.githubusercontent.com/30665585/141701203-1e683108-a29b-4c94-82ca-1dcfffdc1bfb.png)
 
-Alterar cor do carro: (TO-DO)
+Quantidade de triangulos para renderizar a imagem:
+![image](https://user-images.githubusercontent.com/30665585/141701226-26846580-c62c-4aa2-bd80-13e9c3da758f.png)
+
+
 
 <br>__Implementação:__<br>
 Para carregar o Mustang (carro) de nossa aplicação 3D, utilizamos a função "loadModelFromFile". O obj (modelo 3D) foi obtido no site Cgtrader (https://www.cgtrader.com/items/2729539/download-page)
