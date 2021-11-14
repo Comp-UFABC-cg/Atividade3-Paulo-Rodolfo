@@ -219,50 +219,12 @@ void OpenGLWindow::paintUI() {
     ImGui::End();
   }
 
-  // Create a window for the other widgets
-  {
-    const auto widgetSize{ImVec2(183, 62)};
-    ImGui::SetNextWindowPos(ImVec2(m_viewportWidth - widgetSize.x - 20, 10));
-    ImGui::SetNextWindowSize(widgetSize);
-    ImGui::Begin("Widget window", nullptr, ImGuiWindowFlags_NoDecoration);
-
-    static bool faceCulling{};
-    ImGui::Checkbox("Back-face culling", &faceCulling);
-
-    if (faceCulling) {
       abcg::glEnable(GL_CULL_FACE);
-    } else {
-      abcg::glDisable(GL_CULL_FACE);
-    }
+      abcg::glFrontFace(GL_CW);
 
-    // CW/CCW combo box
-    {
-      static std::size_t currentIndex{};
-      const std::vector<std::string> comboItems{"Azul", "Amarelo"};
 
-      ImGui::PushItemWidth(70);
-      if (ImGui::BeginCombo("Cor do Carro",
-                            comboItems.at(currentIndex).c_str())) {
-        for (const auto index : iter::range(comboItems.size())) {
-          const bool isSelected{currentIndex == index};
-          if (ImGui::Selectable(comboItems.at(index).c_str(), isSelected))
-            currentIndex = index;
-          if (isSelected) ImGui::SetItemDefaultFocus();
-        }
-        ImGui::EndCombo();
-      }
-      ImGui::PopItemWidth();
-
-      if (currentIndex == 0) {
-        abcg::glFrontFace(GL_CW);
-      } else {
-        abcg::glFrontFace(GL_CCW);
-      }
-    }
-
-    ImGui::End();
   }
-}
+
 
 void OpenGLWindow::resizeGL(int width, int height) {
   m_viewportWidth = width;
