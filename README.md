@@ -1,4 +1,4 @@
-# Relatório - Atividade 2 - Aplicação 3D #
+# Relatório - Atividade 3 - Aplicação 3D #
 
 Este repositório contém o código fonte e link da aplicação rodando em <br>
 WebAssembly.
