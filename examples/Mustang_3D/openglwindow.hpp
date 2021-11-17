@@ -30,6 +30,14 @@ class OpenGLWindow : public abcg::OpenGLWindow {
   int m_viewportWidth{};
   int m_viewportHeight{};
 
+  glm::vec4 bodyWorkColor;
+  glm::vec4 backGroundColor;
+
+  int bodyWorkColorIndex{};
+  int backGroundColorIndex{};
+
+  std::vector<glm::vec4> colors;
+
   float m_angle{};
   int m_verticesToDraw{};
 

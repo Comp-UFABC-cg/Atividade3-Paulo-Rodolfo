@@ -14,14 +14,32 @@ namespace std {
 template <>
 struct hash<Vertex> {
   size_t operator()(Vertex const& vertex) const noexcept {
-    const std::size_t h1{std::hash<glm::vec3>()(vertex.position)};
+    std::size_t h1{std::hash<glm::vec3>()(vertex.position)};
     return h1;
   }
 };
 }  // namespace std
 
 void OpenGLWindow::initializeGL() {
-  abcg::glClearColor(0, 0, 0, 1);
+  glClearColor(0, 0, 0, 1);
+
+  colors = {
+    {0.502f, 0.827f, 0.404f, 1.0f}, // Green        (body)
+    {0.578f, 0.516f, 0.418f, 1.0f}, // Brown        (coat)
+    {0.671f, 0.659f, 0.522f, 1.0f}, // Light Brown  (scarf)
+    {0.0f, 0.0f, 0.0f, 1.0f},       // Black        (eye)
+    {1.0f, 1.0f, 1.0f, 1.0f},       // White
+    {1.0f, 0.2f, 0.2f, 1.0f},       // Red
+    {0.2f, 0.2f, 1.0f, 1.0f},       // Blue
+    {0.2f, 0.7f, 1.0f, 1.0f},       // Light Blue
+    {0.4f, 0.4f, 0.4f, 1.0f}        // Gray
+  };
+
+  backGroundColorIndex = 5;
+  backGroundColor = colors[backGroundColorIndex];
+
+  bodyWorkColorIndex = 1;
+  bodyWorkColor = colors[bodyWorkColorIndex];
 
   // Enable depth buffering
   abcg::glEnable(GL_DEPTH_TEST);
@@ -153,7 +171,14 @@ void OpenGLWindow::paintGL() {
   m_angle = glm::wrapAngle(m_angle + glm::radians(1.0f) * deltaTime);
 
   // Clear color buffer and depth buffer
-  abcg::glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+  glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+  GLint colorLoc{glGetUniformLocation(m_program, "color")};
+  glViewport(0, 0, m_viewportWidth, m_viewportHeight);
+
+  glUseProgram(m_program);
+  glBindVertexArray(m_VAO);
+  
 
   abcg::glViewport(0, 0, m_viewportWidth, m_viewportHeight);
 
@@ -165,8 +190,15 @@ void OpenGLWindow::paintGL() {
   abcg::glUniform1f(angleLoc, m_angle);
 
   // Draw triangles
-  abcg::glDrawElements(GL_TRIANGLES, m_verticesToDraw, GL_UNSIGNED_INT,
-                       nullptr);
+     glUniform4f(colorLoc, backGroundColor[0], backGroundColor[1], backGroundColor[2], backGroundColor[3]);
+     abcg::glDrawElements(GL_TRIANGLES, m_verticesToDraw, GL_UNSIGNED_INT,nullptr);
+
+  // Draw BodyWork
+//EXAMPLE
+ // glUniform4f(colorLoc, bodyWorkColor[0], bodyWorkColor[1], bodyWorkColor[2], bodyWorkColor[3]); // set current selected body color to frag
+ // m_verticesToDraw = 20406; // set limit of body vertices
+ // glDrawElements(GL_TRIANGLES, m_verticesToDraw, GL_UNSIGNED_INT, (void*)(1 * sizeof(GLuint))); // draw body vertices starting vertices vector in 13560
+
 
   abcg::glBindVertexArray(0);
   abcg::glUseProgram(0);
@@ -181,7 +213,28 @@ void OpenGLWindow::paintUI() {
     ImGui::SetNextWindowPos(ImVec2(m_viewportWidth - widgetSize.x - 20, 10));
     ImGui::SetNextWindowSize(widgetSize);
     ImGui::Begin("Widget window", nullptr, ImGuiWindowFlags_NoDecoration);
-
+  //COLORS
+  std::vector<std::string> comboItems{"Green", "Brown", "Light Brown", "Black", 
+                                          "White", "Red", "Blue", "Light Blue",
+                                          "Gray"};
+  ImGui::PushItemWidth(70);
+        if (ImGui::BeginCombo("Cor de fundo", comboItems.at(backGroundColorIndex).c_str())) {
+          for (int index : iter::range(comboItems.size())) {
+            const bool isSelected{backGroundColorIndex == index};
+            if (ImGui::Selectable(comboItems.at(index).c_str(), isSelected)) {
+              backGroundColorIndex = index;
+              backGroundColor = colors[backGroundColorIndex];
+              glClearColor(backGroundColor[0],backGroundColor[1],backGroundColor[2],0);
+            }            
+            if (isSelected) {
+              ImGui::SetItemDefaultFocus();
+            } 
+          }
+          ImGui::EndCombo();
+        }
+        
+  
+    
 //FACECULLING
     static bool faceCulling{};
     ImGui::Checkbox("Back-face culling", &faceCulling);
