@@ -1,3 +1,3 @@
-project(Modelo_3D)
+project(Mustang_3D)
 add_executable(${PROJECT_NAME} main.cpp openglwindow.cpp)
 enable_abcg(${PROJECT_NAME})
