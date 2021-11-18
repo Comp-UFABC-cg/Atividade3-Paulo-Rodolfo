@@ -217,6 +217,17 @@ void OpenGLWindow::paintUI() {
   std::vector<std::string> comboItems{"Green", "Brown", "Light Brown", "Black", 
                                           "White", "Red", "Blue", "Light Blue",
                                           "Gray"};
+//FACECULLING
+    static bool faceCulling{};
+    ImGui::Checkbox("Back-face culling", &faceCulling);
+
+    if (faceCulling) {
+      abcg::glEnable(GL_CULL_FACE);
+    } else {
+      abcg::glDisable(GL_CULL_FACE);
+    }
+
+
   ImGui::PushItemWidth(70);
         if (ImGui::BeginCombo("Cor de fundo", comboItems.at(backGroundColorIndex).c_str())) {
           for (int index : iter::range(comboItems.size())) {
@@ -247,15 +258,7 @@ void OpenGLWindow::paintUI() {
           ImGui::EndCombo();
         }
         
-//FACECULLING
-    static bool faceCulling{};
-    ImGui::Checkbox("Back-face culling", &faceCulling);
 
-    if (faceCulling) {
-      abcg::glEnable(GL_CULL_FACE);
-    } else {
-      abcg::glDisable(GL_CULL_FACE);
-    }
 
 
     ImGui::End();
