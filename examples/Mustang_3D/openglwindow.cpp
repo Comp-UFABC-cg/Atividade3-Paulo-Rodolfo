@@ -232,8 +232,22 @@ void OpenGLWindow::paintUI() {
           }
           ImGui::EndCombo();
         }
+  ImGui::PushItemWidth(70);
+        if (ImGui::BeginCombo("Cor do carro", comboItems.at(bodyWorkColorIndex).c_str())) {
+          for (int index : iter::range(comboItems.size())) {
+            const bool isSelected{bodyWorkColorIndex == index};
+            if (ImGui::Selectable(comboItems.at(index).c_str(), isSelected)) {
+              bodyWorkColorIndex = index;
+              bodyWorkColor = colors[bodyWorkColorIndex];
+            }            
+            if (isSelected) {
+              ImGui::SetItemDefaultFocus();
+            } 
+          }
+          ImGui::EndCombo();
+        }
         
-  
+  ImGui::PushItemWidth(70);
     
 //FACECULLING
     static bool faceCulling{};
@@ -246,6 +260,7 @@ void OpenGLWindow::paintUI() {
     }
 
  // CW/CCW combo box
+ ImGui::PushItemWidth(70);
     {
       static std::size_t currentIndex{};
       const std::vector<std::string> comboItems{"Azul", "Amarelo"};
