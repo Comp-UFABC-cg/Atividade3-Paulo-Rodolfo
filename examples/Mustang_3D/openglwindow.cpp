@@ -194,10 +194,10 @@ void OpenGLWindow::paintGL() {
      abcg::glDrawElements(GL_TRIANGLES, m_verticesToDraw, GL_UNSIGNED_INT,nullptr);
 
   // Draw BodyWork
-//EXAMPLE
- // glUniform4f(colorLoc, bodyWorkColor[0], bodyWorkColor[1], bodyWorkColor[2], bodyWorkColor[3]); // set current selected body color to frag
- // m_verticesToDraw = 20406; // set limit of body vertices
- // glDrawElements(GL_TRIANGLES, m_verticesToDraw, GL_UNSIGNED_INT, (void*)(1 * sizeof(GLuint))); // draw body vertices starting vertices vector in 13560
+
+     glUniform4f(colorLoc, bodyWorkColor[0], bodyWorkColor[1], bodyWorkColor[2], bodyWorkColor[3]); // set current selected body color to frag
+     m_verticesToDraw = 90000; // set limit of body vertices
+     glDrawElements(GL_TRIANGLES, m_verticesToDraw, GL_UNSIGNED_INT, nullptr); // draw body vertices starting vertices vector in 13560
 
 
   abcg::glBindVertexArray(0);
@@ -243,6 +243,7 @@ void OpenGLWindow::paintUI() {
           }
           ImGui::EndCombo();
         }
+  // Alocar linha no combo
   ImGui::PushItemWidth(70);
         if (ImGui::BeginCombo("Cor do carro", comboItems.at(bodyWorkColorIndex).c_str())) {
           for (int index : iter::range(comboItems.size())) {
@@ -257,6 +258,10 @@ void OpenGLWindow::paintUI() {
           }
           ImGui::EndCombo();
         }
+        ImGui::PopItemWidth();
+        ImGui::PopItemWidth();
+  ImGui::PushItemWidth(70);
+    
         
 
 
@@ -310,7 +315,8 @@ void OpenGLWindow::paintUI() {
   }
 
       //abcg::glEnable(GL_CULL_FACE);
-      abcg::glFrontFace(GL_CW);
+      abcg::glFrontFace(GL_CW); // Invertido
+      //abcg::glFrontFace(GL_CCW); // Normal
 
 
   }
