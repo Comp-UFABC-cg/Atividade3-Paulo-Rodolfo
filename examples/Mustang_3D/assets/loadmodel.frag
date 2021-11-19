@@ -1,13 +1,12 @@
 #version 410
 
+uniform vec4 color;
 out vec4 outColor;
 
 void main() {
-  float i = 1.0 - gl_FragCoord.z;
+  float i = gl_FragCoord.z - 0.1f;
 
-  if (gl_FrontFacing) {
-    outColor = vec4(i, i, i, 1);
-  } else {
-    outColor = vec4(i, 0, 0, 1);
-  }
+  outColor = color -i;
+
+  
 }

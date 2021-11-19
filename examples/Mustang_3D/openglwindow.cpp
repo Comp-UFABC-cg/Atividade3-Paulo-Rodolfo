@@ -190,14 +190,19 @@ void OpenGLWindow::paintGL() {
   abcg::glUniform1f(angleLoc, m_angle);
 
   // Draw triangles
-     glUniform4f(colorLoc, backGroundColor[0], backGroundColor[1], backGroundColor[2], backGroundColor[3]);
-     abcg::glDrawElements(GL_TRIANGLES, m_verticesToDraw, GL_UNSIGNED_INT,nullptr);
+  //   glUniform4f(colorLoc, backGroundColor[0], backGroundColor[1], backGroundColor[2], backGroundColor[3]);
+    // abcg::glDrawElements(GL_TRIANGLES, m_verticesToDraw, GL_UNSIGNED_INT,nullptr);
 
+  
   // Draw BodyWork
-
      glUniform4f(colorLoc, bodyWorkColor[0], bodyWorkColor[1], bodyWorkColor[2], bodyWorkColor[3]); // set current selected body color to frag
-     m_verticesToDraw = 90000; // set limit of body vertices
-     glDrawElements(GL_TRIANGLES, m_verticesToDraw, GL_UNSIGNED_INT, nullptr); // draw body vertices starting vertices vector in 13560
+     m_verticesToDraw = 58000; // set limit of body vertices
+     glDrawElements(GL_TRIANGLES, m_verticesToDraw, GL_UNSIGNED_INT,nullptr); // draw body vertices starting vertices vector in 13560
+  
+  // Draw Tire
+     glUniform4f(colorLoc, backGroundColor[0], backGroundColor[1], backGroundColor[2], backGroundColor[3]);
+     m_verticesToDraw = 770000; // set limit of body vertices
+     glDrawElements(GL_TRIANGLES, m_verticesToDraw, GL_UNSIGNED_INT,(void*)(60000 * sizeof(GLuint))); // draw body vertices starting vertices vector in 13560
 
 
   abcg::glBindVertexArray(0);
@@ -217,7 +222,7 @@ void OpenGLWindow::paintUI() {
   std::vector<std::string> comboItems{"Green", "Brown", "Light Brown", "Black", 
                                           "White", "Red", "Blue", "Light Blue",
                                           "Gray"};
-//FACECULLING
+  //FACECULLING
     static bool faceCulling{};
     ImGui::Checkbox("Back-face culling", &faceCulling);
 
@@ -229,13 +234,13 @@ void OpenGLWindow::paintUI() {
 
 
   ImGui::PushItemWidth(70);
-        if (ImGui::BeginCombo("Cor de fundo", comboItems.at(backGroundColorIndex).c_str())) {
+        if (ImGui::BeginCombo("Cor do pneu", comboItems.at(backGroundColorIndex).c_str())) {
           for (int index : iter::range(comboItems.size())) {
             const bool isSelected{backGroundColorIndex == index};
             if (ImGui::Selectable(comboItems.at(index).c_str(), isSelected)) {
               backGroundColorIndex = index;
               backGroundColor = colors[backGroundColorIndex];
-              glClearColor(backGroundColor[0],backGroundColor[1],backGroundColor[2],0);
+              
             }            
             if (isSelected) {
               ImGui::SetItemDefaultFocus();
@@ -251,6 +256,7 @@ void OpenGLWindow::paintUI() {
             if (ImGui::Selectable(comboItems.at(index).c_str(), isSelected)) {
               bodyWorkColorIndex = index;
               bodyWorkColor = colors[bodyWorkColorIndex];
+              
             }            
             if (isSelected) {
               ImGui::SetItemDefaultFocus();
@@ -262,10 +268,6 @@ void OpenGLWindow::paintUI() {
         ImGui::PopItemWidth();
   ImGui::PushItemWidth(70);
     
-        
-
-
-
     ImGui::End();
   }
 
