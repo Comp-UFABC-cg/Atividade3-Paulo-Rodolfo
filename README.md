@@ -38,6 +38,12 @@ __Link para a aplicação:__ https://comp-ufabc-cg.github.io/Atividade2-Paulo-Ro
 - Permite selecionar a quantidade de triângulos da aplicação 3D.
 ![image](https://user-images.githubusercontent.com/30665585/141701226-26846580-c62c-4aa2-bd80-13e9c3da758f.png)
 
+3) Seleção de cores:
+- Permite a seleção de cores do pneu e do carro, vide abaixo. Os vértices são coloridos a partir da cor selecionada.
+
+a) Cor do Pneu:
+
+b) Cor do Carro:
 
 
 <br>__Implementação:__<br>
