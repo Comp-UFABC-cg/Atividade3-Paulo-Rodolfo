@@ -21,15 +21,15 @@ struct hash<Vertex> {
 }  // namespace std
 
 void OpenGLWindow::initializeGL() {
-  glClearColor(0, 0, 0, 1);
+  glClearColor(0.3, 0.3, 0.3, 1);
 
   colors = {
-    {0.502f, 0.827f, 0.404f, 1.0f}, // Green        (body)
+    {0.402f, 1.000f, 0.404f, 1.0f}, // Green        (body)
     {0.578f, 0.516f, 0.418f, 1.0f}, // Brown        (coat)
     {0.671f, 0.659f, 0.522f, 1.0f}, // Light Brown  (scarf)
     {0.0f, 0.0f, 0.0f, 1.0f},       // Black        (eye)
     {1.0f, 1.0f, 1.0f, 1.0f},       // White
-    {1.0f, 0.2f, 0.2f, 1.0f},       // Red
+    {1.0f, 0.0f, 0.0f, 1.0f},       // Red
     {0.2f, 0.2f, 1.0f, 1.0f},       // Blue
     {0.2f, 0.7f, 1.0f, 1.0f},       // Light Blue
     {0.4f, 0.4f, 0.4f, 1.0f}        // Gray
