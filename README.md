@@ -45,6 +45,10 @@ a) Cor do Pneu:
 
 b) Cor do Carro:
 
+4) Face culling
+- Checkbox para habilitar o face culling.
+
+
 
 <br>__Implementação:__<br>
 Para carregar o Mustang (carro) de nossa aplicação 3D, utilizamos a função "loadModelFromFile". O modelo 3d foi obtido no site Cgtrader (https://www.cgtrader.com/items/2729539/download-page).
