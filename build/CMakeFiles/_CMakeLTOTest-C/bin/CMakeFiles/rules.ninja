@@ -61,7 +61,7 @@ rule C_STATIC_LIBRARY_LINKER__foo_
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = C:\msys64\mingw64\bin\cmake.exe --regenerate-during-build -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build\CMakeFiles\_CMakeLTOTest-C\src -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build\CMakeFiles\_CMakeLTOTest-C\bin
+  command = C:\msys64\mingw64\bin\cmake.exe --regenerate-during-build -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build\CMakeFiles\_CMakeLTOTest-C\src -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build\CMakeFiles\_CMakeLTOTest-C\bin
   description = Re-running CMake...
   generator = 1
 

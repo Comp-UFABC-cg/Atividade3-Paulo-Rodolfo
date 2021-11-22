@@ -34,13 +34,13 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/build/CMakeFiles/_CMakeLTOTest-CXX/bin/
+cmake_ninja_workdir = C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/build/CMakeFiles/_CMakeLTOTest-CXX/bin/
 
 #############################################
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build\CMakeFiles\_CMakeLTOTest-CXX\bin && C:\msys64\mingw64\bin\cmake.exe --regenerate-during-build -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build\CMakeFiles\_CMakeLTOTest-CXX\src -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build\CMakeFiles\_CMakeLTOTest-CXX\bin"
+  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build\CMakeFiles\_CMakeLTOTest-CXX\bin && C:\msys64\mingw64\bin\cmake.exe --regenerate-during-build -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build\CMakeFiles\_CMakeLTOTest-CXX\src -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build\CMakeFiles\_CMakeLTOTest-CXX\bin"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -52,7 +52,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build\CMakeFiles\_CMakeLTOTest-CXX\bin && C:\msys64\mingw64\bin\cmake-gui.exe -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build\CMakeFiles\_CMakeLTOTest-CXX\src -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build\CMakeFiles\_CMakeLTOTest-CXX\bin"
+  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build\CMakeFiles\_CMakeLTOTest-CXX\bin && C:\msys64\mingw64\bin\cmake-gui.exe -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build\CMakeFiles\_CMakeLTOTest-CXX\src -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build\CMakeFiles\_CMakeLTOTest-CXX\bin"
   DESC = Running CMake cache editor...
   pool = console
   restat = 1
@@ -68,7 +68,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 
 build cmake_object_order_depends_target_boo: phony || cmake_object_order_depends_target_foo
 
-build CMakeFiles/boo.dir/main.cpp.o: CXX_COMPILER__boo_ C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/build/CMakeFiles/_CMakeLTOTest-CXX/src/main.cpp || cmake_object_order_depends_target_boo
+build CMakeFiles/boo.dir/main.cpp.o: CXX_COMPILER__boo_ C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/build/CMakeFiles/_CMakeLTOTest-CXX/src/main.cpp || cmake_object_order_depends_target_boo
   DEP_FILE = CMakeFiles\boo.dir\main.cpp.o.d
   FLAGS = -flto=thin
   OBJECT_DIR = CMakeFiles\boo.dir
@@ -100,7 +100,7 @@ build boo.js: CXX_EXECUTABLE_LINKER__boo_ CMakeFiles/boo.dir/main.cpp.o | libfoo
 
 build cmake_object_order_depends_target_foo: phony || CMakeFiles/foo.dir
 
-build CMakeFiles/foo.dir/foo.cpp.o: CXX_COMPILER__foo_ C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/build/CMakeFiles/_CMakeLTOTest-CXX/src/foo.cpp || cmake_object_order_depends_target_foo
+build CMakeFiles/foo.dir/foo.cpp.o: CXX_COMPILER__foo_ C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/build/CMakeFiles/_CMakeLTOTest-CXX/src/foo.cpp || cmake_object_order_depends_target_foo
   DEP_FILE = CMakeFiles\foo.dir\foo.cpp.o.d
   FLAGS = -flto=thin
   OBJECT_DIR = CMakeFiles\foo.dir
@@ -135,7 +135,7 @@ build foo: phony libfoo.a
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/build/CMakeFiles/_CMakeLTOTest-CXX/bin
+# Folder: C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/build/CMakeFiles/_CMakeLTOTest-CXX/bin
 
 build all: phony boo.js libfoo.a
 
@@ -146,14 +146,14 @@ build all: phony boo.js libfoo.a
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/build/CMakeFiles/3.21.0/CMakeCXXCompiler.cmake C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/build/CMakeFiles/3.21.0/CMakeSystem.cmake C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/build/CMakeFiles/_CMakeLTOTest-CXX/src/CMakeLists.txt C$:/emsdk/upstream/emscripten/cmake/Modules/CMakeSystemSpecificInformation.cmake C$:/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeCXXInformation.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeGenericSystem.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Clang-CXX.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Clang.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/GNU.cmake CMakeCache.txt
+build build.ninja: RERUN_CMAKE | C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/build/CMakeFiles/3.21.0/CMakeCXXCompiler.cmake C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/build/CMakeFiles/3.21.0/CMakeSystem.cmake C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/build/CMakeFiles/_CMakeLTOTest-CXX/src/CMakeLists.txt C$:/emsdk/upstream/emscripten/cmake/Modules/CMakeSystemSpecificInformation.cmake C$:/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeCXXInformation.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeGenericSystem.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Clang-CXX.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Clang.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/GNU.cmake CMakeCache.txt
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/build/CMakeFiles/3.21.0/CMakeCXXCompiler.cmake C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/build/CMakeFiles/3.21.0/CMakeSystem.cmake C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/build/CMakeFiles/_CMakeLTOTest-CXX/src/CMakeLists.txt C$:/emsdk/upstream/emscripten/cmake/Modules/CMakeSystemSpecificInformation.cmake C$:/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeCXXInformation.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeGenericSystem.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Clang-CXX.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Clang.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/GNU.cmake CMakeCache.txt: phony
+build C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/build/CMakeFiles/3.21.0/CMakeCXXCompiler.cmake C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/build/CMakeFiles/3.21.0/CMakeSystem.cmake C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/build/CMakeFiles/_CMakeLTOTest-CXX/src/CMakeLists.txt C$:/emsdk/upstream/emscripten/cmake/Modules/CMakeSystemSpecificInformation.cmake C$:/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeCXXInformation.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeGenericSystem.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Clang-CXX.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/Clang.cmake C$:/msys64/mingw64/share/cmake-3.21/Modules/Compiler/GNU.cmake CMakeCache.txt: phony
 
 
 #############################################

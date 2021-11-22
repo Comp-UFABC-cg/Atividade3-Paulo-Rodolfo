@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/glm
+# Install script for directory: C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/glm
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

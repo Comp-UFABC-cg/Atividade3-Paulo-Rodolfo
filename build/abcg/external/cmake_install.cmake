@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external
+# Install script for directory: C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,11 +39,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/build/abcg/external/imgui/cmake_install.cmake")
-  include("C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/build/abcg/external/cppitertools/cmake_install.cmake")
-  include("C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/build/abcg/external/fmt/cmake_install.cmake")
-  include("C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/build/abcg/external/glm/cmake_install.cmake")
-  include("C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/build/abcg/external/gsl/cmake_install.cmake")
+  include("C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/build/abcg/external/imgui/cmake_install.cmake")
+  include("C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/build/abcg/external/cppitertools/cmake_install.cmake")
+  include("C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/build/abcg/external/fmt/cmake_install.cmake")
+  include("C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/build/abcg/external/glm/cmake_install.cmake")
+  include("C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/build/abcg/external/gsl/cmake_install.cmake")
 
 endif()
 

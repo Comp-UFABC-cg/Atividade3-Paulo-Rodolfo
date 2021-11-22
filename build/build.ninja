@@ -39,13 +39,13 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/build/
+cmake_ninja_workdir = C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/build/
 
 #############################################
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build && C:\msys64\mingw64\bin\cmake.exe --regenerate-during-build -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build"
+  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build && C:\msys64\mingw64\bin\cmake.exe --regenerate-during-build -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -57,7 +57,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build && C:\msys64\mingw64\bin\cmake-gui.exe -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build"
+  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build && C:\msys64\mingw64\bin\cmake-gui.exe -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build"
   DESC = Running CMake cache editor...
   pool = console
   restat = 1
@@ -66,7 +66,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/CMakeLists.txt
+# C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/CMakeLists.txt
 # =============================================================================
 
 
@@ -74,7 +74,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build abcg/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build\abcg && C:\msys64\mingw64\bin\cmake.exe --regenerate-during-build -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build"
+  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build\abcg && C:\msys64\mingw64\bin\cmake.exe --regenerate-during-build -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -86,7 +86,7 @@ build abcg/rebuild_cache: phony abcg/CMakeFiles/rebuild_cache.util
 # Utility command for edit_cache
 
 build abcg/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build\abcg && C:\msys64\mingw64\bin\cmake-gui.exe -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build"
+  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build\abcg && C:\msys64\mingw64\bin\cmake-gui.exe -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build"
   DESC = Running CMake cache editor...
   pool = console
   restat = 1
@@ -102,59 +102,59 @@ build abcg/edit_cache: phony abcg/CMakeFiles/edit_cache.util
 
 build cmake_object_order_depends_target_abcg: phony || cmake_object_order_depends_target_fmt cmake_object_order_depends_target_imgui
 
-build abcg/CMakeFiles/abcg.dir/abcg_application.cpp.o: CXX_COMPILER__abcg_Release C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/abcg_application.cpp || cmake_object_order_depends_target_abcg
+build abcg/CMakeFiles/abcg.dir/abcg_application.cpp.o: CXX_COMPILER__abcg_Release C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/abcg_application.cpp || cmake_object_order_depends_target_abcg
   DEP_FILE = abcg\CMakeFiles\abcg.dir\abcg_application.cpp.o.d
   FLAGS = -O3 -DNDEBUG -flto=thin -sSDL2_IMAGE_FORMATS="[""jpg"",""png""]" -std=c++20 -Oz -sUSE_SDL=2 -sUSE_SDL_IMAGE=2 -std=gnu++20
-  INCLUDES = -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/cppitertools -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/fmt -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/glm/.. -IC:/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/imgui -isystem C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external
+  INCLUDES = -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/cppitertools -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/fmt -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/glm/.. -IC:/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/imgui -isystem C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external
   OBJECT_DIR = abcg\CMakeFiles\abcg.dir
   OBJECT_FILE_DIR = abcg\CMakeFiles\abcg.dir
 
-build abcg/CMakeFiles/abcg.dir/abcg_elapsedtimer.cpp.o: CXX_COMPILER__abcg_Release C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/abcg_elapsedtimer.cpp || cmake_object_order_depends_target_abcg
+build abcg/CMakeFiles/abcg.dir/abcg_elapsedtimer.cpp.o: CXX_COMPILER__abcg_Release C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/abcg_elapsedtimer.cpp || cmake_object_order_depends_target_abcg
   DEP_FILE = abcg\CMakeFiles\abcg.dir\abcg_elapsedtimer.cpp.o.d
   FLAGS = -O3 -DNDEBUG -flto=thin -sSDL2_IMAGE_FORMATS="[""jpg"",""png""]" -std=c++20 -Oz -sUSE_SDL=2 -sUSE_SDL_IMAGE=2 -std=gnu++20
-  INCLUDES = -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/cppitertools -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/fmt -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/glm/.. -IC:/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/imgui -isystem C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external
+  INCLUDES = -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/cppitertools -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/fmt -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/glm/.. -IC:/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/imgui -isystem C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external
   OBJECT_DIR = abcg\CMakeFiles\abcg.dir
   OBJECT_FILE_DIR = abcg\CMakeFiles\abcg.dir
 
-build abcg/CMakeFiles/abcg.dir/abcg_exception.cpp.o: CXX_COMPILER__abcg_Release C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/abcg_exception.cpp || cmake_object_order_depends_target_abcg
+build abcg/CMakeFiles/abcg.dir/abcg_exception.cpp.o: CXX_COMPILER__abcg_Release C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/abcg_exception.cpp || cmake_object_order_depends_target_abcg
   DEP_FILE = abcg\CMakeFiles\abcg.dir\abcg_exception.cpp.o.d
   FLAGS = -O3 -DNDEBUG -flto=thin -sSDL2_IMAGE_FORMATS="[""jpg"",""png""]" -std=c++20 -Oz -sUSE_SDL=2 -sUSE_SDL_IMAGE=2 -std=gnu++20
-  INCLUDES = -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/cppitertools -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/fmt -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/glm/.. -IC:/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/imgui -isystem C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external
+  INCLUDES = -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/cppitertools -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/fmt -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/glm/.. -IC:/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/imgui -isystem C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external
   OBJECT_DIR = abcg\CMakeFiles\abcg.dir
   OBJECT_FILE_DIR = abcg\CMakeFiles\abcg.dir
 
-build abcg/CMakeFiles/abcg.dir/abcg_image.cpp.o: CXX_COMPILER__abcg_Release C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/abcg_image.cpp || cmake_object_order_depends_target_abcg
+build abcg/CMakeFiles/abcg.dir/abcg_image.cpp.o: CXX_COMPILER__abcg_Release C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/abcg_image.cpp || cmake_object_order_depends_target_abcg
   DEP_FILE = abcg\CMakeFiles\abcg.dir\abcg_image.cpp.o.d
   FLAGS = -O3 -DNDEBUG -flto=thin -sSDL2_IMAGE_FORMATS="[""jpg"",""png""]" -std=c++20 -Oz -sUSE_SDL=2 -sUSE_SDL_IMAGE=2 -std=gnu++20
-  INCLUDES = -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/cppitertools -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/fmt -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/glm/.. -IC:/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/imgui -isystem C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external
+  INCLUDES = -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/cppitertools -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/fmt -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/glm/.. -IC:/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/imgui -isystem C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external
   OBJECT_DIR = abcg\CMakeFiles\abcg.dir
   OBJECT_FILE_DIR = abcg\CMakeFiles\abcg.dir
 
-build abcg/CMakeFiles/abcg.dir/abcg_openglfunctions.cpp.o: CXX_COMPILER__abcg_Release C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/abcg_openglfunctions.cpp || cmake_object_order_depends_target_abcg
+build abcg/CMakeFiles/abcg.dir/abcg_openglfunctions.cpp.o: CXX_COMPILER__abcg_Release C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/abcg_openglfunctions.cpp || cmake_object_order_depends_target_abcg
   DEP_FILE = abcg\CMakeFiles\abcg.dir\abcg_openglfunctions.cpp.o.d
   FLAGS = -O3 -DNDEBUG -flto=thin -sSDL2_IMAGE_FORMATS="[""jpg"",""png""]" -std=c++20 -Oz -sUSE_SDL=2 -sUSE_SDL_IMAGE=2 -std=gnu++20
-  INCLUDES = -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/cppitertools -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/fmt -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/glm/.. -IC:/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/imgui -isystem C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external
+  INCLUDES = -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/cppitertools -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/fmt -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/glm/.. -IC:/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/imgui -isystem C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external
   OBJECT_DIR = abcg\CMakeFiles\abcg.dir
   OBJECT_FILE_DIR = abcg\CMakeFiles\abcg.dir
 
-build abcg/CMakeFiles/abcg.dir/abcg_openglwindow.cpp.o: CXX_COMPILER__abcg_Release C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/abcg_openglwindow.cpp || cmake_object_order_depends_target_abcg
+build abcg/CMakeFiles/abcg.dir/abcg_openglwindow.cpp.o: CXX_COMPILER__abcg_Release C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/abcg_openglwindow.cpp || cmake_object_order_depends_target_abcg
   DEP_FILE = abcg\CMakeFiles\abcg.dir\abcg_openglwindow.cpp.o.d
   FLAGS = -O3 -DNDEBUG -flto=thin -sSDL2_IMAGE_FORMATS="[""jpg"",""png""]" -std=c++20 -Oz -sUSE_SDL=2 -sUSE_SDL_IMAGE=2 -std=gnu++20
-  INCLUDES = -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/cppitertools -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/fmt -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/glm/.. -IC:/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/imgui -isystem C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external
+  INCLUDES = -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/cppitertools -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/fmt -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/glm/.. -IC:/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/imgui -isystem C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external
   OBJECT_DIR = abcg\CMakeFiles\abcg.dir
   OBJECT_FILE_DIR = abcg\CMakeFiles\abcg.dir
 
-build abcg/CMakeFiles/abcg.dir/abcg_string.cpp.o: CXX_COMPILER__abcg_Release C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/abcg_string.cpp || cmake_object_order_depends_target_abcg
+build abcg/CMakeFiles/abcg.dir/abcg_string.cpp.o: CXX_COMPILER__abcg_Release C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/abcg_string.cpp || cmake_object_order_depends_target_abcg
   DEP_FILE = abcg\CMakeFiles\abcg.dir\abcg_string.cpp.o.d
   FLAGS = -O3 -DNDEBUG -flto=thin -sSDL2_IMAGE_FORMATS="[""jpg"",""png""]" -std=c++20 -Oz -sUSE_SDL=2 -sUSE_SDL_IMAGE=2 -std=gnu++20
-  INCLUDES = -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/cppitertools -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/fmt -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/glm/.. -IC:/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/imgui -isystem C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external
+  INCLUDES = -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/cppitertools -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/fmt -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/glm/.. -IC:/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/imgui -isystem C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external
   OBJECT_DIR = abcg\CMakeFiles\abcg.dir
   OBJECT_FILE_DIR = abcg\CMakeFiles\abcg.dir
 
-build abcg/CMakeFiles/abcg.dir/abcg_trackball.cpp.o: CXX_COMPILER__abcg_Release C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/abcg_trackball.cpp || cmake_object_order_depends_target_abcg
+build abcg/CMakeFiles/abcg.dir/abcg_trackball.cpp.o: CXX_COMPILER__abcg_Release C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/abcg_trackball.cpp || cmake_object_order_depends_target_abcg
   DEP_FILE = abcg\CMakeFiles\abcg.dir\abcg_trackball.cpp.o.d
   FLAGS = -O3 -DNDEBUG -flto=thin -sSDL2_IMAGE_FORMATS="[""jpg"",""png""]" -std=c++20 -Oz -sUSE_SDL=2 -sUSE_SDL_IMAGE=2 -std=gnu++20
-  INCLUDES = -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/cppitertools -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/fmt -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/glm/.. -IC:/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/imgui -isystem C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external
+  INCLUDES = -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/cppitertools -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/fmt -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/glm/.. -IC:/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/imgui -isystem C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external
   OBJECT_DIR = abcg\CMakeFiles\abcg.dir
   OBJECT_FILE_DIR = abcg\CMakeFiles\abcg.dir
 
@@ -176,7 +176,7 @@ build abcg/libabcg.a: CXX_STATIC_LIBRARY_LINKER__abcg_Release abcg/CMakeFiles/ab
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/CMakeLists.txt
+# C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/CMakeLists.txt
 # =============================================================================
 
 
@@ -184,7 +184,7 @@ build abcg/libabcg.a: CXX_STATIC_LIBRARY_LINKER__abcg_Release abcg/CMakeFiles/ab
 # Utility command for edit_cache
 
 build abcg/external/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build\abcg\external && C:\msys64\mingw64\bin\cmake-gui.exe -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build"
+  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build\abcg\external && C:\msys64\mingw64\bin\cmake-gui.exe -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build"
   DESC = Running CMake cache editor...
   pool = console
   restat = 1
@@ -196,7 +196,7 @@ build abcg/external/edit_cache: phony abcg/external/CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build abcg/external/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build\abcg\external && C:\msys64\mingw64\bin\cmake.exe --regenerate-during-build -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build"
+  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build\abcg\external && C:\msys64\mingw64\bin\cmake.exe --regenerate-during-build -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -205,7 +205,7 @@ build abcg/external/rebuild_cache: phony abcg/external/CMakeFiles/rebuild_cache.
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/CMakeLists.txt
+# C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/CMakeLists.txt
 # =============================================================================
 
 
@@ -213,7 +213,7 @@ build abcg/external/rebuild_cache: phony abcg/external/CMakeFiles/rebuild_cache.
 # Utility command for rebuild_cache
 
 build abcg/external/imgui/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build\abcg\external\imgui && C:\msys64\mingw64\bin\cmake.exe --regenerate-during-build -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build"
+  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build\abcg\external\imgui && C:\msys64\mingw64\bin\cmake.exe --regenerate-during-build -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -225,7 +225,7 @@ build abcg/external/imgui/rebuild_cache: phony abcg/external/imgui/CMakeFiles/re
 # Utility command for edit_cache
 
 build abcg/external/imgui/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build\abcg\external\imgui && C:\msys64\mingw64\bin\cmake-gui.exe -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build"
+  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build\abcg\external\imgui && C:\msys64\mingw64\bin\cmake-gui.exe -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build"
   DESC = Running CMake cache editor...
   pool = console
   restat = 1
@@ -241,52 +241,52 @@ build abcg/external/imgui/edit_cache: phony abcg/external/imgui/CMakeFiles/edit_
 
 build cmake_object_order_depends_target_imgui: phony || abcg/external/imgui/CMakeFiles/imgui.dir
 
-build abcg/external/imgui/CMakeFiles/imgui.dir/imgui.cpp.o: CXX_COMPILER__imgui_Release C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/imgui/imgui.cpp || cmake_object_order_depends_target_imgui
+build abcg/external/imgui/CMakeFiles/imgui.dir/imgui.cpp.o: CXX_COMPILER__imgui_Release C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/imgui/imgui.cpp || cmake_object_order_depends_target_imgui
   DEP_FILE = abcg\external\imgui\CMakeFiles\imgui.dir\imgui.cpp.o.d
   FLAGS = -O3 -DNDEBUG -flto=thin -s USE_SDL=2
-  INCLUDES = -IC:/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -I/usr/local/include -I/opt/local/include -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/imgui
+  INCLUDES = -IC:/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -I/usr/local/include -I/opt/local/include -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/imgui
   OBJECT_DIR = abcg\external\imgui\CMakeFiles\imgui.dir
   OBJECT_FILE_DIR = abcg\external\imgui\CMakeFiles\imgui.dir
 
-build abcg/external/imgui/CMakeFiles/imgui.dir/imgui_demo.cpp.o: CXX_COMPILER__imgui_Release C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/imgui/imgui_demo.cpp || cmake_object_order_depends_target_imgui
+build abcg/external/imgui/CMakeFiles/imgui.dir/imgui_demo.cpp.o: CXX_COMPILER__imgui_Release C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/imgui/imgui_demo.cpp || cmake_object_order_depends_target_imgui
   DEP_FILE = abcg\external\imgui\CMakeFiles\imgui.dir\imgui_demo.cpp.o.d
   FLAGS = -O3 -DNDEBUG -flto=thin -s USE_SDL=2
-  INCLUDES = -IC:/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -I/usr/local/include -I/opt/local/include -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/imgui
+  INCLUDES = -IC:/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -I/usr/local/include -I/opt/local/include -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/imgui
   OBJECT_DIR = abcg\external\imgui\CMakeFiles\imgui.dir
   OBJECT_FILE_DIR = abcg\external\imgui\CMakeFiles\imgui.dir
 
-build abcg/external/imgui/CMakeFiles/imgui.dir/imgui_draw.cpp.o: CXX_COMPILER__imgui_Release C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/imgui/imgui_draw.cpp || cmake_object_order_depends_target_imgui
+build abcg/external/imgui/CMakeFiles/imgui.dir/imgui_draw.cpp.o: CXX_COMPILER__imgui_Release C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/imgui/imgui_draw.cpp || cmake_object_order_depends_target_imgui
   DEP_FILE = abcg\external\imgui\CMakeFiles\imgui.dir\imgui_draw.cpp.o.d
   FLAGS = -O3 -DNDEBUG -flto=thin -s USE_SDL=2
-  INCLUDES = -IC:/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -I/usr/local/include -I/opt/local/include -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/imgui
+  INCLUDES = -IC:/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -I/usr/local/include -I/opt/local/include -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/imgui
   OBJECT_DIR = abcg\external\imgui\CMakeFiles\imgui.dir
   OBJECT_FILE_DIR = abcg\external\imgui\CMakeFiles\imgui.dir
 
-build abcg/external/imgui/CMakeFiles/imgui.dir/imgui_tables.cpp.o: CXX_COMPILER__imgui_Release C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/imgui/imgui_tables.cpp || cmake_object_order_depends_target_imgui
+build abcg/external/imgui/CMakeFiles/imgui.dir/imgui_tables.cpp.o: CXX_COMPILER__imgui_Release C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/imgui/imgui_tables.cpp || cmake_object_order_depends_target_imgui
   DEP_FILE = abcg\external\imgui\CMakeFiles\imgui.dir\imgui_tables.cpp.o.d
   FLAGS = -O3 -DNDEBUG -flto=thin -s USE_SDL=2
-  INCLUDES = -IC:/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -I/usr/local/include -I/opt/local/include -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/imgui
+  INCLUDES = -IC:/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -I/usr/local/include -I/opt/local/include -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/imgui
   OBJECT_DIR = abcg\external\imgui\CMakeFiles\imgui.dir
   OBJECT_FILE_DIR = abcg\external\imgui\CMakeFiles\imgui.dir
 
-build abcg/external/imgui/CMakeFiles/imgui.dir/imgui_widgets.cpp.o: CXX_COMPILER__imgui_Release C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/imgui/imgui_widgets.cpp || cmake_object_order_depends_target_imgui
+build abcg/external/imgui/CMakeFiles/imgui.dir/imgui_widgets.cpp.o: CXX_COMPILER__imgui_Release C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/imgui/imgui_widgets.cpp || cmake_object_order_depends_target_imgui
   DEP_FILE = abcg\external\imgui\CMakeFiles\imgui.dir\imgui_widgets.cpp.o.d
   FLAGS = -O3 -DNDEBUG -flto=thin -s USE_SDL=2
-  INCLUDES = -IC:/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -I/usr/local/include -I/opt/local/include -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/imgui
+  INCLUDES = -IC:/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -I/usr/local/include -I/opt/local/include -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/imgui
   OBJECT_DIR = abcg\external\imgui\CMakeFiles\imgui.dir
   OBJECT_FILE_DIR = abcg\external\imgui\CMakeFiles\imgui.dir
 
-build abcg/external/imgui/CMakeFiles/imgui.dir/imgui_impl_sdl.cpp.o: CXX_COMPILER__imgui_Release C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/imgui/imgui_impl_sdl.cpp || cmake_object_order_depends_target_imgui
+build abcg/external/imgui/CMakeFiles/imgui.dir/imgui_impl_sdl.cpp.o: CXX_COMPILER__imgui_Release C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/imgui/imgui_impl_sdl.cpp || cmake_object_order_depends_target_imgui
   DEP_FILE = abcg\external\imgui\CMakeFiles\imgui.dir\imgui_impl_sdl.cpp.o.d
   FLAGS = -O3 -DNDEBUG -flto=thin -s USE_SDL=2
-  INCLUDES = -IC:/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -I/usr/local/include -I/opt/local/include -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/imgui
+  INCLUDES = -IC:/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -I/usr/local/include -I/opt/local/include -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/imgui
   OBJECT_DIR = abcg\external\imgui\CMakeFiles\imgui.dir
   OBJECT_FILE_DIR = abcg\external\imgui\CMakeFiles\imgui.dir
 
-build abcg/external/imgui/CMakeFiles/imgui.dir/imgui_impl_opengl3.cpp.o: CXX_COMPILER__imgui_Release C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/imgui/imgui_impl_opengl3.cpp || cmake_object_order_depends_target_imgui
+build abcg/external/imgui/CMakeFiles/imgui.dir/imgui_impl_opengl3.cpp.o: CXX_COMPILER__imgui_Release C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/imgui/imgui_impl_opengl3.cpp || cmake_object_order_depends_target_imgui
   DEP_FILE = abcg\external\imgui\CMakeFiles\imgui.dir\imgui_impl_opengl3.cpp.o.d
   FLAGS = -O3 -DNDEBUG -flto=thin -s USE_SDL=2
-  INCLUDES = -IC:/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -I/usr/local/include -I/opt/local/include -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/imgui
+  INCLUDES = -IC:/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -I/usr/local/include -I/opt/local/include -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/imgui
   OBJECT_DIR = abcg\external\imgui\CMakeFiles\imgui.dir
   OBJECT_FILE_DIR = abcg\external\imgui\CMakeFiles\imgui.dir
 
@@ -308,7 +308,7 @@ build abcg/external/imgui/libimgui.a: CXX_STATIC_LIBRARY_LINKER__imgui_Release a
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/CMakeLists.txt
+# C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/CMakeLists.txt
 # =============================================================================
 
 
@@ -316,7 +316,7 @@ build abcg/external/imgui/libimgui.a: CXX_STATIC_LIBRARY_LINKER__imgui_Release a
 # Utility command for rebuild_cache
 
 build abcg/external/cppitertools/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build\abcg\external\cppitertools && C:\msys64\mingw64\bin\cmake.exe --regenerate-during-build -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build"
+  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build\abcg\external\cppitertools && C:\msys64\mingw64\bin\cmake.exe --regenerate-during-build -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -328,7 +328,7 @@ build abcg/external/cppitertools/rebuild_cache: phony abcg/external/cppitertools
 # Utility command for edit_cache
 
 build abcg/external/cppitertools/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build\abcg\external\cppitertools && C:\msys64\mingw64\bin\cmake-gui.exe -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build"
+  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build\abcg\external\cppitertools && C:\msys64\mingw64\bin\cmake-gui.exe -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build"
   DESC = Running CMake cache editor...
   pool = console
   restat = 1
@@ -337,7 +337,7 @@ build abcg/external/cppitertools/edit_cache: phony abcg/external/cppitertools/CM
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/CMakeLists.txt
+# C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/CMakeLists.txt
 # =============================================================================
 
 
@@ -345,7 +345,7 @@ build abcg/external/cppitertools/edit_cache: phony abcg/external/cppitertools/CM
 # Utility command for rebuild_cache
 
 build abcg/external/fmt/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build\abcg\external\fmt && C:\msys64\mingw64\bin\cmake.exe --regenerate-during-build -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build"
+  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build\abcg\external\fmt && C:\msys64\mingw64\bin\cmake.exe --regenerate-during-build -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -357,7 +357,7 @@ build abcg/external/fmt/rebuild_cache: phony abcg/external/fmt/CMakeFiles/rebuil
 # Utility command for edit_cache
 
 build abcg/external/fmt/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build\abcg\external\fmt && C:\msys64\mingw64\bin\cmake-gui.exe -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build"
+  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build\abcg\external\fmt && C:\msys64\mingw64\bin\cmake-gui.exe -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build"
   DESC = Running CMake cache editor...
   pool = console
   restat = 1
@@ -373,10 +373,10 @@ build abcg/external/fmt/edit_cache: phony abcg/external/fmt/CMakeFiles/edit_cach
 
 build cmake_object_order_depends_target_fmt: phony || abcg/external/fmt/CMakeFiles/fmt.dir
 
-build abcg/external/fmt/CMakeFiles/fmt.dir/format.cc.o: CXX_COMPILER__fmt_Release C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/fmt/format.cc || cmake_object_order_depends_target_fmt
+build abcg/external/fmt/CMakeFiles/fmt.dir/format.cc.o: CXX_COMPILER__fmt_Release C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/fmt/format.cc || cmake_object_order_depends_target_fmt
   DEP_FILE = abcg\external\fmt\CMakeFiles\fmt.dir\format.cc.o.d
   FLAGS = -O3 -DNDEBUG -flto=thin -std=gnu++20
-  INCLUDES = -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/fmt
+  INCLUDES = -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/fmt
   OBJECT_DIR = abcg\external\fmt\CMakeFiles\fmt.dir
   OBJECT_FILE_DIR = abcg\external\fmt\CMakeFiles\fmt.dir
 
@@ -398,7 +398,7 @@ build abcg/external/fmt/libfmt.a: CXX_STATIC_LIBRARY_LINKER__fmt_Release abcg/ex
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/CMakeLists.txt
+# C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/CMakeLists.txt
 # =============================================================================
 
 
@@ -406,7 +406,7 @@ build abcg/external/fmt/libfmt.a: CXX_STATIC_LIBRARY_LINKER__fmt_Release abcg/ex
 # Utility command for rebuild_cache
 
 build abcg/external/glm/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build\abcg\external\glm && C:\msys64\mingw64\bin\cmake.exe --regenerate-during-build -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build"
+  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build\abcg\external\glm && C:\msys64\mingw64\bin\cmake.exe --regenerate-during-build -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -418,7 +418,7 @@ build abcg/external/glm/rebuild_cache: phony abcg/external/glm/CMakeFiles/rebuil
 # Utility command for edit_cache
 
 build abcg/external/glm/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build\abcg\external\glm && C:\msys64\mingw64\bin\cmake-gui.exe -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build"
+  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build\abcg\external\glm && C:\msys64\mingw64\bin\cmake-gui.exe -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build"
   DESC = Running CMake cache editor...
   pool = console
   restat = 1
@@ -427,7 +427,7 @@ build abcg/external/glm/edit_cache: phony abcg/external/glm/CMakeFiles/edit_cach
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/CMakeLists.txt
+# C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/CMakeLists.txt
 # =============================================================================
 
 
@@ -435,7 +435,7 @@ build abcg/external/glm/edit_cache: phony abcg/external/glm/CMakeFiles/edit_cach
 # Utility command for rebuild_cache
 
 build abcg/external/gsl/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build\abcg\external\gsl && C:\msys64\mingw64\bin\cmake.exe --regenerate-during-build -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build"
+  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build\abcg\external\gsl && C:\msys64\mingw64\bin\cmake.exe --regenerate-during-build -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -447,7 +447,7 @@ build abcg/external/gsl/rebuild_cache: phony abcg/external/gsl/CMakeFiles/rebuil
 # Utility command for edit_cache
 
 build abcg/external/gsl/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build\abcg\external\gsl && C:\msys64\mingw64\bin\cmake-gui.exe -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build"
+  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build\abcg\external\gsl && C:\msys64\mingw64\bin\cmake-gui.exe -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build"
   DESC = Running CMake cache editor...
   pool = console
   restat = 1
@@ -456,7 +456,7 @@ build abcg/external/gsl/edit_cache: phony abcg/external/gsl/CMakeFiles/edit_cach
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/CMakeLists.txt
+# C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/CMakeLists.txt
 # =============================================================================
 
 
@@ -464,7 +464,7 @@ build abcg/external/gsl/edit_cache: phony abcg/external/gsl/CMakeFiles/edit_cach
 # Utility command for rebuild_cache
 
 build examples/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build\examples && C:\msys64\mingw64\bin\cmake.exe --regenerate-during-build -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build"
+  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build\examples && C:\msys64\mingw64\bin\cmake.exe --regenerate-during-build -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -476,7 +476,7 @@ build examples/rebuild_cache: phony examples/CMakeFiles/rebuild_cache.util
 # Utility command for edit_cache
 
 build examples/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build\examples && C:\msys64\mingw64\bin\cmake-gui.exe -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build"
+  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build\examples && C:\msys64\mingw64\bin\cmake-gui.exe -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build"
   DESC = Running CMake cache editor...
   pool = console
   restat = 1
@@ -485,7 +485,7 @@ build examples/edit_cache: phony examples/CMakeFiles/edit_cache.util
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/examples/CMakeLists.txt
+# C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/examples/CMakeLists.txt
 # =============================================================================
 
 
@@ -493,7 +493,7 @@ build examples/edit_cache: phony examples/CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build examples/Mustang_3D/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build\examples\Mustang_3D && C:\msys64\mingw64\bin\cmake.exe --regenerate-during-build -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build"
+  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build\examples\Mustang_3D && C:\msys64\mingw64\bin\cmake.exe --regenerate-during-build -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -505,7 +505,7 @@ build examples/Mustang_3D/rebuild_cache: phony examples/Mustang_3D/CMakeFiles/re
 # Utility command for edit_cache
 
 build examples/Mustang_3D/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build\examples\Mustang_3D && C:\msys64\mingw64\bin\cmake-gui.exe -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build"
+  COMMAND = cmd.exe /C "cd /D C:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build\examples\Mustang_3D && C:\msys64\mingw64\bin\cmake-gui.exe -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build"
   DESC = Running CMake cache editor...
   pool = console
   restat = 1
@@ -521,17 +521,17 @@ build examples/Mustang_3D/edit_cache: phony examples/Mustang_3D/CMakeFiles/edit_
 
 build cmake_object_order_depends_target_Mustang_3D: phony || cmake_object_order_depends_target_abcg cmake_object_order_depends_target_fmt cmake_object_order_depends_target_imgui
 
-build examples/Mustang_3D/CMakeFiles/Mustang_3D.dir/main.cpp.o: CXX_COMPILER__Mustang_3D_Release C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/examples/Mustang_3D/main.cpp || cmake_object_order_depends_target_Mustang_3D
+build examples/Mustang_3D/CMakeFiles/Mustang_3D.dir/main.cpp.o: CXX_COMPILER__Mustang_3D_Release C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/examples/Mustang_3D/main.cpp || cmake_object_order_depends_target_Mustang_3D
   DEP_FILE = examples\Mustang_3D\CMakeFiles\Mustang_3D.dir\main.cpp.o.d
   FLAGS = -O3 -DNDEBUG -flto=thin -Wall -Wextra -pedantic -std=c++20 -Oz -sUSE_SDL=2 -sUSE_SDL_IMAGE=2 -std=gnu++20
-  INCLUDES = -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/cppitertools -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/fmt -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/glm/.. -IC:/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/imgui -isystem C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external
+  INCLUDES = -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/cppitertools -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/fmt -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/glm/.. -IC:/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/imgui -isystem C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external
   OBJECT_DIR = examples\Mustang_3D\CMakeFiles\Mustang_3D.dir
   OBJECT_FILE_DIR = examples\Mustang_3D\CMakeFiles\Mustang_3D.dir
 
-build examples/Mustang_3D/CMakeFiles/Mustang_3D.dir/openglwindow.cpp.o: CXX_COMPILER__Mustang_3D_Release C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/examples/Mustang_3D/openglwindow.cpp || cmake_object_order_depends_target_Mustang_3D
+build examples/Mustang_3D/CMakeFiles/Mustang_3D.dir/openglwindow.cpp.o: CXX_COMPILER__Mustang_3D_Release C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/examples/Mustang_3D/openglwindow.cpp || cmake_object_order_depends_target_Mustang_3D
   DEP_FILE = examples\Mustang_3D\CMakeFiles\Mustang_3D.dir\openglwindow.cpp.o.d
   FLAGS = -O3 -DNDEBUG -flto=thin -Wall -Wextra -pedantic -std=c++20 -Oz -sUSE_SDL=2 -sUSE_SDL_IMAGE=2 -std=gnu++20
-  INCLUDES = -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/cppitertools -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/fmt -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/glm/.. -IC:/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external/imgui -isystem C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg/external
+  INCLUDES = -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/cppitertools -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/fmt -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/glm/.. -IC:/emsdk/upstream/emscripten/cache/sysroot/include/SDL2 -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/imgui -isystem C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external
   OBJECT_DIR = examples\Mustang_3D\CMakeFiles\Mustang_3D.dir
   OBJECT_FILE_DIR = examples\Mustang_3D\CMakeFiles\Mustang_3D.dir
 
@@ -545,7 +545,7 @@ build examples/Mustang_3D/CMakeFiles/Mustang_3D.dir/openglwindow.cpp.o: CXX_COMP
 
 build ../public/Mustang_3D.js: CXX_EXECUTABLE_LINKER__Mustang_3D_Release examples/Mustang_3D/CMakeFiles/Mustang_3D.dir/main.cpp.o examples/Mustang_3D/CMakeFiles/Mustang_3D.dir/openglwindow.cpp.o | abcg/libabcg.a abcg/external/fmt/libfmt.a abcg/external/imgui/libimgui.a || abcg/external/fmt/libfmt.a abcg/external/imgui/libimgui.a abcg/libabcg.a
   FLAGS = -O3 -DNDEBUG -flto=thin
-  LINK_FLAGS = -sASSERTIONS=0 -sDISABLE_EXCEPTION_CATCHING=1 -sALLOW_MEMORY_GROWTH=1 -sEXIT_RUNTIME=1 -sFULL_ES3=1 -sMAX_WEBGL_VERSION=2 -sMIN_WEBGL_VERSION=2 -sUSE_SDL=2 -sUSE_SDL_IMAGE=2 -sWASM=1 --use-preload-plugins --preload-file C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/examples/Mustang_3D/assets@/assets
+  LINK_FLAGS = -sASSERTIONS=0 -sDISABLE_EXCEPTION_CATCHING=1 -sALLOW_MEMORY_GROWTH=1 -sEXIT_RUNTIME=1 -sFULL_ES3=1 -sMAX_WEBGL_VERSION=2 -sMIN_WEBGL_VERSION=2 -sUSE_SDL=2 -sUSE_SDL_IMAGE=2 -sWASM=1 --use-preload-plugins --preload-file C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/examples/Mustang_3D/assets@/assets
   LINK_LIBRARIES = abcg/libabcg.a  abcg/external/fmt/libfmt.a  abcg/external/imgui/libimgui.a
   OBJECT_DIR = examples\Mustang_3D\CMakeFiles\Mustang_3D.dir
   POST_BUILD = cd .
@@ -578,70 +578,70 @@ build libimgui.a: phony abcg/external/imgui/libimgui.a
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/build
+# Folder: C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/build
 
 build all: phony abcg/all examples/all
 
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/build/abcg
+# Folder: C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/build/abcg
 
 build abcg/all: phony abcg/libabcg.a abcg/external/all
 
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/build/abcg/external
+# Folder: C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/build/abcg/external
 
 build abcg/external/all: phony abcg/external/imgui/all abcg/external/cppitertools/all abcg/external/fmt/all abcg/external/glm/all abcg/external/gsl/all
 
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/build/abcg/external/cppitertools
+# Folder: C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/build/abcg/external/cppitertools
 
 build abcg/external/cppitertools/all: phony
 
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/build/abcg/external/fmt
+# Folder: C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/build/abcg/external/fmt
 
 build abcg/external/fmt/all: phony abcg/external/fmt/libfmt.a
 
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/build/abcg/external/glm
+# Folder: C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/build/abcg/external/glm
 
 build abcg/external/glm/all: phony
 
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/build/abcg/external/gsl
+# Folder: C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/build/abcg/external/gsl
 
 build abcg/external/gsl/all: phony
 
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/build/abcg/external/imgui
+# Folder: C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/build/abcg/external/imgui
 
 build abcg/external/imgui/all: phony abcg/external/imgui/libimgui.a
 
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/build/examples
+# Folder: C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/build/examples
 
 build examples/all: phony examples/Mustang_3D/all
 
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/build/examples/Mustang_3D
+# Folder: C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/build/examples/Mustang_3D
 
 build examples/Mustang_3D/all: phony ../public/Mustang_3D.js
 

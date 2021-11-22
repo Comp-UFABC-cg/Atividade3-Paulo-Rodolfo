@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/abcg
+# Install script for directory: C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade2-Paulo-Rodolfo/build/abcg/external/cmake_install.cmake")
+  include("C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/build/abcg/external/cmake_install.cmake")
 
 endif()
 

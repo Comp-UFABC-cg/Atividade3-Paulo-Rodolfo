@@ -99,7 +99,7 @@ rule CXX_EXECUTABLE_LINKER__Mustang_3D_Release
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = C:\msys64\mingw64\bin\cmake.exe --regenerate-during-build -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade2-Paulo-Rodolfo\build
+  command = C:\msys64\mingw64\bin\cmake.exe --regenerate-during-build -SC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo -BC:\Users\paulo\Documents\GitHub\UFABC\Disciplina\Computacao_Grafica\Atividade3-Paulo-Rodolfo\build
   description = Re-running CMake...
   generator = 1
 
