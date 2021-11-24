@@ -1,1 +1,1 @@
-add_subdirectory(Mustang_3D)
+add_subdirectory(Aplicacao_3D)

@@ -19,6 +19,6 @@ C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-P
 C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/build/abcg/external/gsl/CMakeFiles/edit_cache.dir
 C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/build/examples/CMakeFiles/rebuild_cache.dir
 C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/build/examples/CMakeFiles/edit_cache.dir
-C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/build/examples/Mustang_3D/CMakeFiles/rebuild_cache.dir
-C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/build/examples/Mustang_3D/CMakeFiles/edit_cache.dir
-C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/build/examples/Mustang_3D/CMakeFiles/Mustang_3D.dir
+C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/build/examples/Aplicacao_3D/CMakeFiles/rebuild_cache.dir
+C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/build/examples/Aplicacao_3D/CMakeFiles/edit_cache.dir
+C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/build/examples/Aplicacao_3D/CMakeFiles/Aplicacao_3D.dir
