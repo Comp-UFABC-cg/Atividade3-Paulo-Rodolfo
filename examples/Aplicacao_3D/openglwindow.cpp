@@ -144,7 +144,7 @@ void OpenGLWindow::paintUI() {
   // File browser for textures
   static ImGui::FileBrowser fileDialogTex;
   fileDialogTex.SetTitle("Load Texture");
-  fileDialogTex.SetTypeFilters({".jpg", ".png"});
+  fileDialogTex.SetTypeFilters({".jpg", ".png",".jpeg"});
   fileDialogTex.SetWindowSize(m_viewportWidth * 0.8f, m_viewportHeight * 0.8f);
 
 // Only in WebGL
