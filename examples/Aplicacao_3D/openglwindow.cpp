@@ -49,18 +49,55 @@ void OpenGLWindow::initializeGL() {
   }
 
   // Load default model
-  loadModel(getAssetsPath() + "roman_lamp.obj");
-  m_mappingMode = 3;  // "From mesh" option
+  loadModel(getAssetsPath() + "bunny.obj");
+
+  // Load cubemap
+  m_model.loadCubeTexture(getAssetsPath() + "maps/cube/");
 
   // Initial trackball spin
   m_trackBallModel.setAxis(glm::normalize(glm::vec3(1, 1, 1)));
   m_trackBallModel.setVelocity(0.0001f);
+
+  initializeSkybox();
+}
+
+void OpenGLWindow::initializeSkybox() {
+  // Create skybox program
+  const auto path{getAssetsPath() + "shaders/" + m_skyShaderName};
+  m_skyProgram = createProgramFromFile(path + ".vert", path + ".frag");
+
+  // Generate VBO
+  abcg::glGenBuffers(1, &m_skyVBO);
+  abcg::glBindBuffer(GL_ARRAY_BUFFER, m_skyVBO);
+  abcg::glBufferData(GL_ARRAY_BUFFER, sizeof(m_skyPositions),
+                     m_skyPositions.data(), GL_STATIC_DRAW);
+  abcg::glBindBuffer(GL_ARRAY_BUFFER, 0);
+
+  // Get location of attributes in the program
+  const GLint positionAttribute{
+      abcg::glGetAttribLocation(m_skyProgram, "inPosition")};
+
+  // Create VAO
+  abcg::glGenVertexArrays(1, &m_skyVAO);
+
+  // Bind vertex attributes to current VAO
+  abcg::glBindVertexArray(m_skyVAO);
+
+  abcg::glBindBuffer(GL_ARRAY_BUFFER, m_skyVBO);
+  abcg::glEnableVertexAttribArray(positionAttribute);
+  abcg::glVertexAttribPointer(positionAttribute, 3, GL_FLOAT, GL_FALSE, 0,
+                              nullptr);
+  abcg::glBindBuffer(GL_ARRAY_BUFFER, 0);
+
+  // End of binding to current VAO
+  abcg::glBindVertexArray(0);
 }
 
 void OpenGLWindow::loadModel(std::string_view path) {
   m_model.terminateGL();
 
   m_model.loadDiffuseTexture(getAssetsPath() + "maps/pattern.png");
+  m_model.loadNormalTexture(getAssetsPath() + "maps/pattern_normal.png");
   m_model.loadObj(path);
   m_model.setupVAO(m_programs.at(m_currentProgramIndex));
   m_trianglesToDraw = m_model.getNumTriangles();
@@ -99,14 +136,22 @@ void OpenGLWindow::paintGL() {
   const GLint KdLoc{abcg::glGetUniformLocation(program, "Kd")};
   const GLint KsLoc{abcg::glGetUniformLocation(program, "Ks")};
   const GLint diffuseTexLoc{abcg::glGetUniformLocation(program, "diffuseTex")};
+  const GLint normalTexLoc{abcg::glGetUniformLocation(program, "normalTex")};
+  const GLint cubeTexLoc{abcg::glGetUniformLocation(program, "cubeTex")};
   const GLint mappingModeLoc{
       abcg::glGetUniformLocation(program, "mappingMode")};
+  const GLint texMatrixLoc{abcg::glGetUniformLocation(program, "texMatrix")};
 
   // Set uniform variables used by every scene object
   abcg::glUniformMatrix4fv(viewMatrixLoc, 1, GL_FALSE, &m_viewMatrix[0][0]);
   abcg::glUniformMatrix4fv(projMatrixLoc, 1, GL_FALSE, &m_projMatrix[0][0]);
   abcg::glUniform1i(diffuseTexLoc, 0);
+  abcg::glUniform1i(normalTexLoc, 1);
+  abcg::glUniform1i(cubeTexLoc, 2);
   abcg::glUniform1i(mappingModeLoc, m_mappingMode);
+
+  const glm::mat3 texMatrix{m_trackBallLight.getRotation()};
+  abcg::glUniformMatrix3fv(texMatrixLoc, 1, GL_TRUE, &texMatrix[0][0]);
 
   const auto lightDirRotated{m_trackBallLight.getRotation() * m_lightDir};
   abcg::glUniform4fv(lightDirLoc, 1, &lightDirRotated.x);
@@ -118,7 +163,7 @@ void OpenGLWindow::paintGL() {
   abcg::glUniformMatrix4fv(modelMatrixLoc, 1, GL_FALSE, &m_modelMatrix[0][0]);
 
   const auto modelViewMatrix{glm::mat3(m_viewMatrix * m_modelMatrix)};
-  glm::mat3 normalMatrix{glm::inverseTranspose(modelViewMatrix)};
+  const glm::mat3 normalMatrix{glm::inverseTranspose(modelViewMatrix)};
   abcg::glUniformMatrix3fv(normalMatrixLoc, 1, GL_FALSE, &normalMatrix[0][0]);
 
   abcg::glUniform1f(shininessLoc, m_shininess);
@@ -128,6 +173,41 @@ void OpenGLWindow::paintGL() {
 
   m_model.render(m_trianglesToDraw);
 
+  abcg::glUseProgram(0);
+
+  if (m_currentProgramIndex == 0 || m_currentProgramIndex == 1) {
+    renderSkybox();
+  }
+}
+
+void OpenGLWindow::renderSkybox() {
+  abcg::glUseProgram(m_skyProgram);
+
+  // Get location of uniform variables
+  const GLint viewMatrixLoc{
+      abcg::glGetUniformLocation(m_skyProgram, "viewMatrix")};
+  const GLint projMatrixLoc{
+      abcg::glGetUniformLocation(m_skyProgram, "projMatrix")};
+  const GLint skyTexLoc{abcg::glGetUniformLocation(m_skyProgram, "skyTex")};
+
+  // Set uniform variables
+  const auto viewMatrix{m_trackBallLight.getRotation()};
+  abcg::glUniformMatrix4fv(viewMatrixLoc, 1, GL_FALSE, &viewMatrix[0][0]);
+  abcg::glUniformMatrix4fv(projMatrixLoc, 1, GL_FALSE, &m_projMatrix[0][0]);
+  abcg::glUniform1i(skyTexLoc, 0);
+
+  abcg::glBindVertexArray(m_skyVAO);
+
+  abcg::glActiveTexture(GL_TEXTURE0);
+  abcg::glBindTexture(GL_TEXTURE_CUBE_MAP, m_model.getCubeTexture());
+
+  abcg::glEnable(GL_CULL_FACE);
+  abcg::glFrontFace(GL_CW);
+  abcg::glDepthFunc(GL_LEQUAL);
+  abcg::glDrawArrays(GL_TRIANGLES, 0, m_skyPositions.size());
+  abcg::glDepthFunc(GL_LESS);
+
+  abcg::glBindVertexArray(0);
   abcg::glUseProgram(0);
 }
 
@@ -142,15 +222,24 @@ void OpenGLWindow::paintUI() {
                                 m_viewportHeight * 0.8f);
 
   // File browser for textures
-  static ImGui::FileBrowser fileDialogTex;
-  fileDialogTex.SetTitle("Load Texture");
-  fileDialogTex.SetTypeFilters({".jpg", ".png",".jpeg"});
-  fileDialogTex.SetWindowSize(m_viewportWidth * 0.8f, m_viewportHeight * 0.8f);
+  static ImGui::FileBrowser fileDialogDiffuseMap;
+  fileDialogDiffuseMap.SetTitle("Load Diffuse Map");
+  fileDialogDiffuseMap.SetTypeFilters({".jpg", ".png"});
+  fileDialogDiffuseMap.SetWindowSize(m_viewportWidth * 0.8f,
+                                     m_viewportHeight * 0.8f);
+
+  // File browser for normal maps
+  static ImGui::FileBrowser fileDialogNormalMap;
+  fileDialogNormalMap.SetTitle("Load Normal Map");
+  fileDialogNormalMap.SetTypeFilters({".jpg", ".png"});
+  fileDialogNormalMap.SetWindowSize(m_viewportWidth * 0.8f,
+                                    m_viewportHeight * 0.8f);
 
 // Only in WebGL
 #if defined(__EMSCRIPTEN__)
   fileDialogModel.SetPwd(getAssetsPath());
-  fileDialogTex.SetPwd(getAssetsPath() + "/maps");
+  fileDialogDiffuseMap.SetPwd(getAssetsPath() + "/maps");
+  fileDialogNormalMap.SetPwd(getAssetsPath() + "/maps");
 #endif
 
   // Create main window widget
@@ -164,23 +253,26 @@ void OpenGLWindow::paintUI() {
 
     ImGui::SetNextWindowPos(ImVec2(m_viewportWidth - widgetSize.x - 5, 5));
     ImGui::SetNextWindowSize(widgetSize);
-    const auto flags{ImGuiWindowFlags_MenuBar | ImGuiWindowFlags_NoDecoration};
+    auto flags{ImGuiWindowFlags_MenuBar | ImGuiWindowFlags_NoDecoration};
     ImGui::Begin("Widget window", nullptr, flags);
 
     // Menu
     {
       bool loadModel{};
-      bool loadDiffTex{};
+      bool loadDiffMap{};
+      bool loadNormalMap{};
       if (ImGui::BeginMenuBar()) {
         if (ImGui::BeginMenu("File")) {
           ImGui::MenuItem("Load 3D Model...", nullptr, &loadModel);
-          ImGui::MenuItem("Load Diffuse Texture...", nullptr, &loadDiffTex);
+          ImGui::MenuItem("Load Diffuse Map...", nullptr, &loadDiffMap);
+          ImGui::MenuItem("Load Normal Map...", nullptr, &loadNormalMap);
           ImGui::EndMenu();
         }
         ImGui::EndMenuBar();
       }
       if (loadModel) fileDialogModel.Open();
-      if (loadDiffTex) fileDialogTex.Open();
+      if (loadDiffMap) fileDialogDiffuseMap.Open();
+      if (loadNormalMap) fileDialogNormalMap.Open();
     }
 
     // Slider will be stretched horizontally
@@ -305,7 +397,7 @@ void OpenGLWindow::paintUI() {
   }
 
   // Create window for light sources
-  if (m_currentProgramIndex < 4) {
+  if (m_currentProgramIndex > 1 && m_currentProgramIndex < 6) {
     const auto widgetSize{ImVec2(222, 244)};
     ImGui::SetNextWindowPos(ImVec2(m_viewportWidth - widgetSize.x - 5,
                                    m_viewportHeight - widgetSize.y - 5));
@@ -354,10 +446,16 @@ void OpenGLWindow::paintUI() {
     }
   }
 
-  fileDialogTex.Display();
-  if (fileDialogTex.HasSelected()) {
-    m_model.loadDiffuseTexture(fileDialogTex.GetSelected().string());
-    fileDialogTex.ClearSelected();
+  fileDialogDiffuseMap.Display();
+  if (fileDialogDiffuseMap.HasSelected()) {
+    m_model.loadDiffuseTexture(fileDialogDiffuseMap.GetSelected().string());
+    fileDialogDiffuseMap.ClearSelected();
+  }
+
+  fileDialogNormalMap.Display();
+  if (fileDialogNormalMap.HasSelected()) {
+    m_model.loadNormalTexture(fileDialogNormalMap.GetSelected().string());
+    fileDialogNormalMap.ClearSelected();
   }
 }
 
@@ -374,6 +472,13 @@ void OpenGLWindow::terminateGL() {
   for (const auto& program : m_programs) {
     abcg::glDeleteProgram(program);
   }
+  terminateSkybox();
+}
+
+void OpenGLWindow::terminateSkybox() {
+  abcg::glDeleteProgram(m_skyProgram);
+  abcg::glDeleteBuffers(1, &m_skyVBO);
+  abcg::glDeleteVertexArrays(1, &m_skyVAO);
 }
 
 void OpenGLWindow::update() {
