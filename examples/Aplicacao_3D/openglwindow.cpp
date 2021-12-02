@@ -198,20 +198,23 @@ void OpenGLWindow::paintUI() {
       if (loadNormalMap) fileDialogNormalMap.Open();
     }
 
+    // Explorar cenario
+    static bool explorarCenario{};
+    ImGui::Checkbox("Explorar Cenário", &explorarCenario);
+
+    if (explorarCenario) {
+      // Codigo Explorar cenario
+    } else {
+      //
+    }
+
     // Slider will be stretched horizontally
     ImGui::PushItemWidth(widgetSize.x - 16);
     ImGui::SliderInt("", &m_trianglesToDraw, 0, m_model.getNumTriangles(),
                      "%d triangles");
     ImGui::PopItemWidth();
 
-    static bool faceCulling{};
-    ImGui::Checkbox("Back-face culling", &faceCulling);
-
-    if (faceCulling) {
-      abcg::glEnable(GL_CULL_FACE);
-    } else {
-      abcg::glDisable(GL_CULL_FACE);
-    }
+    
 
     // CW/CCW combo box
     {
