@@ -135,15 +135,6 @@ void Model::createBuffers() {
   abcg::glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 }
 
-void Model::loadCubeTexture(const std::string& path) {
-  if (!std::filesystem::exists(path)) return;
-
-  abcg::glDeleteTextures(1, &m_cubeTexture);
-  m_cubeTexture = abcg::opengl::loadCubemap(
-      {path + "posx.jpg", path + "negx.jpg", path + "posy.jpg",
-       path + "negy.jpg", path + "posz.jpg", path + "negz.jpg"});
-}
-
 void Model::loadDiffuseTexture(std::string_view path) {
   if (!std::filesystem::exists(path)) return;
 
@@ -292,9 +283,6 @@ void Model::render(int numTriangles) const {
   abcg::glActiveTexture(GL_TEXTURE1);
   abcg::glBindTexture(GL_TEXTURE_2D, m_normalTexture);
 
-  abcg::glActiveTexture(GL_TEXTURE2);
-  abcg::glBindTexture(GL_TEXTURE_CUBE_MAP, m_cubeTexture);
-
   // Set minification and magnification parameters
   abcg::glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
   abcg::glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
@@ -391,7 +379,6 @@ void Model::standardize() {
 }
 
 void Model::terminateGL() {
-  abcg::glDeleteTextures(1, &m_cubeTexture);
   abcg::glDeleteTextures(1, &m_normalTexture);
   abcg::glDeleteTextures(1, &m_diffuseTexture);
   abcg::glDeleteBuffers(1, &m_EBO);
