@@ -380,6 +380,31 @@ void OpenGLWindow::paintUI() {
     m_model.loadNormalTexture(fileDialogNormalMap.GetSelected().string());
     fileDialogNormalMap.ClearSelected();
   }
+
+// Create window for slider
+  {
+    ImGui::SetNextWindowPos(ImVec2(5, m_viewportHeight - 50));
+    ImGui::SetNextWindowSize(ImVec2(m_viewportWidth - 5, -1));
+    ImGui::Begin("Controle de Rotação", nullptr, ImGuiWindowFlags_NoDecoration);
+
+    // Controla o Zoom
+    {
+      // Slider will fill the space of the window
+      ImGui::PushItemWidth(m_viewportWidth - 25);
+
+      static float n2;
+      ImGui::SliderFloat("", &n2, 1.9f, -1.9f, "Zoom(Afasta/Aproxima)");
+      m_zoom += (n2 / 5.0f);
+      m_zoom = glm::clamp(m_zoom, -n2, n2);
+
+      ImGui::PopItemWidth();
+    }
+
+    ImGui::End();
+  }
+
+
+
 }
 
 void OpenGLWindow::resizeGL(int width, int height) {
