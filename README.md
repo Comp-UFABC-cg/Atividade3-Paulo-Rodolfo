@@ -34,6 +34,12 @@ __Link para a aplicação:__   (caso encontre problemas ao abrir, é necessário
 
 
 <br>__Funcionalidades:__
+- Tecla A: Movimenta para a esquerda
+- Tecla D: Movimenta para a direita
+- Tecla W: Movimenta para a frente
+- Tecla S: Movimenta para a trás
+- Seta para direita: Olha para a direita (movimentando em torno do eixo y)
+- Seta para esquerda: Olha para a esquerda (movimentando em torno do eixo y)
 
 
 
