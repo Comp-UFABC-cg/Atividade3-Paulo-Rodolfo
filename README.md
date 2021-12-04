@@ -14,7 +14,7 @@ __Link para a aplicação:__   (caso encontre problemas ao abrir, é necessário
 
 <br>__Aplicação:__
 
-<br> <b>Teoria: </b>
+<br>__Teoria:__
 
 <ul>
  <li>O modelo 3D desenvolvido com a biblioteca ABCG utiliza conceitos de álgebra linear para a construção e renderização do objeto.</li>
