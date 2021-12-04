@@ -26,7 +26,7 @@ __Link para a aplicação:__   (caso encontre problemas ao abrir, é necessário
   - A movimentação em torno do próprio eixo y (chamada de movimentação Pan), no vetor ^v (sem movimentar pelo cenário) é obtida através das setas do teclado (esquerda e direita). Sendo atribuídos -1.0f (esquerda) e +1.0f (direita) ao m_panSpeed. 
   
 ![image](https://user-images.githubusercontent.com/30665585/144721323-a6f9a77e-21f8-4e9d-baa4-27dd440e8277.png)
-Fonte imagem: https://www.brunodorta.com.br/cg/lookatproject.html
+<br>Fonte imagem: https://www.brunodorta.com.br/cg/lookatproject.html
   
 
 
