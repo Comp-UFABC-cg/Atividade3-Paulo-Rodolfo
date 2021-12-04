@@ -16,9 +16,9 @@ __Link para a aplicação:__   (caso encontre problemas ao abrir, é necessário
 
 <br>__Teoria:__
 
-<ul>
- <li>O modelo 3D desenvolvido com a biblioteca ABCG utiliza conceitos de álgebra linear para a construção e renderização do objeto.</li>
- <li>A orientação da superfície é determinada utilizando a pipeline do OpenGL.</li>
+
+- O modelo 3D desenvolvido com a biblioteca ABCG utiliza conceitos de álgebra linear para a construção e renderização do objeto.</li>
+- A orientação da superfície é determinada utilizando a pipeline do OpenGL.
 
 
 
@@ -28,5 +28,5 @@ __Link para a aplicação:__   (caso encontre problemas ao abrir, é necessário
 
 
 
-<br>__Implementação:__<br>
+<br>__Implementação:__
 
