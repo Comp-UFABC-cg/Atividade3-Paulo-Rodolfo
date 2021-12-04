@@ -48,3 +48,22 @@ void Camera::pan(float speed) {
 
   computeViewMatrix();
 }
+
+void Camera::vertical(float speed) {
+  glm::mat4 transform{glm::mat4(1.0f)};
+
+  // TO DO - CAMERA VERTICAL
+  //balanceiaVisao();
+  speed = speed;
+
+  //computeViewMatrix();
+}
+
+void Camera:: balanceiaVisao()
+{
+  float taxa = 0.03f;
+  float valor = 0.5f;
+  if(m_eye.y <= (valor-taxa)) m_eye.y = (valor-taxa);
+  if(m_eye.y <= (valor-taxa)) m_eye.y = (valor-taxa);
+
+}

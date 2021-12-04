@@ -29,16 +29,23 @@ void OpenGLWindow::handleEvent(SDL_Event& ev) {
       m_dollySpeed = -1.0f;
     if (ev.key.keysym.sym == SDLK_a) m_truckSpeed = -1.0f;
     if (ev.key.keysym.sym == SDLK_d) m_truckSpeed = 1.0f;
+  // Evento corrida
+  if ((ev.key.keysym.sym == SDLK_SPACE) && m_dollySpeed > 0)
+      m_dollySpeed = 4.0f;
   // Fim evento andar
 
   // Inicio evento camera
+  if (ev.key.keysym.sym == SDLK_UP)
+      m_verticalSpeed = 1.0f;
+    if (ev.key.keysym.sym == SDLK_DOWN) 
+      m_verticalSpeed = -1.0f;
     if (ev.key.keysym.sym == SDLK_LEFT)
       m_panSpeed = -1.0f;
     if (ev.key.keysym.sym == SDLK_RIGHT)
       m_panSpeed = 1.0f;
   // Fim evento camera
   }
-
+//////////////////////////////////////////////////////////////////////
   if (ev.type == SDL_KEYUP) {
   // Inicio evento andar
     if ((ev.key.keysym.sym == SDLK_w) &&
@@ -49,9 +56,18 @@ void OpenGLWindow::handleEvent(SDL_Event& ev) {
       m_dollySpeed = 0.0f;
     if (ev.key.keysym.sym == SDLK_a && m_truckSpeed < 0) m_truckSpeed = 0.0f;
     if (ev.key.keysym.sym == SDLK_d && m_truckSpeed > 0) m_truckSpeed = 0.0f;
+    // Evento corrida
+    if ((ev.key.keysym.sym == SDLK_SPACE) && m_dollySpeed > 1.0f)
+      m_dollySpeed = 1.0f;
     // Fim evento andar
 
   // Inicio evento camera
+    if ((ev.key.keysym.sym == SDLK_UP) &&
+        m_verticalSpeed > 0)
+      m_verticalSpeed = 0.0f;
+    if ((ev.key.keysym.sym == SDLK_DOWN) &&
+        m_verticalSpeed < 0)
+     m_verticalSpeed = 0.0f;
     if ((ev.key.keysym.sym == SDLK_LEFT) &&
         m_panSpeed < 0)
       m_panSpeed = 0.0f;
@@ -59,7 +75,6 @@ void OpenGLWindow::handleEvent(SDL_Event& ev) {
         m_panSpeed > 0)
       m_panSpeed = 0.0f;
   // Fim evento camera
-
   }
 }
 
@@ -271,4 +286,5 @@ void OpenGLWindow::update() {
   m_camera.dolly(m_dollySpeed * deltaTime);
   m_camera.truck(m_truckSpeed * deltaTime);
   m_camera.pan(m_panSpeed * deltaTime);
+  m_camera.vertical(m_verticalSpeed * deltaTime);
 }
