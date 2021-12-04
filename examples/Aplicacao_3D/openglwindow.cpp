@@ -21,33 +21,45 @@ struct hash<Vertex> {
 }  // namespace std
 
 void OpenGLWindow::handleEvent(SDL_Event& ev) {
+  // Inicio Evento andar
   if (ev.type == SDL_KEYDOWN) {
-    if (ev.key.keysym.sym == SDLK_UP || ev.key.keysym.sym == SDLK_w)
+    if (ev.key.keysym.sym == SDLK_w)
       m_dollySpeed = 1.0f;
-    if (ev.key.keysym.sym == SDLK_DOWN || ev.key.keysym.sym == SDLK_s)
+    if (ev.key.keysym.sym == SDLK_s)
       m_dollySpeed = -1.0f;
-    if (ev.key.keysym.sym == SDLK_LEFT || ev.key.keysym.sym == SDLK_a)
+    if (ev.key.keysym.sym == SDLK_a) m_truckSpeed = -1.0f;
+    if (ev.key.keysym.sym == SDLK_d) m_truckSpeed = 1.0f;
+  // Fim evento andar
+
+  // Inicio evento camera
+    if (ev.key.keysym.sym == SDLK_LEFT)
       m_panSpeed = -1.0f;
-    if (ev.key.keysym.sym == SDLK_RIGHT || ev.key.keysym.sym == SDLK_d)
+    if (ev.key.keysym.sym == SDLK_RIGHT)
       m_panSpeed = 1.0f;
-    if (ev.key.keysym.sym == SDLK_q) m_truckSpeed = -1.0f;
-    if (ev.key.keysym.sym == SDLK_e) m_truckSpeed = 1.0f;
+  // Fim evento camera
   }
+
   if (ev.type == SDL_KEYUP) {
-    if ((ev.key.keysym.sym == SDLK_UP || ev.key.keysym.sym == SDLK_w) &&
+  // Inicio evento andar
+    if ((ev.key.keysym.sym == SDLK_w) &&
         m_dollySpeed > 0)
       m_dollySpeed = 0.0f;
-    if ((ev.key.keysym.sym == SDLK_DOWN || ev.key.keysym.sym == SDLK_s) &&
+    if ((ev.key.keysym.sym == SDLK_s) &&
         m_dollySpeed < 0)
       m_dollySpeed = 0.0f;
-    if ((ev.key.keysym.sym == SDLK_LEFT || ev.key.keysym.sym == SDLK_a) &&
+    if (ev.key.keysym.sym == SDLK_a && m_truckSpeed < 0) m_truckSpeed = 0.0f;
+    if (ev.key.keysym.sym == SDLK_d && m_truckSpeed > 0) m_truckSpeed = 0.0f;
+    // Fim evento andar
+
+  // Inicio evento camera
+    if ((ev.key.keysym.sym == SDLK_LEFT) &&
         m_panSpeed < 0)
       m_panSpeed = 0.0f;
-    if ((ev.key.keysym.sym == SDLK_RIGHT || ev.key.keysym.sym == SDLK_d) &&
+    if ((ev.key.keysym.sym == SDLK_RIGHT) &&
         m_panSpeed > 0)
       m_panSpeed = 0.0f;
-    if (ev.key.keysym.sym == SDLK_q && m_truckSpeed < 0) m_truckSpeed = 0.0f;
-    if (ev.key.keysym.sym == SDLK_e && m_truckSpeed > 0) m_truckSpeed = 0.0f;
+  // Fim evento camera
+
   }
 }
 
