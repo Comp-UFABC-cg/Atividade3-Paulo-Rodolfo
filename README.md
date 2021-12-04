@@ -24,7 +24,7 @@ __Link para a aplicação:__   (caso encontre problemas ao abrir, é necessário
    - Os eventos de <b>SDLK_w</b> e <b>SDLK_s</b> refletem em movimentar a câmera para frente e para a trás (chamada de movimentação dolly) na direção ± ^n. Sendo, +1.0f para a frente e -1.0f para a trás. Os valores são atribuídos a variável responsável pela movimentação nesta direção: <b>m_dollySpeed</b>.
    - Os eventos de <b>SDLK_a</b> e <b>SDLK_d</b> refletem em movimentar a câmera para os lados (chamada de movimentação truck) (esquerda e direita, respectivamente) na direção ±û. Sendo, -1.0f para a esquerda e +1.0f para a direita. Os valores são atribuídos a variável responsável pela movimentação nesta direção: <b>m_truckSpeed</b>.
   - Os eventos de <b>SDLK_LEFT</b> e <b>SDLK_RIGHT</b> refletem em movimentar a câmera em torno do próprio eixo y (chamada de movimentação Pan), realizada no vetor ^v (sem movimentar pelo cenário). Sendo atribuídos -1.0f para a esquerda e +1.0f para a direita. Os valores são atribuídos a variável responsável pela movimentação neste vetor: <b>m_panSpeed</b>.
-  - O evento de <b>SDLK_SPACE</b> reflete em correr na direção selecionada. (por exemplo: ao pressionar W + espaço a câmera corre para frente). Para isto, é atribuído 4.0f ao <b>m_dollySpeed</b>.
+  - O evento de <b>SDLK_SPACE</b> reflete em correr para frente ao pressionar W + Espaço. Para isto, é atribuído 4.0f ao <b>m_dollySpeed</b>.
 
 
 ![image](https://user-images.githubusercontent.com/30665585/144721323-a6f9a77e-21f8-4e9d-baa4-27dd440e8277.png)
@@ -41,6 +41,7 @@ __Link para a aplicação:__   (caso encontre problemas ao abrir, é necessário
 - Tecla S: Movimenta para a trás
 - Seta para direita: Olha para a direita (movimentando em torno do eixo y)
 - Seta para esquerda: Olha para a esquerda (movimentando em torno do eixo y)
+- Espaço: Corre para frente (W + espaço).
 
 
 
