@@ -79,6 +79,11 @@ void OpenGLWindow::handleEvent(SDL_Event& ev) {
 }
 
 void OpenGLWindow::initializeGL() {
+  try
+  {
+    
+  
+  
   abcg::glClearColor(0, 0, 0, 1);
 
   // Enable depth buffering
@@ -91,7 +96,7 @@ void OpenGLWindow::initializeGL() {
   m_ground.initializeGL(m_program);
 
   // Load model
-  loadModelFromFile(getAssetsPath() + "bunny.obj");
+  loadModelFromFile(getAssetsPath() + "cenario_1/bunny.obj");
 
   // Generate VBO
   abcg::glGenBuffers(1, &m_VBO);
@@ -128,6 +133,14 @@ void OpenGLWindow::initializeGL() {
   abcg::glBindVertexArray(0);
 
   resizeGL(getWindowSettings().width, getWindowSettings().height);
+
+  }
+  catch(const std::exception& e)
+  {
+    
+    fmt::print("Warning: {}\n", e.what());
+    
+  }
 }
 
 void OpenGLWindow::loadModelFromFile(std::string_view path) {
@@ -216,13 +229,13 @@ void OpenGLWindow::paintGL() {
   glm::mat4 model{1.0f};
   model = glm::translate(model, glm::vec3(-1.0f, 0.0f, 0.0f));
   model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0, 1, 0));
-  model = glm::scale(model, glm::vec3(0.5f));
+  model = glm::scale(model, glm::vec3(0.02f));
 
   abcg::glUniformMatrix4fv(modelMatrixLoc, 1, GL_FALSE, &model[0][0]);
   abcg::glUniform4f(colorLoc, 1.0f, 1.0f, 1.0f, 1.0f);
   abcg::glDrawElements(GL_TRIANGLES, m_indices.size(), GL_UNSIGNED_INT,
                        nullptr);
-
+/*
   // Draw yellow bunny
   model = glm::mat4(1.0);
   model = glm::translate(model, glm::vec3(0.0f, 0.0f, -1.0f));
@@ -253,6 +266,7 @@ void OpenGLWindow::paintGL() {
   abcg::glDrawElements(GL_TRIANGLES, m_indices.size(), GL_UNSIGNED_INT,
                        nullptr);
 
+*/
   abcg::glBindVertexArray(0);
 
   // Draw ground
