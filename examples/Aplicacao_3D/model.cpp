@@ -8,27 +8,18 @@
 #include <glm/gtx/hash.hpp>
 #include <unordered_map>
 
-// Custom specialization of std::hash injected in namespace std
+// Explicit specialization of std::hash for Vertex
 namespace std {
 template <>
 struct hash<Vertex> {
   size_t operator()(Vertex const& vertex) const noexcept {
-    std::size_t h1{std::hash<glm::vec3>()(vertex.position)};
-    std::size_t h2{std::hash<glm::vec3>()(vertex.normal)};
-    std::size_t h3{std::hash<glm::vec2>()(vertex.texCoord)};
+     std::size_t h1{std::hash<glm::vec3>()(vertex.position)};
+     std::size_t h2{std::hash<glm::vec3>()(vertex.normal)};
+     std::size_t h3{std::hash<glm::vec2>()(vertex.texCoord)};
     return h1 ^ h2 ^ h3;
   }
 };
 }  // namespace std
-
-Model::~Model() {
-  glDeleteTextures(1, &m_cubeTexture);
-  glDeleteTextures(1, &m_normalTexture);
-  glDeleteTextures(1, &m_diffuseTexture);
-  glDeleteBuffers(1, &m_EBO);
-  glDeleteBuffers(1, &m_VBO);
-  glDeleteVertexArrays(1, &m_VAO);
-}
 
 void Model::computeNormals() {
   // Clear previous vertex normals
@@ -46,7 +37,7 @@ void Model::computeNormals() {
     // Compute normal
     const auto edge1{b.position - a.position};
     const auto edge2{c.position - b.position};
-    glm::vec3 normal{glm::cross(edge1, edge2)};
+     glm::vec3 normal{glm::cross(edge1, edge2)};
 
     // Accumulate on vertices
     a.normal += normal;
@@ -62,118 +53,36 @@ void Model::computeNormals() {
   m_hasNormals = true;
 }
 
-void Model::computeTangents() {
-  // Reserve space for bitangents
-  std::vector<glm::vec3> bitangents(m_vertices.size(), glm::vec3(0));
-
-  // Compute face tangents and bitangents
-  for (const auto offset : iter::range<int>(0, m_indices.size(), 3)) {
-    // Get face indices
-    const auto i1{m_indices.at(offset + 0)};
-    const auto i2{m_indices.at(offset + 1)};
-    const auto i3{m_indices.at(offset + 2)};
-
-    // Get face vertices
-    Vertex& v1{m_vertices.at(i1)};
-    Vertex& v2{m_vertices.at(i2)};
-    Vertex& v3{m_vertices.at(i3)};
-
-    const auto e1{v2.position - v1.position};
-    const auto e2{v3.position - v1.position};
-    const auto delta1{v2.texCoord - v1.texCoord};
-    const auto delta2{v3.texCoord - v1.texCoord};
-
-    // clang-format off
-    glm::mat2 M;
-    M[0][0] =  delta2.t;
-    M[0][1] = -delta1.t;
-    M[1][0] = -delta2.s;
-    M[1][1] =  delta1.s;
-    M *= (1.0f / (delta1.s * delta2.t - delta2.s * delta1.t));
-
-    auto tangent{glm::vec4(M[0][0] * e1.x + M[0][1] * e2.x,
-                           M[0][0] * e1.y + M[0][1] * e2.y,
-                           M[0][0] * e1.z + M[0][1] * e2.z, 0.0f)};
-
-    auto bitangent{glm::vec3(M[1][0] * e1.x + M[1][1] * e2.x,
-                             M[1][0] * e1.y + M[1][1] * e2.y,
-                             M[1][0] * e1.z + M[1][1] * e2.z)};
-    // clang-format on
-
-    // Accumulate on vertices
-    v1.tangent += tangent;
-    v2.tangent += tangent;
-    v3.tangent += tangent;
-
-    bitangents.at(i1) += bitangent;
-    bitangents.at(i2) += bitangent;
-    bitangents.at(i3) += bitangent;
-  }
-
-  for (auto&& [i, vertex] : iter::enumerate(m_vertices)) {
-    const auto& n{vertex.normal};
-    const auto& t{glm::vec3(vertex.tangent)};
-
-    // Orthogonalize t with respect to n
-    const auto tangent = t - n * glm::dot(n, t);
-    vertex.tangent = glm::vec4(glm::normalize(tangent), 0);
-
-    // Compute handedness of re-orthogonalized basis
-    const auto b{glm::cross(n, t)};
-    const auto handedness{glm::dot(b, bitangents.at(i))};
-    vertex.tangent.w = (handedness < 0.0f) ? -1.0f : 1.0f;
-  }
-}
-
 void Model::createBuffers() {
   // Delete previous buffers
-  glDeleteBuffers(1, &m_EBO);
-  glDeleteBuffers(1, &m_VBO);
+  abcg::glDeleteBuffers(1, &m_EBO);
+  abcg::glDeleteBuffers(1, &m_VBO);
 
   // VBO
-  glGenBuffers(1, &m_VBO);
-  glBindBuffer(GL_ARRAY_BUFFER, m_VBO);
-  glBufferData(GL_ARRAY_BUFFER, sizeof(m_vertices[0]) * m_vertices.size(),
-               m_vertices.data(), GL_STATIC_DRAW);
-  glBindBuffer(GL_ARRAY_BUFFER, 0);
+  abcg::glGenBuffers(1, &m_VBO);
+  abcg::glBindBuffer(GL_ARRAY_BUFFER, m_VBO);
+  abcg::glBufferData(GL_ARRAY_BUFFER, sizeof(m_vertices[0]) * m_vertices.size(),
+                     m_vertices.data(), GL_STATIC_DRAW);
+  abcg::glBindBuffer(GL_ARRAY_BUFFER, 0);
 
   // EBO
-  glGenBuffers(1, &m_EBO);
-  glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_EBO);
-  glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(m_indices[0]) * m_indices.size(),
-               m_indices.data(), GL_STATIC_DRAW);
-  glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
-}
-
-void Model::loadCubeTexture(const std::string& path) {
-  if (!std::filesystem::exists(path)) return;
-
-  glDeleteTextures(1, &m_cubeTexture);
-  /*m_cubeTexture = abcg::opengl::loadCubemap(
-      {path + "posx.jpg", path + "negx.jpg", path + "posy.jpg",
-       path + "negy.jpg", path + "posz.jpg", path + "negz.jpg"});*/
-
-  m_cubeTexture = abcg::opengl::loadCubemap(
-      {path + "posx.jpg", path + "negx.jpg", path + "posy.jpg",
-       path + "negy.jpg", path + "posz.jpg", path + "negz.jpg"});
+  abcg::glGenBuffers(1, &m_EBO);
+  abcg::glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_EBO);
+  abcg::glBufferData(GL_ELEMENT_ARRAY_BUFFER,
+                     sizeof(m_indices[0]) * m_indices.size(), m_indices.data(),
+                     GL_STATIC_DRAW);
+  abcg::glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 }
 
 void Model::loadDiffuseTexture(std::string_view path) {
   if (!std::filesystem::exists(path)) return;
 
-  glDeleteTextures(1, &m_diffuseTexture);
+  abcg::glDeleteTextures(1, &m_diffuseTexture);
   m_diffuseTexture = abcg::opengl::loadTexture(path);
 }
 
-void Model::loadNormalTexture(std::string_view path) {
-  if (!std::filesystem::exists(path)) return;
-
-  glDeleteTextures(1, &m_normalTexture);
-  m_normalTexture = abcg::opengl::loadTexture(path);
-}
-
-void Model::loadFromFile(std::string_view path, bool standardize) {
-  auto basePath{std::filesystem::path{path}.parent_path().string() + "/"};
+void Model::loadObj(std::string_view path, bool standardize) {
+  const auto basePath{std::filesystem::path{path}.parent_path().string() + "/"};
 
   tinyobj::ObjReaderConfig readerConfig;
   readerConfig.mtl_search_path = basePath;  // Path to material files
@@ -211,13 +120,13 @@ void Model::loadFromFile(std::string_view path, bool standardize) {
     // Loop over indices
     for (const auto offset : iter::range(shape.mesh.indices.size())) {
       // Access to vertex
-      tinyobj::index_t index{shape.mesh.indices.at(offset)};
+      const tinyobj::index_t index{shape.mesh.indices.at(offset)};
 
       // Vertex position
-      std::size_t startIndex{static_cast<size_t>(3 * index.vertex_index)};
-      float vx{attrib.vertices.at(startIndex + 0)};
-      float vy{attrib.vertices.at(startIndex + 1)};
-      float vz{attrib.vertices.at(startIndex + 2)};
+      const int startIndex{3 * index.vertex_index};
+      const float vx{attrib.vertices.at(startIndex + 0)};
+      const float vy{attrib.vertices.at(startIndex + 1)};
+      const float vz{attrib.vertices.at(startIndex + 2)};
 
       // Vertex normal
       float nx{};
@@ -225,10 +134,10 @@ void Model::loadFromFile(std::string_view path, bool standardize) {
       float nz{};
       if (index.normal_index >= 0) {
         m_hasNormals = true;
-        startIndex = 3 * index.normal_index;
-        nx = attrib.normals.at(startIndex + 0);
-        ny = attrib.normals.at(startIndex + 1);
-        nz = attrib.normals.at(startIndex + 2);
+        const int normalStartIndex{3 * index.normal_index};
+        nx = attrib.normals.at(normalStartIndex + 0);
+        ny = attrib.normals.at(normalStartIndex + 1);
+        nz = attrib.normals.at(normalStartIndex + 2);
       }
 
       // Vertex texture coordinates
@@ -236,9 +145,9 @@ void Model::loadFromFile(std::string_view path, bool standardize) {
       float tv{};
       if (index.texcoord_index >= 0) {
         m_hasTexCoords = true;
-        startIndex = 2 * index.texcoord_index;
-        tu = attrib.texcoords.at(startIndex + 0);
-        tv = attrib.texcoords.at(startIndex + 1);
+        const int texCoordsStartIndex{2 * index.texcoord_index};
+        tu = attrib.texcoords.at(texCoordsStartIndex + 0);
+        tv = attrib.texcoords.at(texCoordsStartIndex + 1);
       }
 
       Vertex vertex{};
@@ -268,12 +177,6 @@ void Model::loadFromFile(std::string_view path, bool standardize) {
 
     if (!mat.diffuse_texname.empty())
       loadDiffuseTexture(basePath + mat.diffuse_texname);
-
-    if (!mat.normal_texname.empty()) {
-      loadNormalTexture(basePath + mat.normal_texname);
-    } else if (!mat.bump_texname.empty()) {
-      loadNormalTexture(basePath + mat.bump_texname);
-    }
   } else {
     // Default values
     m_Ka = {0.1f, 0.1f, 0.1f, 1.0f};
@@ -290,84 +193,75 @@ void Model::loadFromFile(std::string_view path, bool standardize) {
     computeNormals();
   }
 
-  if (m_hasTexCoords) {
-    computeTangents();
-  }
-
   createBuffers();
 }
 
 void Model::render(int numTriangles) const {
-  glBindVertexArray(m_VAO);
+  abcg::glBindVertexArray(m_VAO);
 
-  glActiveTexture(GL_TEXTURE0);
-  glBindTexture(GL_TEXTURE_2D, m_diffuseTexture);
-
-  glActiveTexture(GL_TEXTURE1);
-  glBindTexture(GL_TEXTURE_2D, m_normalTexture);
+  abcg::glActiveTexture(GL_TEXTURE0);
+  abcg::glBindTexture(GL_TEXTURE_2D, m_diffuseTexture);
 
   // Set minification and magnification parameters
-  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+  abcg::glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+  abcg::glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
   // Set texture wrapping parameters
-  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+  abcg::glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+  abcg::glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
-  GLsizei numIndices = (numTriangles < 0) ? m_indices.size() : numTriangles * 3;
+  const auto numIndices{(numTriangles < 0) ? m_indices.size()
+                                           : numTriangles * 3};
 
-  glDrawElements(GL_TRIANGLES, numIndices, GL_UNSIGNED_INT, nullptr);
+  abcg::glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(numIndices),
+                       GL_UNSIGNED_INT, nullptr);
 
-  glBindVertexArray(0);
+  abcg::glBindVertexArray(0);
 }
 
 void Model::setupVAO(GLuint program) {
   // Release previous VAO
-  glDeleteVertexArrays(1, &m_VAO);
+  abcg::glDeleteVertexArrays(1, &m_VAO);
 
   // Create VAO
-  glGenVertexArrays(1, &m_VAO);
-  glBindVertexArray(m_VAO);
+  abcg::glGenVertexArrays(1, &m_VAO);
+  abcg::glBindVertexArray(m_VAO);
 
   // Bind EBO and VBO
-  glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_EBO);
-  glBindBuffer(GL_ARRAY_BUFFER, m_VBO);
+  abcg::glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_EBO);
+  abcg::glBindBuffer(GL_ARRAY_BUFFER, m_VBO);
 
   // Bind vertex attributes
-  GLint positionAttribute{glGetAttribLocation(program, "inPosition")};
+  const GLint positionAttribute{
+      abcg::glGetAttribLocation(program, "inPosition")};
   if (positionAttribute >= 0) {
-    glEnableVertexAttribArray(positionAttribute);
-    glVertexAttribPointer(positionAttribute, 3, GL_FLOAT, GL_FALSE,
-                          sizeof(Vertex), nullptr);
+    abcg::glEnableVertexAttribArray(positionAttribute);
+    abcg::glVertexAttribPointer(positionAttribute, 3, GL_FLOAT, GL_FALSE,
+                                sizeof(Vertex), nullptr);
   }
 
-  GLint normalAttribute{glGetAttribLocation(program, "inNormal")};
+  const GLint normalAttribute{abcg::glGetAttribLocation(program, "inNormal")};
   if (normalAttribute >= 0) {
-    glEnableVertexAttribArray(normalAttribute);
+    abcg::glEnableVertexAttribArray(normalAttribute);
     GLsizei offset{sizeof(glm::vec3)};
-    glVertexAttribPointer(normalAttribute, 3, GL_FLOAT, GL_FALSE,
-                          sizeof(Vertex), reinterpret_cast<void*>(offset));
+    abcg::glVertexAttribPointer(normalAttribute, 3, GL_FLOAT, GL_FALSE,
+                                sizeof(Vertex),
+                                reinterpret_cast<void*>(offset));
   }
 
-  GLint texCoordAttribute{glGetAttribLocation(program, "inTexCoord")};
+  const GLint texCoordAttribute{
+      abcg::glGetAttribLocation(program, "inTexCoord")};
   if (texCoordAttribute >= 0) {
-    glEnableVertexAttribArray(texCoordAttribute);
+    abcg::glEnableVertexAttribArray(texCoordAttribute);
     GLsizei offset{sizeof(glm::vec3) + sizeof(glm::vec3)};
-    glVertexAttribPointer(texCoordAttribute, 2, GL_FLOAT, GL_FALSE,
-                          sizeof(Vertex), reinterpret_cast<void*>(offset));
-  }
-
-  GLint tangentCoordAttribute{glGetAttribLocation(program, "inTangent")};
-  if (tangentCoordAttribute >= 0) {
-    glEnableVertexAttribArray(tangentCoordAttribute);
-    GLsizei offset{sizeof(glm::vec3) + sizeof(glm::vec3) + sizeof(glm::vec2)};
-    glVertexAttribPointer(tangentCoordAttribute, 4, GL_FLOAT, GL_FALSE,
-                          sizeof(Vertex), reinterpret_cast<void*>(offset));
+    abcg::glVertexAttribPointer(texCoordAttribute, 2, GL_FLOAT, GL_FALSE,
+                                sizeof(Vertex),
+                                reinterpret_cast<void*>(offset));
   }
 
   // End of binding
-  glBindBuffer(GL_ARRAY_BUFFER, 0);
-  glBindVertexArray(0);
+  abcg::glBindBuffer(GL_ARRAY_BUFFER, 0);
+  abcg::glBindVertexArray(0);
 }
 
 void Model::standardize() {
@@ -391,4 +285,11 @@ void Model::standardize() {
   for (auto& vertex : m_vertices) {
     vertex.position = (vertex.position - center) * scaling;
   }
+}
+
+void Model::terminateGL() {
+  abcg::glDeleteTextures(1, &m_diffuseTexture);
+  abcg::glDeleteBuffers(1, &m_EBO);
+  abcg::glDeleteBuffers(1, &m_VBO);
+  abcg::glDeleteVertexArrays(1, &m_VAO);
 }
