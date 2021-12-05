@@ -98,7 +98,7 @@ void OpenGLWindow::initializeGL() {
   m_ground.initializeGL(m_program);
 
   // Load model
-  loadModelFromFile(getAssetsPath() + "cenario_1/medieval.obj");
+  loadModelFromFile(getAssetsPath() + "cenario/medieval.obj");
 
   // Generate VBO
   abcg::glGenBuffers(1, &m_VBO);
@@ -143,9 +143,11 @@ void OpenGLWindow::initializeGL() {
     //std::ofstream ofs ("log.txt", std::ofstream::out);
 
     auto flags{ImGuiWindowFlags_MenuBar | ImGuiWindowFlags_NoDecoration};
+    ImGui::Begin("Erro no Initialize", nullptr, flags);
+    ImGui::PushItemWidth(15);
     ImGui::Begin(e.what(), nullptr, flags);
     ImGui::PushItemWidth(120);
-    ImGui::Text("Erro no Initialize");
+    
     printf(e.what());
   }
 }
