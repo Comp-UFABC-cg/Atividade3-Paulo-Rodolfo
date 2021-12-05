@@ -8,6 +8,10 @@
 #include <glm/gtx/fast_trigonometry.hpp>
 #include <glm/gtx/hash.hpp>
 #include <unordered_map>
+#include <stdio.h>
+#include <conio.h>
+#include <fstream> 
+
 
 // Explicit specialization of std::hash for Vertex
 namespace std {
@@ -82,8 +86,6 @@ void OpenGLWindow::initializeGL() {
   try
   {
     
-  
-  
   abcg::glClearColor(0, 0, 0, 1);
 
   // Enable depth buffering
@@ -96,7 +98,7 @@ void OpenGLWindow::initializeGL() {
   m_ground.initializeGL(m_program);
 
   // Load model
-  loadModelFromFile(getAssetsPath() + "cenario_1/bunny.obj");
+  loadModelFromFile(getAssetsPath() + "cenario_1/medieval.obj");
 
   // Generate VBO
   abcg::glGenBuffers(1, &m_VBO);
@@ -135,11 +137,16 @@ void OpenGLWindow::initializeGL() {
   resizeGL(getWindowSettings().width, getWindowSettings().height);
 
   }
-  catch(const std::exception& e)
+  catch(std::exception& e)
   {
-    
-    fmt::print("Warning: {}\n", e.what());
-    
+    // Log
+    //std::ofstream ofs ("log.txt", std::ofstream::out);
+
+    auto flags{ImGuiWindowFlags_MenuBar | ImGuiWindowFlags_NoDecoration};
+    ImGui::Begin(e.what(), nullptr, flags);
+    ImGui::PushItemWidth(120);
+    ImGui::Text("Erro no Initialize");
+    printf(e.what());
   }
 }
 
@@ -229,7 +236,7 @@ void OpenGLWindow::paintGL() {
   glm::mat4 model{1.0f};
   model = glm::translate(model, glm::vec3(-1.0f, 0.0f, 0.0f));
   model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0, 1, 0));
-  model = glm::scale(model, glm::vec3(0.02f));
+  model = glm::scale(model, glm::vec3(0.20f));
 
   abcg::glUniformMatrix4fv(modelMatrixLoc, 1, GL_FALSE, &model[0][0]);
   abcg::glUniform4f(colorLoc, 1.0f, 1.0f, 1.0f, 1.0f);
@@ -302,3 +309,4 @@ void OpenGLWindow::update() {
   m_camera.pan(m_panSpeed * deltaTime);
   m_camera.vertical(m_verticalSpeed * deltaTime);
 }
+
