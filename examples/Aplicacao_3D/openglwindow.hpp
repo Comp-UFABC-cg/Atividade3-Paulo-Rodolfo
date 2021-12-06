@@ -6,6 +6,8 @@
 #include "abcg.hpp"
 #include "camera.hpp"
 #include "ground.hpp"
+#include "model.hpp"
+#include "trackball.hpp"
 
 struct Vertex {
   glm::vec3 position;
@@ -29,10 +31,51 @@ class OpenGLWindow : public abcg::OpenGLWindow {
   GLuint m_VBO{};
   GLuint m_EBO{};
   GLuint m_program{};
-
+  
+  
+  
+  
+  
+  
+  
+  
+  //--------trackball
   int m_viewportWidth{};
   int m_viewportHeight{};
 
+  Model m_model;
+  int m_trianglesToDraw{};
+  
+  TrackBall m_trackBallModel;
+  TrackBall m_trackBallLight;
+  float m_zoom{};
+
+
+  glm::mat4 m_modelMatrix{1.0f};
+  glm::mat4 m_viewMatrix{1.0f};
+  glm::mat4 m_projMatrix{1.0f};
+
+  // Shaders
+  std::vector<const char*> m_shaderNames{"texture", "blinnphong", "phong",
+                                         "gouraud", "normal",     "depth"};
+  std::vector<GLuint> m_programs;
+  int m_currentProgramIndex{};
+
+  // Mapping mode
+  // 0: triplanar; 1: cylindrical; 2: spherical; 3: from mesh
+  int m_mappingMode{};
+
+  // Light and material properties
+  glm::vec4 m_lightDir{-1.0f, -1.0f, -1.0f, 0.0f};
+  glm::vec4 m_Ia{1.0f};
+  glm::vec4 m_Id{1.0f};
+  glm::vec4 m_Is{1.0f};
+  glm::vec4 m_Ka;
+  glm::vec4 m_Kd;
+  glm::vec4 m_Ks;
+  float m_shininess{};
+  
+  //--------trackball
   Camera m_camera;
   float m_dollySpeed{0.0f};
   float m_truckSpeed{0.0f};
@@ -44,7 +87,8 @@ class OpenGLWindow : public abcg::OpenGLWindow {
   std::vector<Vertex> m_vertices;
   std::vector<GLuint> m_indices;
 
-  void loadModelFromFile(std::string_view path);
+  //--------trackball loadmodel
+  void loadModel(std::string_view path);
   void update();
 };
 
