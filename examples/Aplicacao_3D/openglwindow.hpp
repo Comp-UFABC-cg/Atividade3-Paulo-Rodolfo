@@ -9,13 +9,13 @@
 #include "model.hpp"
 #include "trackball.hpp"
 
-struct Vertex {
-  glm::vec3 position;
+//struct Vertex {
+ // glm::vec3 position;
 
-  bool operator==(const Vertex& other) const {
-    return position == other.position;
-  }
-};
+ // bool operator==(const Vertex& other) const {
+ //   return position == other.position;
+ // }
+//};
 
 class OpenGLWindow : public abcg::OpenGLWindow {
  protected:
