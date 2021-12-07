@@ -119,7 +119,7 @@ void OpenGLWindow::initializeGL() {
     
   }
   // Load default model
-  loadModel(getAssetsPath() + "cenario/medieval.obj");
+  loadModel(getAssetsPath() + "1_casa_medieval/medieval.obj");
   m_mappingMode = 3;  // "From mesh" option
 
   // Trackballs -------------------------
@@ -146,7 +146,7 @@ void OpenGLWindow::loadModel(std::string_view path) {
   try
   {
       m_model.terminateGL();
-      m_model.loadDiffuseTexture(getAssetsPath() + "maps/pattern.png");
+      m_model.loadDiffuseTexture(getAssetsPath() + "1_casa_medieval/maps/diff.png");
       m_model.loadObj(path);
       m_model.setupVAO(m_programs.at(m_currentProgramIndex));
       m_trianglesToDraw = m_model.getNumTriangles();
