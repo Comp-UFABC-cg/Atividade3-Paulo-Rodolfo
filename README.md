@@ -31,8 +31,10 @@ __Link para a aplicação:__   (caso encontre problemas ao abrir, é necessário
 <br>Fonte imagem: https://www.brunodorta.com.br/cg/lookatproject.html
   
 
-
-
+TO-DO:
+- LOOKAT
+- ILUMINAÇÃO
+- TEXTURA
 
 <br>__Funcionalidades:__
 - Tecla A: Movimenta para a esquerda
