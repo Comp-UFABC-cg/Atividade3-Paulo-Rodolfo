@@ -476,8 +476,8 @@ void OpenGLWindow::paintGL() {
       abcg::glGetUniformLocation(program, "mappingMode")};
 
   // Set uniform variables used by every scene object
-  abcg::glUniformMatrix4fv(viewMatrixLoc, 1, GL_FALSE, &m_viewMatrix[0][0]);
-  abcg::glUniformMatrix4fv(projMatrixLoc, 1, GL_FALSE, &m_projMatrix[0][0]);
+  abcg::glUniformMatrix4fv(viewMatrixLoc, 1, GL_FALSE, &m_camera.m_viewMatrix[0][0]);
+  abcg::glUniformMatrix4fv(projMatrixLoc, 1, GL_FALSE, &m_camera.m_projMatrix[0][0]);
   abcg::glUniform1i(diffuseTexLoc, 0);
   abcg::glUniform1i(mappingModeLoc, m_mappingMode);
 
@@ -490,7 +490,7 @@ void OpenGLWindow::paintGL() {
   // Set uniform variables of the current object
   abcg::glUniformMatrix4fv(modelMatrixLoc, 1, GL_FALSE, &m_modelMatrix[0][0]);
 
-  const auto modelViewMatrix{glm::mat3(m_viewMatrix * m_modelMatrix)};
+  const auto modelViewMatrix{glm::mat3(m_camera.m_viewMatrix * m_modelMatrix)};
   glm::mat3 normalMatrix{glm::inverseTranspose(modelViewMatrix)};
   abcg::glUniformMatrix3fv(normalMatrixLoc, 1, GL_FALSE, &normalMatrix[0][0]);
 
@@ -583,7 +583,9 @@ void OpenGLWindow::resizeGL(int width, int height) {
 	
   m_viewportWidth = width;
   m_viewportHeight = height;
-
+ 
+  m_camera.computeProjectionMatrix(width, height);
+  
   m_trackBallModel.resizeViewport(width, height);
   m_trackBallLight.resizeViewport(width, height);
 }
@@ -607,7 +609,7 @@ void OpenGLWindow::update() {
   m_camera.vertical(m_verticalSpeed * deltaTime);
   
   // TrackBall ---------------------------
-  m_modelMatrix = m_trackBallModel.getRotation();
+//  m_modelMatrix = m_trackBallModel.getRotation();
 
   m_viewMatrix =
       glm::lookAt(glm::vec3(0.0f, 0.0f, 2.0f + m_zoom),

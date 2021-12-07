@@ -542,8 +542,22 @@ build examples/Aplicacao_3D/CMakeFiles/Aplicacao_3D.dir/main.cpp.obj: CXX_COMPIL
   OBJECT_DIR = examples\Aplicacao_3D\CMakeFiles\Aplicacao_3D.dir
   OBJECT_FILE_DIR = examples\Aplicacao_3D\CMakeFiles\Aplicacao_3D.dir
 
+build examples/Aplicacao_3D/CMakeFiles/Aplicacao_3D.dir/model.cpp.obj: CXX_COMPILER__Aplicacao_3D_Debug C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/examples/Aplicacao_3D/model.cpp || cmake_object_order_depends_target_Aplicacao_3D
+  DEP_FILE = examples\Aplicacao_3D\CMakeFiles\Aplicacao_3D.dir\model.cpp.obj.d
+  FLAGS = -g -flto -fno-fat-lto-objects -Wall -Wextra -pedantic -std=gnu++2a
+  INCLUDES = -IC:/msys64/mingw64/include/SDL2 -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/cppitertools -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/fmt -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/glm/.. -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/imgui -isystem C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external
+  OBJECT_DIR = examples\Aplicacao_3D\CMakeFiles\Aplicacao_3D.dir
+  OBJECT_FILE_DIR = examples\Aplicacao_3D\CMakeFiles\Aplicacao_3D.dir
+
 build examples/Aplicacao_3D/CMakeFiles/Aplicacao_3D.dir/openglwindow.cpp.obj: CXX_COMPILER__Aplicacao_3D_Debug C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/examples/Aplicacao_3D/openglwindow.cpp || cmake_object_order_depends_target_Aplicacao_3D
   DEP_FILE = examples\Aplicacao_3D\CMakeFiles\Aplicacao_3D.dir\openglwindow.cpp.obj.d
+  FLAGS = -g -flto -fno-fat-lto-objects -Wall -Wextra -pedantic -std=gnu++2a
+  INCLUDES = -IC:/msys64/mingw64/include/SDL2 -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/cppitertools -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/fmt -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/glm/.. -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/imgui -isystem C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external
+  OBJECT_DIR = examples\Aplicacao_3D\CMakeFiles\Aplicacao_3D.dir
+  OBJECT_FILE_DIR = examples\Aplicacao_3D\CMakeFiles\Aplicacao_3D.dir
+
+build examples/Aplicacao_3D/CMakeFiles/Aplicacao_3D.dir/trackball.cpp.obj: CXX_COMPILER__Aplicacao_3D_Debug C$:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/examples/Aplicacao_3D/trackball.cpp || cmake_object_order_depends_target_Aplicacao_3D
+  DEP_FILE = examples\Aplicacao_3D\CMakeFiles\Aplicacao_3D.dir\trackball.cpp.obj.d
   FLAGS = -g -flto -fno-fat-lto-objects -Wall -Wextra -pedantic -std=gnu++2a
   INCLUDES = -IC:/msys64/mingw64/include/SDL2 -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/cppitertools -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/fmt -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/glm/.. -IC:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external/imgui -isystem C:/Users/paulo/Documents/GitHub/UFABC/Disciplina/Computacao_Grafica/Atividade3-Paulo-Rodolfo/abcg/external
   OBJECT_DIR = examples\Aplicacao_3D\CMakeFiles\Aplicacao_3D.dir
@@ -557,7 +571,7 @@ build examples/Aplicacao_3D/CMakeFiles/Aplicacao_3D.dir/openglwindow.cpp.obj: CX
 #############################################
 # Link the executable bin\Aplicacao_3D.exe
 
-build bin/Aplicacao_3D.exe: CXX_EXECUTABLE_LINKER__Aplicacao_3D_Debug examples/Aplicacao_3D/CMakeFiles/Aplicacao_3D.dir/camera.cpp.obj examples/Aplicacao_3D/CMakeFiles/Aplicacao_3D.dir/ground.cpp.obj examples/Aplicacao_3D/CMakeFiles/Aplicacao_3D.dir/main.cpp.obj examples/Aplicacao_3D/CMakeFiles/Aplicacao_3D.dir/openglwindow.cpp.obj | abcg/libabcg.a C$:/msys64/mingw64/lib/libglew32.dll.a abcg/external/fmt/libfmt.a abcg/external/imgui/libimgui.a C$:/msys64/mingw64/lib/libSDL2main.a C$:/msys64/mingw64/lib/libSDL2.dll.a C$:/msys64/mingw64/lib/libSDL2_image.dll.a || abcg/external/fmt/libfmt.a abcg/external/imgui/libimgui.a abcg/libabcg.a
+build bin/Aplicacao_3D.exe: CXX_EXECUTABLE_LINKER__Aplicacao_3D_Debug examples/Aplicacao_3D/CMakeFiles/Aplicacao_3D.dir/camera.cpp.obj examples/Aplicacao_3D/CMakeFiles/Aplicacao_3D.dir/ground.cpp.obj examples/Aplicacao_3D/CMakeFiles/Aplicacao_3D.dir/main.cpp.obj examples/Aplicacao_3D/CMakeFiles/Aplicacao_3D.dir/model.cpp.obj examples/Aplicacao_3D/CMakeFiles/Aplicacao_3D.dir/openglwindow.cpp.obj examples/Aplicacao_3D/CMakeFiles/Aplicacao_3D.dir/trackball.cpp.obj | abcg/libabcg.a C$:/msys64/mingw64/lib/libglew32.dll.a abcg/external/fmt/libfmt.a abcg/external/imgui/libimgui.a C$:/msys64/mingw64/lib/libSDL2main.a C$:/msys64/mingw64/lib/libSDL2.dll.a C$:/msys64/mingw64/lib/libSDL2_image.dll.a || abcg/external/fmt/libfmt.a abcg/external/imgui/libimgui.a abcg/libabcg.a
   FLAGS = -g -flto -fno-fat-lto-objects
   LINK_LIBRARIES = abcg/libabcg.a  -lmingw32  -lSDL2main  -lSDL2  -lglew32  -lopengl32  C:/msys64/mingw64/lib/libglew32.dll.a  -lopengl32  -lglu32  abcg/external/fmt/libfmt.a  abcg/external/imgui/libimgui.a  -lmingw32  -mwindows  C:/msys64/mingw64/lib/libSDL2main.a  C:/msys64/mingw64/lib/libSDL2.dll.a  C:/msys64/mingw64/lib/libSDL2_image.dll.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = examples\Aplicacao_3D\CMakeFiles\Aplicacao_3D.dir
