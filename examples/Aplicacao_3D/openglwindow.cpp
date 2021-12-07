@@ -93,21 +93,23 @@ void OpenGLWindow::initializeGL() {
   for (const auto& name : m_shaderNames) {
     const auto path{getAssetsPath() + "shaders/" + name};
     const auto program{createProgramFromFile(path + ".vert", path + ".frag")};
+    m_ground.initializeGL(program); // LookAt
     m_programs.push_back(program);
+    
   }
   // Load default model
-  loadModel(getAssetsPath() + "cenario/roman_lamp.obj");
+  loadModel(getAssetsPath() + "cenario/medieval.obj");
   m_mappingMode = 3;  // "From mesh" option
 
   // Initial trackball spin
-  m_trackBallModel.setAxis(glm::normalize(glm::vec3(1, 1, 1)));
-  m_trackBallModel.setVelocity(0.0001f);
+  // m_trackBallModel.setAxis(glm::normalize(glm::vec3(1, 1, 1)));
+  // m_trackBallModel.setVelocity(0.0001f);
   
   // Trackballs -------------------------
 /*
   // Create program
 
-  m_ground.initializeGL(m_program);
+ 
 
   // CHAMADA Load model INCLUIR
 
@@ -485,7 +487,7 @@ void OpenGLWindow::paintGL() {
   abcg::glUseProgram(m_program);
 
   // Get location of uniform variables (could be precomputed)
-  const GLint viewMatrixLoc{
+const GLint viewMatrixLoc{
       abcg::glGetUniformLocation(m_program, "viewMatrix")};
   const GLint projMatrixLoc{
       abcg::glGetUniformLocation(m_program, "projMatrix")};
@@ -542,7 +544,6 @@ void OpenGLWindow::paintGL() {
   abcg::glUniform4f(colorLoc, 1.0f, 0.25f, 0.25f, 1.0f);
   abcg::glDrawElements(GL_TRIANGLES, m_indices.size(), GL_UNSIGNED_INT,
                        nullptr);
-
 
   abcg::glBindVertexArray(0);
 
