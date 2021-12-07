@@ -28,25 +28,21 @@ void OpenGLWindow::handleEvent(SDL_Event& ev) {
     if (ev.key.keysym.sym == SDLK_w)
     {
       m_dollySpeed = 1.0f;
-      m_cameraLight.mousePress(glm::ivec2(m_dollySpeed, 0.0f));
     }
       
     if (ev.key.keysym.sym == SDLK_s)
     {
       m_dollySpeed = -1.0f;
-      m_cameraLight.mousePress(glm::ivec2(m_dollySpeed, 0.0f));
     }
       
     if (ev.key.keysym.sym == SDLK_a) 
     {
       m_truckSpeed = -1.0f;
-    	m_cameraLight.mousePress(glm::ivec2(m_truckSpeed, 0.0f));
     }
     
     if (ev.key.keysym.sym == SDLK_d) 
     {
       m_truckSpeed = 1.0f;
-    	m_cameraLight.mousePress(glm::ivec2(m_truckSpeed, 0.0f));
     }
     	
   // Evento corrida
