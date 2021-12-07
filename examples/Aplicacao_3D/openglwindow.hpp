@@ -43,9 +43,17 @@ class OpenGLWindow : public abcg::OpenGLWindow {
   int m_viewportWidth{};
   int m_viewportHeight{};
 
+  Camera m_camera;
+  TrackBall m_cameraLight;
+
+// TODO - REMOVER
+  bool upStair = false; // Used to move camera considering upstairs area and show message in roof
+  bool started = false; // Used to sinalize started game after press first key in menu
+  bool enjoyTheWindow = false;  // Used to show message when player reach the window/ end of maze area
+
   Model m_model;
   int m_trianglesToDraw{};
-  
+
   TrackBall m_trackBallModel;
   TrackBall m_trackBallLight;
   float m_zoom{};
@@ -55,9 +63,10 @@ class OpenGLWindow : public abcg::OpenGLWindow {
   glm::mat4 m_viewMatrix{1.0f};
   glm::mat4 m_projMatrix{1.0f};
 
+  
   // Shaders
   std::vector<const char*> m_shaderNames{"texture", "blinnphong", "phong",
-                                         "gouraud", "normal",     "depth"};
+                                         "gouraud", "normal",     "depth", "lookat"};
   std::vector<GLuint> m_programs;
   int m_currentProgramIndex{};
 
@@ -70,13 +79,13 @@ class OpenGLWindow : public abcg::OpenGLWindow {
   glm::vec4 m_Ia{1.0f};
   glm::vec4 m_Id{1.0f};
   glm::vec4 m_Is{1.0f};
-  glm::vec4 m_Ka;
-  glm::vec4 m_Kd;
-  glm::vec4 m_Ks;
+  glm::vec4 m_Ka{};
+  glm::vec4 m_Kd{};
+  glm::vec4 m_Ks{};
   float m_shininess{};
   
   //--------trackball
-  Camera m_camera;
+  
   float m_dollySpeed{0.0f};
   float m_truckSpeed{0.0f};
   float m_panSpeed{0.0f};
@@ -90,6 +99,38 @@ class OpenGLWindow : public abcg::OpenGLWindow {
   //--------trackball loadmodel
   void loadModel(std::string_view path);
   void update();
+  // Skybox
+  const std::string m_skyShaderName{"skybox"};
+  GLuint m_skyVAO{};
+  GLuint m_skyVBO{};
+  GLuint m_skyProgram{};
+
+  // clang-format off
+  const std::array<glm::vec3, 36>  m_skyPositions{
+    // Front
+    glm::vec3{-1, -1, +1}, glm::vec3{+1, -1, +1}, glm::vec3{+1, +1, +1},
+    glm::vec3{-1, -1, +1}, glm::vec3{+1, +1, +1}, glm::vec3{-1, +1, +1},
+    // Back
+    glm::vec3{+1, -1, -1}, glm::vec3{-1, -1, -1}, glm::vec3{-1, +1, -1},
+    glm::vec3{+1, -1, -1}, glm::vec3{-1, +1, -1}, glm::vec3{+1, +1, -1},
+    // Right
+    glm::vec3{+1, -1, -1}, glm::vec3{+1, +1, -1}, glm::vec3{+1, +1, +1},
+    glm::vec3{+1, -1, -1}, glm::vec3{+1, +1, +1}, glm::vec3{+1, -1, +1},
+    // Left
+    glm::vec3{-1, -1, +1}, glm::vec3{-1, +1, +1}, glm::vec3{-1, +1, -1},
+    glm::vec3{-1, -1, +1}, glm::vec3{-1, +1, -1}, glm::vec3{-1, -1, -1},
+    // Top
+    glm::vec3{-1, +1, +1}, glm::vec3{+1, +1, +1}, glm::vec3{+1, +1, -1},
+    glm::vec3{-1, +1, +1}, glm::vec3{+1, +1, -1}, glm::vec3{-1, +1, -1},
+    // Bottom
+    glm::vec3{-1, -1, -1}, glm::vec3{+1, -1, -1}, glm::vec3{+1, -1, +1},
+    glm::vec3{-1, -1, -1}, glm::vec3{+1, -1, +1}, glm::vec3{-1, -1, +1}
+  };
+  // clang-format on
+
+  void initializeSkybox();
+  void renderSkybox();
+  void terminateSkybox();
 };
 
 #endif
