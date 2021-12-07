@@ -70,3 +70,10 @@
 6	3553	6605493433164681	examples/Aplicacao_3D/CMakeFiles/Aplicacao_3D.dir/main.cpp.obj	b8570c24cbfba6c3
 44	5541	6605493452955936	examples/Aplicacao_3D/CMakeFiles/Aplicacao_3D.dir/openglwindow.cpp.obj	d1da9e4f7f8f33e9
 5541	17414	0	bin/Aplicacao_3D.exe	b1d74ce9c12bc057
+8	197	6605495813956263	examples/Aplicacao_3D/CMakeFiles/Aplicacao_3D.dir/camera.cpp.obj	2616182b810f63b5
+38	5338	6605495865463178	examples/Aplicacao_3D/CMakeFiles/Aplicacao_3D.dir/openglwindow.cpp.obj	d1da9e4f7f8f33e9
+5338	17918	0	bin/Aplicacao_3D.exe	b1d74ce9c12bc057
+16	9001	6605496321321910	examples/Aplicacao_3D/CMakeFiles/Aplicacao_3D.dir/openglwindow.cpp.obj	d1da9e4f7f8f33e9
+9005	21502	0	bin/Aplicacao_3D.exe	b1d74ce9c12bc057
+23	8388	6605496978630704	examples/Aplicacao_3D/CMakeFiles/Aplicacao_3D.dir/openglwindow.cpp.obj	d1da9e4f7f8f33e9
+8389	21709	0	bin/Aplicacao_3D.exe	b1d74ce9c12bc057
