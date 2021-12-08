@@ -35,14 +35,14 @@ __Link para a aplicação:__  https://comp-ufabc-cg.github.io/Atividade3-Paulo-R
     - Espaço do mundo: É o frame no qual renderizamos o objeto. Em nossa aplicação podemos renderizar um objeto por vez dentro do frame (mundo). O espaço do mundo também segue a orientação RHS.
     - Espaço da câmera: É o frame da câmera da aplicação (que simula o ponto de vista em primeira pessoa e possibilita a navegação pelo mundo).
  - Câmera: 
-    - Implementada em câmera.cpp e câmera.hpp calcula a matriz de visão (é uma mudança de frame: do espaço do mundo para o espaço da câmera). A matriz de visão é a inversa da matriz M (que converte as coordenadas do espaço da câmera para o espaço do mundo). Ou seja, <br>Mview = M^-1</br>. A sua fórmula é a inversa pois a finalidade é justamente o oposto (queremos converter as coordenadas do espaço do mundo para o espaço da câmera). Isto é implementado através da função <br>glm::lookAt</br> (importada da biblioteca GLM), o cálculo, portanto, é realizado conforme abaixo: <br>
+    - Implementada em câmera.cpp e câmera.hpp calcula a matriz de visão (é uma mudança de frame: do espaço do mundo para o espaço da câmera). A matriz de visão é a inversa da matriz M (que converte as coordenadas do espaço da câmera para o espaço do mundo). Ou seja, <b>Mview = M^-1</b>. A sua fórmula é a inversa pois a finalidade é justamente o oposto (queremos converter as coordenadas do espaço do mundo para o espaço da câmera). Isto é implementado através da função <br>glm::lookAt</br> (importada da biblioteca GLM), o cálculo, portanto, é realizado conforme abaixo: <br>
     ![image](https://user-images.githubusercontent.com/30665585/145130652-9f043382-13ef-4c68-9897-b1727c2fc180.png) <br>
     
-    - Os parâmetros <br>m_eye</br>, <br>m_at</br> e <br>m_up</br> equivalem, respectivamente a posição da câmera, posição para onde a câmera está olhando e direção para cima da câmera. As posições iniciais são descritas abaixo:
+    - Os parâmetros <b>m_eye</b>, <b>m_at</b> e <b>m_up</b> equivalem, respectivamente a posição da câmera, posição para onde a câmera está olhando e direção para cima da câmera. As posições iniciais são descritas abaixo:
      - m_eye: (0,0,2,5)
      - m_at: (0,0,0)
      - m_up: (0,1,0)
-    - As funções dolly, truck, pan são utilizadas dentro do <br>OpenGLWindow</br> para capturar e refletir (através da atualização das variáveis <br>m_eye</br> e <br>m_up</br>) a movimentação da entrada do teclado. A finalidade dessas funções foi descrita no início do relatório. A implementação delas foi realizada dentro de camera.cpp.    
+    - As funções dolly, truck, pan são utilizadas dentro do <b>OpenGLWindow</b> para capturar e refletir (através da atualização das variáveis <b>m_eye</b> e <b>m_up</b>) a movimentação da entrada do teclado. A finalidade dessas funções foi descrita no início do relatório. A implementação delas foi realizada dentro de camera.cpp.    
  - Iluminação:
     - Conceitualmente, a interação de luz entre as superfícies dos objetos e a fonte de luz é modelada matemáticamente através da equação de renderização (Kajiya 1986).
     - Na aplicação existem três opções de iluminação (dentro da opção shader):
@@ -51,20 +51,14 @@ __Link para a aplicação:__  https://comp-ufabc-cg.github.io/Atividade3-Paulo-R
      - Normal: Visualização de vetores normais como cores.
    O modelo de Blinn-Phong (Blinn 1977) é uma modificação do modelo de Phong. Este modelo é mais eficiente que o modelo de Phong. A diferença visível entre os dois é referente a forma do brilho especular: No Phong é sempre redondo na superfície plana, já no Blinn-Phong é redondo quando a superfície é vista de frente e alongado verticalmente quando a direção da visão e a direção à fonte de luz estão rentes à superfície. <br>
    Dado a simplicidade do modelo e maior eficiência se comparado ao Phong, implementamos em nossa aplicação pois é o mais utilizado em aplicações de tempo real. <br>
-   O modelo está implementado em <br>texture.frag</br> (função: BlinnPhong) e <br>blinnphong.frag</br> (além de seus arquivos de cabeçalho de mesmo nome cuja extensão é .hpp). <br>
-   Para o cálculo de normais: Utilizamos a função <br>Model::computeNormals</br> que calcula os vetores normais para cada vértice. Esta função está implementada dentro de model.cpp. Caso o objeto já possua as normais calculadas, a identificação booleana <br>(m_hasNormals)</br> não irá calcular as normais (poupa processamento e otimiza o código). Por fim, o <brnormal.vert</br> converte as coordenadas do vértice resultante (cada um deles) em uma cor RGB.
+   O modelo está implementado em <b>texture.frag</b> (função: BlinnPhong) e <br>blinnphong.frag</b> (além de seus arquivos de cabeçalho de mesmo nome cuja extensão é .hpp). <br>
+   Para o cálculo de normais: Utilizamos a função <b>Model::computeNormals</b> que calcula os vetores normais para cada vértice. Esta função está implementada dentro de model.cpp. Caso o objeto já possua as normais calculadas, a identificação booleana <b>(m_hasNormals)</b> não irá calcular as normais (poupa processamento e otimiza o código). Por fim, o <b>normal.vert</b> converte as coordenadas do vértice resultante (cada um deles) em uma cor RGB.
  - Textura:
      - Conforme citado acima, utilizamos a textura em conjunto com o modelo de reflexão Blinn-Phong.
-     - O carregamento das texturas é feito a partir da função importada da biblioteca abcg: abcg::opengl::loadTexture
-     - Nossos modelos possuem o .mtl, que é a descrição das propriedades do objeto. Especifica os seguintes parâmetros: <br>Ns (brilho especular)</br>, <br>Ka</br> (propriedade de reflexão do ambiente), <br>Kd</br> (difusa) e <br>Ks</br> (especular).
-     - Em <br>Model::loadObj</br> prioriza-se as propriedades do material (caso houver). Caso não possua, são setados valores padrão dos parâmetros citados acima.
+     - O carregamento das texturas é feito a partir da função importada da biblioteca abcg: <b>abcg::opengl::loadTexture<b/>.
+     - Nossos modelos possuem o .mtl, que é a descrição das propriedades do objeto. Especifica os seguintes parâmetros: <b>Ns (brilho especular)</b>, <b>Ka</b> (propriedade de reflexão do ambiente), <b>Kd</b> (difusa) e <b>Ks</b> (especular).
+     - Em <b>Model::loadObj</b> prioriza-se as propriedades do material (caso houver). Caso não possua, são setados valores padrão dos parâmetros citados acima.
      - O modo default de carregamento de textura é o 3 (from mesh) - para que o arquivo obj carregue sua textura caso possua.
-
-
-TO-DO:
-- LOOKAT (OK FEITO)
-- ILUMINAÇÃO 
-- TEXTURA
 
 <br>__Funcionalidades:__
 - Tecla A: Movimenta para a esquerda
