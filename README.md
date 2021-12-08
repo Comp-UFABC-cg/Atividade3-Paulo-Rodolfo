@@ -75,7 +75,7 @@ __Link para a aplicação:__  https://comp-ufabc-cg.github.io/Atividade3-Paulo-R
        - Cilíndrico: É o mapeamento equivalente a envolver a área lateral de uma cilindro com textura.<br>
        - Esférico: É o mapeamento equivalente a envolver uma esfera.<br>
        - Mapeamento UV Unwrap: Define diretamente quais coordenadas (u,v) são pertencentes a cada vértice da malha geométrica (mesh).<br>
-       Todos mapeamentos são armazenados na variáveis <b> m_mappingMode </b> em <b>openglwindow.cpp<b/>.  <br>
-![image](https://user-images.githubusercontent.com/30665585/145146090-260f6793-a9fb-468a-8ddf-415aa097cb49.png)
+       Todos mapeamentos são armazenados na variáveis <b> m_mappingMode </b> em <b>openglwindow.cpp</b>.  <br>
+![image](https://user-images.githubusercontent.com/30665585/145146090-260f6793-a9fb-468a-8ddf-415aa097cb49.png) <br>
 Resultado da textura
 
