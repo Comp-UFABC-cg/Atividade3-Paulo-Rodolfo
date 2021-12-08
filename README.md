@@ -45,11 +45,11 @@ __Link para a aplicação:__   (caso encontre problemas ao abrir, é necessário
  - Projeções:
     - Nossa aplicação possui suporte para os dois tipos de projeção: ortográfica e perspectiva. A seleção é feita a partir do combobox. A variável m_projMatrix armazena a projeção escolhida. Ambas funções são importadas da biblioteca GLM. Em linhas gerais, a diferença entre as duas projeções é que a projeção em perspectiva é como enxergamos o mundo, ou seja, quanto mais longe um objeto estiver do campo de visão, menor ele ficará. <br>
     ![image](https://user-images.githubusercontent.com/30665585/145132688-6d297c0e-b82d-4945-8d2c-06dc3a16e84c.png)
-
+ - Iluminação:
 
 TO-DO:
 - LOOKAT (OK FEITO)
-- ILUMINAÇÃO
+- ILUMINAÇÃO 
 - TEXTURA
 
 <br>__Funcionalidades:__
