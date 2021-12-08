@@ -70,7 +70,7 @@ __Link para a aplicação:__  https://comp-ufabc-cg.github.io/Atividade3-Paulo-R
      - Em <b>Model::loadObj</b> prioriza-se as propriedades do material (caso houver). Caso não possua, são setados valores padrão dos parâmetros citados acima.
      - O modo default de carregamento de textura é o 3 (from mesh) - para que o arquivo obj carregue sua textura caso possua.
      - Mapeamento: 
-      - O mapeamento consiste em mapear pontos do espaço 3D em pontos do espaço 2D. É necessário para a inclusão da textura. A aplicação possui 4 deles: <br>
+      - O mapeamento consiste em mapear pontos do espaço 3D (x,y,z) em pontos do espaço 2D (u,v). É necessário para a inclusão da textura. A aplicação possui 4 deles: <br>
        - Planar: É uma projeção linear e paralela dos pontos do espaço 3D para o plano do espaço de textura 2D. A aplicação possui o mapeamento triplanar que é uma combinação dos mapeamentos planares de x,y e z. <br>
        - Cilíndrico: É o mapeamento equivalente a envolver a área lateral de uma cilindro com textura.<br>
        - Esférico: É o mapeamento equivalente a envolver uma esfera.<br>
