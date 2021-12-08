@@ -222,15 +222,8 @@ void OpenGLWindow::paintUI() {
       if (loadDiffTex) fileDialogTex.Open();
     }
     
-    // Slider will be stretched horizontally
-    ImGui::PushItemWidth(widgetSize.x - 16);
-    ImGui::SliderInt("", &m_trianglesToDraw, 0, m_model.getNumTriangles(),
-                     "%d triangles");
-    ImGui::PopItemWidth();
-    
     // manual
     ImGui::Checkbox("Exibir Manual", &manual);
-
 
     // faceCulling
     static bool faceCulling{};
@@ -242,6 +235,12 @@ void OpenGLWindow::paintUI() {
       abcg::glDisable(GL_CULL_FACE);
     }
 
+    // Slider will be stretched horizontally
+    ImGui::PushItemWidth(widgetSize.x - 16);
+    ImGui::SliderInt("", &m_trianglesToDraw, 0, m_model.getNumTriangles(),
+                     "%d triangles");
+    ImGui::PopItemWidth();
+    
     // CW/CCW combo box
     {
       static std::size_t currentIndex{};
@@ -329,13 +328,13 @@ void OpenGLWindow::paintUI() {
     ImGui::Begin(" Teste", nullptr, ImGuiWindowFlags_NoDecoration);
     ImGui::Text("MANUAL");
     ImGui::Text("Tecla A: Andar para a esquerda");
-  //  ImGui::Text("Tecla D: Andar para a direita");
-  //  ImGui::Text("Tecla W: Andar para frente");
-  //  ImGui::Text("Tecla S: Andar para trás");
-  //  ImGui::Text("Seta esquerda: Girar para a esquerda");
-  //  ImGui::Text("Seta direita: Girar para a direita");
- //   ImGui::Text("Seta frente: Girar para frente");
- //   ImGui::Text("Seta trás: Girar para trás");
+    ImGui::Text("Tecla D: Andar para a direita");
+    ImGui::Text("Tecla W: Andar para frente");
+    ImGui::Text("Tecla S: Andar para trás");
+    ImGui::Text("Seta esquerda: Girar para a esquerda");
+    ImGui::Text("Seta direita: Girar para a direita");
+    //ImGui::Text("Seta frente: Girar para frente");
+    //ImGui::Text("Seta trás: Girar para trás");
     
 
     ImGui::End();
