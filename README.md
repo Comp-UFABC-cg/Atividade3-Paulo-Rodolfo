@@ -36,7 +36,7 @@ __Link para a aplicação:__   (caso encontre problemas ao abrir, é necessário
     - Espaço da câmera: É o frame da câmera da aplicação (que simula o ponto de vista em primeira pessoa e possibilita a navegação pelo mundo).
  - Câmera: 
     - Implementada em câmera.cpp e câmera.hpp calcula a matriz de visão (é uma mudança de frame: do espaço do mundo para o espaço da câmera). A matriz de visão é a inversa da matriz M (que converte as coordenadas do espaço da câmera para o espaço do mundo). Ou seja, Mview = M^-1. A sua fórmula é a inversa pois a finalidade é justamente o oposto (queremos converter as coordenadas do espaço do mundo para o espaço da câmera). Isto é implementado através da função glm::lookAt (importada da biblioteca GLM), o cálculo, portanto, é realizado conforme abaixo: <br>
-    ![image](https://user-images.githubusercontent.com/30665585/145130652-9f043382-13ef-4c68-9897-b1727c2fc180.png)
+    ![image](https://user-images.githubusercontent.com/30665585/145130652-9f043382-13ef-4c68-9897-b1727c2fc180.png) <br>
     Os parâmetros m_eye, m_at e m_up equivalem, respectivamente a posição da câmera, posição para onde a câmera está olhando e direção para cima da câmera.
  
 TO-DO:
