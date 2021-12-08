@@ -42,7 +42,11 @@ __Link para a aplicação:__   (caso encontre problemas ao abrir, é necessário
      - m_at: (0,0,0)
      - m_up: (0,1,0)
     - As funções dolly, truck, pan são utilizadas dentro do OpenGLWindow para capturar e refletir (através da atualização das variáveis m_eye e m_up) a movimentação da entrada do teclado. A finalidade dessas funções foi descrita no início do relatório. A implementação delas foi realizada dentro de camera.cpp.
- 
+ - Projeções:
+    - Nossa aplicação possui suporte para os dois tipos de projeção: ortográfica e perspectiva. A seleção é feita a partir do combobox. A variável m_projMatrix armazena a projeção escolhida. Ambas funções são importadas da biblioteca GLM. Em linhas gerais, a diferença entre as duas projeções é que a projeção em perspectiva é como enxergamos o mundo, ou seja, quanto mais longe um objeto estiver do campo de visão, menor ele ficará. <br>
+    ![image](https://user-images.githubusercontent.com/30665585/145132688-6d297c0e-b82d-4945-8d2c-06dc3a16e84c.png)
+
+
 TO-DO:
 - LOOKAT (OK FEITO)
 - ILUMINAÇÃO
