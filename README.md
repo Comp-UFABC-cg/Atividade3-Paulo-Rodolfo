@@ -14,7 +14,7 @@ __Link para a aplicação:__   (caso encontre problemas ao abrir, é necessário
 
 <br>__Aplicação:__
 
-<br>__Teoria:__
+<br>__Teoria e Implementação:__
 
 
 - O modelo 3D desenvolvido com a biblioteca ABCG utiliza conceitos de álgebra linear para a construção e renderização do objeto.</li>
@@ -63,8 +63,4 @@ TO-DO:
 - Seta para esquerda: Olha para a esquerda (movimentando em torno do eixo y)
 - Espaço: Corre para frente (W + espaço).
 
-
-
-
-<br>__Implementação:__
 
