@@ -74,7 +74,7 @@ __Link para a aplicação:__  https://comp-ufabc-cg.github.io/Atividade3-Paulo-R
        - Planar: É uma projeção linear e paralela dos pontos do espaço 3D para o plano do espaço de textura 2D. A aplicação possui o mapeamento triplanar que é uma combinação dos mapeamentos planares de x,y e z. <br>
        - Cilíndrico: É o mapeamento equivalente a envolver a área lateral de uma cilindro com textura.<br>
        - Esférico: É o mapeamento equivalente a envolver uma esfera.<br>
-       - Mapeamento UV Unwrap: Define diretamente quais coordenadas (u,v) são pertencentes a cada vértice da malha geométria (mesh).<br>
+       - Mapeamento UV Unwrap: Define diretamente quais coordenadas (u,v) são pertencentes a cada vértice da malha geométrica (mesh).<br>
        Todos mapeamentos são armazenados na variáveis <b> m_mappingMode </b> em <b>openglwindow.cpp<b/>. 
 
 
