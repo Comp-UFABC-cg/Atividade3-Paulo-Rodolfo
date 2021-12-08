@@ -42,13 +42,17 @@ __Link para a aplicação:__   (caso encontre problemas ao abrir, é necessário
      - m_eye: (0,0,2,5)
      - m_at: (0,0,0)
      - m_up: (0,1,0)
-    - As funções dolly, truck, pan são utilizadas dentro do OpenGLWindow para capturar e refletir (através da atualização das variáveis m_eye e m_up) a movimentação da entrada do teclado. A finalidade dessas funções foi descrita no início do relatório. A implementação delas foi realizada dentro de camera.cpp.
- - Projeções:
-    - Nossa aplicação possui suporte para os dois tipos de projeção: ortográfica e perspectiva. A seleção é feita a partir do combobox. A variável m_projMatrix armazena a projeção escolhida. Ambas funções são importadas da biblioteca GLM. Em linhas gerais, a diferença entre as duas projeções é que a projeção em perspectiva é como enxergamos o mundo, ou seja, quanto mais longe um objeto estiver do campo de visão, menor ele ficará. <br>
-    ![image](https://user-images.githubusercontent.com/30665585/145132688-6d297c0e-b82d-4945-8d2c-06dc3a16e84c.png)
-    
+    - As funções dolly, truck, pan são utilizadas dentro do OpenGLWindow para capturar e refletir (através da atualização das variáveis m_eye e m_up) a movimentação da entrada do teclado. A finalidade dessas funções foi descrita no início do relatório. A implementação delas foi realizada dentro de camera.cpp.    
  - Iluminação:
     - Conceitualmente, a interação de luz entre as superfícies dos objetos e a fonte de luz é modelada matemáticamente através da equação de renderização (Kajiya 1986).
+    - Na aplicação existem três opções de iluminação (dentro da opção shader):
+     - Textura: Utilização de shader que utiliza textura em conjunto com o modelo de reflexão Blinn-Phong.
+     - Iluminação: Utilização do modelo Blinn-Phong.
+     - Normal: Visualização de vetores normais como cores.
+   O modelo de Blinn-Phong (Blinn 1977) é uma modificação do modelo de Phong. Este modelo é mais eficiente que o modelo de Phong. A diferença visível entre os dois é referente a forma do brilho especular: No Phong é sempre redondo na superfície plana, já no Blinn-Phong é redondo quando a superfície é vista de frente e alongado verticalmente quando a direção da visão e a direção à fonte de luz estão rentes à superfície.
+   Dado a simplicidade do modelo e maior eficiência se comparado ao Phong, implementamos em nossa aplicação pois é o mais utilizado em aplicações de tempo real.
+   O modelo está implementado em texture.frag (função: BlinnPhong) e blinnphong.frag (além de seus arquivos de cabeçalho de mesmo nome cuja extensão é .hpp).
+   Para o cálculo de normais: Utilizamos a função Model::computeNormals que calcula os vetores normais para cada vértice. Esta função está implementada dentro de model.cpp. Caso o objeto já possua as normais calculadas, a identificação booleana (m_hasNormals) não irá calcular as normais (poupa processamento e otimiza o código). Por fim, o normal.vert converte as coordenadas do vértice resultante (cada um deles) em uma cor RGB.
 
 TO-DO:
 - LOOKAT (OK FEITO)
