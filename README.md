@@ -48,6 +48,7 @@ __Link para a aplicação:__   (caso encontre problemas ao abrir, é necessário
     ![image](https://user-images.githubusercontent.com/30665585/145132688-6d297c0e-b82d-4945-8d2c-06dc3a16e84c.png)
     
  - Iluminação:
+    - Conceitualmente, a interação de luz entre as superfícies dos objetos e a fonte de luz é modelada matemáticamente através da equação de renderização (Kajiya 1986).
 
 TO-DO:
 - LOOKAT (OK FEITO)
