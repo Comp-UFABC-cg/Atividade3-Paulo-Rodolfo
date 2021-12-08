@@ -80,5 +80,7 @@ __Link para a aplicação:__  https://comp-ufabc-cg.github.io/Atividade3-Paulo-R
 Resultado da textura
 
 Links Objetos 3D:
-Casa Medieval - https://www.cgtrader.com/free-3d-models/exterior/house/medieval-house-ba1c8fd4-d6ee-4666-83de-23c1684fe6aa
-Mustang - https://www.cgtrader.com/items/2729539/download-page
+Alien - https://comp-ufabc-cg.github.io/Atividade3-Paulo-Rodolfo/public/ <br>
+Casa Medieval - https://www.cgtrader.com/free-3d-models/exterior/house/medieval-house-ba1c8fd4-d6ee-4666-83de-23c1684fe6aa <br>
+Mustang - https://www.cgtrader.com/items/2729539/download-page <br>
+
