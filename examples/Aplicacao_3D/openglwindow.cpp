@@ -183,7 +183,7 @@ void OpenGLWindow::paintUI() {
 // Only in WebGL
 #if defined(__EMSCRIPTEN__)
   fileDialogModel.SetPwd(getAssetsPath());
-  fileDialogTex.SetPwd(getAssetsPath() + "/maps");
+  fileDialogTex.SetPwd(getAssetsPath()); // sub pasta maps 
 #endif
 
   // Create main window widget
