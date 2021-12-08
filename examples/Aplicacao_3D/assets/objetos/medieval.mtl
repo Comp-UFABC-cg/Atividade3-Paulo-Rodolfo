@@ -10,7 +10,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-	map_Ka maps/diff.png
-	map_Kd maps/diff.png
-	map_bump maps/diff.png
-	bump maps/diff.png
+	map_Ka texturas/medieval_diff.png
+	map_Kd texturas/medieval_diff.png
+	map_bump texturas/medieval_diff.png
+	bump texturas/medieval_diff.png

@@ -119,7 +119,7 @@ void OpenGLWindow::initializeGL() {
     
   }
   // Load default model
-  loadModel(getAssetsPath() + "1_casa_medieval/medieval.obj");
+  loadModel(getAssetsPath() + "objetos/medieval.obj");
   m_mappingMode = 3;  // "From mesh" option
 
   // Trackballs -------------------------
@@ -146,7 +146,7 @@ void OpenGLWindow::loadModel(std::string_view path) {
   try
   {
       m_model.terminateGL();
-      m_model.loadDiffuseTexture(getAssetsPath() + "1_casa_medieval/maps/diff.png");
+      m_model.loadDiffuseTexture(getAssetsPath() + "texturas/medieval_diff.png");
       m_model.loadObj(path);
       m_model.setupVAO(m_programs.at(m_currentProgramIndex));
       m_trianglesToDraw = m_model.getNumTriangles();
@@ -182,8 +182,8 @@ void OpenGLWindow::paintUI() {
 
 // Only in WebGL
 #if defined(__EMSCRIPTEN__)
-  fileDialogModel.SetPwd(getAssetsPath());
-  fileDialogTex.SetPwd(getAssetsPath()); // sub pasta maps 
+  fileDialogModel.SetPwd(getAssetsPath() + "/objetos");
+  fileDialogTex.SetPwd(getAssetsPath() + "/texturas"); // sub pasta maps 
 #endif
 
   // Create main window widget
