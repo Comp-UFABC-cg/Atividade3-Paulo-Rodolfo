@@ -169,14 +169,14 @@ void OpenGLWindow::paintUI() {
 
   // File browser for models
   static ImGui::FileBrowser fileDialogModel;
-  fileDialogModel.SetTitle("Load 3D Model");
+  fileDialogModel.SetTitle("Carregar Modelo 3D");
   fileDialogModel.SetTypeFilters({".obj"});
   fileDialogModel.SetWindowSize(m_viewportWidth * 0.8f,
                                 m_viewportHeight * 0.8f);
 
   // File browser for textures
   static ImGui::FileBrowser fileDialogTex;
-  fileDialogTex.SetTitle("Load Texture");
+  fileDialogTex.SetTitle("Carregar Textura");
   fileDialogTex.SetTypeFilters({".jpg", ".png"});
   fileDialogTex.SetWindowSize(m_viewportWidth * 0.8f, m_viewportHeight * 0.8f);
 
