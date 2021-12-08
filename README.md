@@ -70,13 +70,4 @@ __Link para a aplicação:__  https://comp-ufabc-cg.github.io/Atividade3-Paulo-R
      - Em <b>Model::loadObj</b> prioriza-se as propriedades do material (caso houver). Caso não possua, são setados valores padrão dos parâmetros citados acima.
      - O modo default de carregamento de textura é o 3 (from mesh) - para que o arquivo obj carregue sua textura caso possua.
 
-<br>__Funcionalidades (Manual de uso):__
-- Tecla A: Movimenta para a esquerda
-- Tecla D: Movimenta para a direita
-- Tecla W: Movimenta para a frente
-- Tecla S: Movimenta para a trás
-- Seta para direita: Olha para a direita (movimentando em torno do eixo y)
-- Seta para esquerda: Olha para a esquerda (movimentando em torno do eixo y)
-- Espaço: Corre para frente (W + espaço).
-
 
