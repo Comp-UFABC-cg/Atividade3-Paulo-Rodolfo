@@ -37,6 +37,7 @@ __Link para a aplicação:__   (caso encontre problemas ao abrir, é necessário
  - Câmera: 
     - Implementada em câmera.cpp e câmera.hpp calcula a matriz de visão (é uma mudança de frame: do espaço do mundo para o espaço da câmera). A matriz de visão é a inversa da matriz M (que converte as coordenadas do espaço da câmera para o espaço do mundo). Ou seja, Mview = M^-1. A sua fórmula é a inversa pois a finalidade é justamente o oposto (queremos converter as coordenadas do espaço do mundo para o espaço da câmera). Isto é implementado através da função glm::lookAt (importada da biblioteca GLM), o cálculo, portanto, é realizado conforme abaixo: <br>
     ![image](https://user-images.githubusercontent.com/30665585/145130652-9f043382-13ef-4c68-9897-b1727c2fc180.png) <br>
+    
     - Os parâmetros m_eye, m_at e m_up equivalem, respectivamente a posição da câmera, posição para onde a câmera está olhando e direção para cima da câmera. As posições iniciais são descritas abaixo:
      - m_eye: (0,0,2,5)
      - m_at: (0,0,0)
@@ -45,6 +46,7 @@ __Link para a aplicação:__   (caso encontre problemas ao abrir, é necessário
  - Projeções:
     - Nossa aplicação possui suporte para os dois tipos de projeção: ortográfica e perspectiva. A seleção é feita a partir do combobox. A variável m_projMatrix armazena a projeção escolhida. Ambas funções são importadas da biblioteca GLM. Em linhas gerais, a diferença entre as duas projeções é que a projeção em perspectiva é como enxergamos o mundo, ou seja, quanto mais longe um objeto estiver do campo de visão, menor ele ficará. <br>
     ![image](https://user-images.githubusercontent.com/30665585/145132688-6d297c0e-b82d-4945-8d2c-06dc3a16e84c.png)
+    
  - Iluminação:
 
 TO-DO:
