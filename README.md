@@ -44,7 +44,7 @@ __Link para a aplicação:__   (caso encontre problemas ao abrir, é necessário
     - As funções dolly, truck, pan são utilizadas dentro do OpenGLWindow para capturar e refletir (através da atualização das variáveis m_eye e m_up) a movimentação da entrada do teclado. A finalidade dessas funções foi descrita no início do relatório. A implementação delas foi realizada dentro de camera.cpp.
  
 TO-DO:
-- LOOKAT
+- LOOKAT (OK FEITO)
 - ILUMINAÇÃO
 - TEXTURA
 
