@@ -204,12 +204,14 @@ void OpenGLWindow::paintUI() {
     {
       bool loadModel{};
       bool loadDiffTex{};
+      
       if (ImGui::BeginMenuBar()) {
-        if (ImGui::BeginMenu("File")) {
+        if (ImGui::BeginMenu("Arquivo")) {
           ImGui::MenuItem("Load 3D Model...", nullptr, &loadModel);
           ImGui::MenuItem("Load Diffuse Texture...", nullptr, &loadDiffTex);
           ImGui::EndMenu();
         }
+        
         ImGui::EndMenuBar();
       }
       if (loadModel) fileDialogModel.Open();
@@ -253,36 +255,6 @@ void OpenGLWindow::paintUI() {
         abcg::glFrontFace(GL_CCW);
       } else {
         abcg::glFrontFace(GL_CW);
-      }
-    }
-
-    // Projection combo box
-    {
-      static std::size_t currentIndex{};
-      std::vector<std::string> comboItems{"Perspective", "Orthographic"};
-
-      ImGui::PushItemWidth(120);
-      if (ImGui::BeginCombo("Projection",
-                            comboItems.at(currentIndex).c_str())) {
-        for (auto index : iter::range(comboItems.size())) {
-          const bool isSelected{currentIndex == index};
-          if (ImGui::Selectable(comboItems.at(index).c_str(), isSelected))
-            currentIndex = index;
-          if (isSelected) ImGui::SetItemDefaultFocus();
-        }
-        ImGui::EndCombo();
-      }
-      ImGui::PopItemWidth();
-
-      const auto aspect{static_cast<float>(m_viewportWidth) /
-                        static_cast<float>(m_viewportHeight)};
-      if (currentIndex == 0) {
-        m_projMatrix =
-            glm::perspective(glm::radians(45.0f), aspect, 0.1f, 5.0f);
-
-      } else {
-        m_projMatrix =
-            glm::ortho(-1.0f * aspect, 1.0f * aspect, -1.0f, 1.0f, 0.1f, 5.0f);
       }
     }
 
@@ -394,6 +366,7 @@ void OpenGLWindow::paintUI() {
   }
 }
 
+
 void OpenGLWindow::paintGL() {
   update();
   
@@ -470,7 +443,7 @@ const GLint viewMatrixLoc{
       abcg::glGetUniformLocation(m_program, "modelMatrix")};
   const GLint colorLoc{abcg::glGetUniformLocation(m_program, "color")};
 
-  // Set uniform variables for viewMatrix and projMatrix
+  
   // These matrices are used for every scene object
   abcg::glUniformMatrix4fv(viewMatrixLoc, 1, GL_FALSE,
                            &m_camera.m_viewMatrix[0][0]);
@@ -479,7 +452,7 @@ const GLint viewMatrixLoc{
 
   abcg::glBindVertexArray(m_VAO);
 
-  // Draw white bunny
+  
   glm::mat4 model{1.0f};
   model = glm::translate(model, glm::vec3(-1.0f, 0.0f, 0.0f));
   model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0, 1, 0));
@@ -489,8 +462,8 @@ const GLint viewMatrixLoc{
   abcg::glUniform4f(colorLoc, 1.0f, 1.0f, 1.0f, 1.0f);
   abcg::glDrawElements(GL_TRIANGLES, m_indices.size(), GL_UNSIGNED_INT,
                        nullptr);
-//// bunnys
-  // Draw yellow bunny
+
+  
   model = glm::mat4(1.0);
   model = glm::translate(model, glm::vec3(0.0f, 0.0f, -1.0f));
   model = glm::scale(model, glm::vec3(0.5f));
@@ -500,7 +473,7 @@ const GLint viewMatrixLoc{
   abcg::glDrawElements(GL_TRIANGLES, m_indices.size(), GL_UNSIGNED_INT,
                        nullptr);
 
-  // Draw blue bunny
+  
   model = glm::mat4(1.0);
   model = glm::translate(model, glm::vec3(1.0f, 0.0f, 0.0f));
   model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0, 1, 0));
@@ -511,7 +484,7 @@ const GLint viewMatrixLoc{
   abcg::glDrawElements(GL_TRIANGLES, m_indices.size(), GL_UNSIGNED_INT,
                        nullptr);
 
-  // Draw red bunny
+  
   model = glm::mat4(1.0);
   model = glm::scale(model, glm::vec3(0.1f));
 

@@ -38,6 +38,7 @@ class OpenGLWindow : public abcg::OpenGLWindow {
   TrackBall m_trackBallLight;
   float m_zoom{};
 
+  bool started = false;
 
   glm::mat4 m_modelMatrix{1.0f};
   glm::mat4 m_viewMatrix{1.0f};
