@@ -30,6 +30,10 @@ __Link para a aplicação:__   (caso encontre problemas ao abrir, é necessário
 ![image](https://user-images.githubusercontent.com/30665585/144721323-a6f9a77e-21f8-4e9d-baa4-27dd440e8277.png)
 <br>Fonte imagem: https://www.brunodorta.com.br/cg/lookatproject.html
   
+  - Para a implementação da movimentação da câmera é necessário utilizar os espaços do OpenGL: Espaço do objeto, espaço do mundo e espaço da câmera.
+    - Espaço do objeto: É o local da definição do obj importado na aplicação. Segue o RHS (right-handed coordinate system - em português: Regra da mão direita). O objeto é renderizado no centro da tela. A renderização é realizada pela função OpenGLWindow::loadModel. O modelo padrão (default), carregado assim que a aplicação é executada é a casa medieval (medieval.obj) com a textura difusa (através da chamada a função loadDiffuseTexture).
+    - Espaço do mundo: É o frame no qual renderizamos o objeto. Em nossa aplicação podemos renderizar um objeto por vez dentro do frame (mundo). O espaço do mundo também segue a orientação RHS.
+    - Espaço da câmera: É o frame da câmera da aplicação (que simula o ponto de vista em primeira pessoa e possibilita a navegação pelo mundo).
 
 TO-DO:
 - LOOKAT
