@@ -31,7 +31,7 @@ __Link para a aplicação:__  https://comp-ufabc-cg.github.io/Atividade3-Paulo-R
 <br>Fonte imagem: https://www.brunodorta.com.br/cg/lookatproject.html
   
   - Para a implementação da movimentação da câmera é necessário utilizar os espaços do OpenGL: Espaço do objeto, espaço do mundo e espaço da câmera.
-    - Espaço do objeto: É o local da definição do obj importado na aplicação. Segue o <b>RHS (right-handed coordinate system - em português: Regra da mão direita)</b>. O objeto é renderizado no centro da tela. A renderização é realizada pela função <b>OpenGLWindow::loadModel</b>. O modelo padrão (default), carregado assim que a aplicação é executada é a casa medieval (medieval.obj) com a textura difusa (através da chamada a função <b>loadDiffuseTexture</b> ).
+    - Espaço do objeto: É o local da definição do obj importado na aplicação. Segue o <b>RHS (right-handed coordinate system - em português: Regra da mão direita)</b>. O objeto é renderizado no centro da tela. A renderização é realizada pela função <b>OpenGLWindow::loadModel</b>. O modelo padrão (default), carregado assim que a aplicação é executada é a casa medieval (medieval.obj) com a textura difusa (através da chamada a função <b>loadDiffuseTexture</b>).
     - Espaço do mundo: É o frame no qual renderizamos o objeto. Em nossa aplicação podemos renderizar um objeto por vez dentro do frame (mundo). O espaço do mundo também segue a orientação RHS.
     - Espaço da câmera: É o frame da câmera da aplicação (que simula o ponto de vista em primeira pessoa e possibilita a navegação pelo mundo).
  - Câmera: 
@@ -49,14 +49,14 @@ __Link para a aplicação:__  https://comp-ufabc-cg.github.io/Atividade3-Paulo-R
      - Textura: Utilização de shader que utiliza textura em conjunto com o modelo de reflexão Blinn-Phong.
      - Iluminação: Utilização do modelo Blinn-Phong.
      - Normal: Visualização de vetores normais como cores.
-   O modelo de Blinn-Phong (Blinn 1977) é uma modificação do modelo de Phong. Este modelo é mais eficiente que o modelo de Phong. A diferença visível entre os dois é referente a forma do brilho especular: No Phong é sempre redondo na superfície plana, já no Blinn-Phong é redondo quando a superfície é vista de frente e alongado verticalmente quando a direção da visão e a direção à fonte de luz estão rentes à superfície. <br>
+   O modelo de <b>Blinn-Phong</b> (Blinn 1977) é uma modificação do modelo de Phong. Este modelo é mais eficiente que o modelo de Phong. A diferença visível entre os dois é referente a forma do brilho especular: No Phong é sempre redondo na superfície plana, já no Blinn-Phong é redondo quando a superfície é vista de frente e alongado verticalmente quando a direção da visão e a direção à fonte de luz estão rentes à superfície. <br>
    Dado a simplicidade do modelo e maior eficiência se comparado ao Phong, implementamos em nossa aplicação pois é o mais utilizado em aplicações de tempo real. <br>
    O modelo está implementado em <b>texture.frag</b> (função: BlinnPhong) e <br>blinnphong.frag</b> (além de seus arquivos de cabeçalho de mesmo nome cuja extensão é .hpp). <br>
    Para o cálculo de normais: Utilizamos a função <b>Model::computeNormals</b> que calcula os vetores normais para cada vértice. Esta função está implementada dentro de model.cpp. Caso o objeto já possua as normais calculadas, a identificação booleana <b>(m_hasNormals)</b> não irá calcular as normais (poupa processamento e otimiza o código). Por fim, o <b>normal.vert</b> converte as coordenadas do vértice resultante (cada um deles) em uma cor RGB.
  - Textura:
      - Conforme citado acima, utilizamos a textura em conjunto com o modelo de reflexão Blinn-Phong.
      - O carregamento das texturas é feito a partir da função importada da biblioteca abcg: <b>abcg::opengl::loadTexture</b>.
-     - Nossos modelos possuem o .mtl, que é a descrição das propriedades do objeto. Especifica os seguintes parâmetros: <b>Ns (brilho especular)</b>, <b>Ka</b> (propriedade de reflexão do ambiente), <b>Kd</b> (difusa) e <b>Ks</b> (especular).
+     - Nossos modelos possuem o .mtl, que é a descrição das propriedades do objeto. Especifica os seguintes parâmetros: <b>Ns</b> (brilho especular), <b>Ka</b> (propriedade de reflexão do ambiente), <b>Kd</b> (difusa) e <b>Ks</b> (especular).
      - Em <b>Model::loadObj</b> prioriza-se as propriedades do material (caso houver). Caso não possua, são setados valores padrão dos parâmetros citados acima.
      - O modo default de carregamento de textura é o 3 (from mesh) - para que o arquivo obj carregue sua textura caso possua.
 
