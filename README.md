@@ -34,7 +34,11 @@ __Link para a aplicação:__   (caso encontre problemas ao abrir, é necessário
     - Espaço do objeto: É o local da definição do obj importado na aplicação. Segue o RHS (right-handed coordinate system - em português: Regra da mão direita). O objeto é renderizado no centro da tela. A renderização é realizada pela função OpenGLWindow::loadModel. O modelo padrão (default), carregado assim que a aplicação é executada é a casa medieval (medieval.obj) com a textura difusa (através da chamada a função loadDiffuseTexture).
     - Espaço do mundo: É o frame no qual renderizamos o objeto. Em nossa aplicação podemos renderizar um objeto por vez dentro do frame (mundo). O espaço do mundo também segue a orientação RHS.
     - Espaço da câmera: É o frame da câmera da aplicação (que simula o ponto de vista em primeira pessoa e possibilita a navegação pelo mundo).
-
+ - Câmera: 
+    - Implementada em câmera.cpp e câmera.hpp calcula a matriz de visão (é uma mudança de frame: do espaço do mundo para o espaço da câmera). A matriz de visão é a inversa da matriz M (que converte as coordenadas do espaço da câmera para o espaço do mundo). Ou seja, Mview = M^-1. A sua fórmula é a inversa pois a finalidade é justamente o oposto (queremos converter as coordenadas do espaço do mundo para o espaço da câmera). Isto é implementado através da função glm::lookAt (importada da biblioteca GLM), o cálculo, portanto, é realizado conforme abaixo: <br>
+    ![image](https://user-images.githubusercontent.com/30665585/145130652-9f043382-13ef-4c68-9897-b1727c2fc180.png)
+    Os parâmetros m_eye, m_at e m_up equivalem, respectivamente a posição da câmera, posição para onde a câmera está olhando e direção para cima da câmera.
+ 
 TO-DO:
 - LOOKAT
 - ILUMINAÇÃO
