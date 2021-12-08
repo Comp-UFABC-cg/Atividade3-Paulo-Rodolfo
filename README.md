@@ -49,9 +49,9 @@ __Link para a aplicação:__   (caso encontre problemas ao abrir, é necessário
      - Textura: Utilização de shader que utiliza textura em conjunto com o modelo de reflexão Blinn-Phong.
      - Iluminação: Utilização do modelo Blinn-Phong.
      - Normal: Visualização de vetores normais como cores.
-   O modelo de Blinn-Phong (Blinn 1977) é uma modificação do modelo de Phong. Este modelo é mais eficiente que o modelo de Phong. A diferença visível entre os dois é referente a forma do brilho especular: No Phong é sempre redondo na superfície plana, já no Blinn-Phong é redondo quando a superfície é vista de frente e alongado verticalmente quando a direção da visão e a direção à fonte de luz estão rentes à superfície.
-   Dado a simplicidade do modelo e maior eficiência se comparado ao Phong, implementamos em nossa aplicação pois é o mais utilizado em aplicações de tempo real.
-   O modelo está implementado em texture.frag (função: BlinnPhong) e blinnphong.frag (além de seus arquivos de cabeçalho de mesmo nome cuja extensão é .hpp).
+   O modelo de Blinn-Phong (Blinn 1977) é uma modificação do modelo de Phong. Este modelo é mais eficiente que o modelo de Phong. A diferença visível entre os dois é referente a forma do brilho especular: No Phong é sempre redondo na superfície plana, já no Blinn-Phong é redondo quando a superfície é vista de frente e alongado verticalmente quando a direção da visão e a direção à fonte de luz estão rentes à superfície. <br>
+   Dado a simplicidade do modelo e maior eficiência se comparado ao Phong, implementamos em nossa aplicação pois é o mais utilizado em aplicações de tempo real. <br>
+   O modelo está implementado em texture.frag (função: BlinnPhong) e blinnphong.frag (além de seus arquivos de cabeçalho de mesmo nome cuja extensão é .hpp). <br>
    Para o cálculo de normais: Utilizamos a função Model::computeNormals que calcula os vetores normais para cada vértice. Esta função está implementada dentro de model.cpp. Caso o objeto já possua as normais calculadas, a identificação booleana (m_hasNormals) não irá calcular as normais (poupa processamento e otimiza o código). Por fim, o normal.vert converte as coordenadas do vértice resultante (cada um deles) em uma cor RGB.
 
 TO-DO:
