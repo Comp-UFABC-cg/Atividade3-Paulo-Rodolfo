@@ -46,8 +46,62 @@ void OpenGLWindow::handleEvent(SDL_Event& ev) {
     }
     	
   // Evento corrida
-  if ((ev.key.keysym.sym == SDLK_SPACE) && m_dollySpeed > 0)
-      m_dollySpeed = 4.0f;
+  if ((ev.key.keysym.sym == SDLK_SPACE) && m_dollySpeed != 0)
+
+  {
+      if(m_dollySpeed < 0)
+      {
+        m_dollySpeed = -3.0f;
+      }
+      if(m_dollySpeed > 0)
+      {
+        m_dollySpeed = 3.0f;
+      }
+  }
+      
+
+  if ((ev.key.keysym.sym == SDLK_SPACE) && m_verticalSpeed != 0)
+  {
+      if(m_verticalSpeed < 0)
+      {
+        m_verticalSpeed = -3.0f;
+      }
+      if(m_verticalSpeed > 0)
+      {
+        m_verticalSpeed = 3.0f;
+      }
+  }
+      
+      
+
+  if ((ev.key.keysym.sym == SDLK_SPACE) && m_panSpeed != 0)
+
+  {
+      if(m_panSpeed < 0)
+      {
+        m_panSpeed = -3.0f;
+      }
+      if(m_panSpeed > 0)
+      {
+        m_panSpeed = 3.0f;
+      }
+  }
+      
+
+  if ((ev.key.keysym.sym == SDLK_SPACE) && m_truckSpeed != 0)
+
+  {
+      if(m_truckSpeed < 0)
+      {
+        m_truckSpeed = -3.0f;
+      }
+      if(m_truckSpeed > 0)
+      {
+        m_truckSpeed = 3.0f;
+      }
+  }
+
+      
   // Fim evento andar
 
   // Inicio evento camera
@@ -90,8 +144,31 @@ void OpenGLWindow::handleEvent(SDL_Event& ev) {
     if (ev.key.keysym.sym == SDLK_a && m_truckSpeed < 0) m_truckSpeed = 0.0f;
     if (ev.key.keysym.sym == SDLK_d && m_truckSpeed > 0) m_truckSpeed = 0.0f;
     // Evento corrida
+    // Aceleracao positiva
     if ((ev.key.keysym.sym == SDLK_SPACE) && m_dollySpeed > 1.0f)
       m_dollySpeed = 1.0f;
+
+    if ((ev.key.keysym.sym == SDLK_SPACE) && m_panSpeed > 1.0f)
+      m_panSpeed = 1.0f;
+
+    if ((ev.key.keysym.sym == SDLK_SPACE) && m_truckSpeed > 1.0f)
+     m_truckSpeed = 1.0f;
+    
+    if ((ev.key.keysym.sym == SDLK_SPACE) && m_verticalSpeed > 1.0f)
+      m_verticalSpeed = 1.0f;
+    // Aceleracao negativa
+    if ((ev.key.keysym.sym == SDLK_SPACE) && m_dollySpeed < -1.0f)
+      m_dollySpeed = -1.0f;
+
+    if ((ev.key.keysym.sym == SDLK_SPACE) && m_panSpeed < -1.0f)
+      m_panSpeed = -1.0f;
+
+    if ((ev.key.keysym.sym == SDLK_SPACE) && m_truckSpeed < -1.0f)
+     m_truckSpeed = -1.0f;
+    
+    if ((ev.key.keysym.sym == SDLK_SPACE) && m_verticalSpeed < -1.0f)
+      m_verticalSpeed = -1.0f;
+
     // Fim evento andar
 
   // Inicio evento camera
@@ -331,7 +408,7 @@ void OpenGLWindow::paintUI() {
 
   if(manual)
   {
-    const auto widgetSize{ImVec2(300, 200)};
+    const auto widgetSize{ImVec2(300, 220)};
     ImGui::SetNextWindowPos(ImVec2(m_viewportWidth - widgetSize.x - 280,
                                    m_viewportHeight - widgetSize.y - 250));
     ImGui::SetNextWindowSize(widgetSize);
@@ -345,6 +422,7 @@ void OpenGLWindow::paintUI() {
     ImGui::Text("Seta direita: Girar para a direita");
     ImGui::Text("Seta frente: Girar para cima");
     ImGui::Text("Seta trás: Girar para baixo");
+    ImGui::Text("Espaço: Acelerar");
     
     ImGui::End();
   }
