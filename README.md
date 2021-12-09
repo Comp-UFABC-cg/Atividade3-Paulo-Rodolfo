@@ -29,8 +29,8 @@ __Link para a aplicação:__  https://comp-ufabc-cg.github.io/Atividade3-Paulo-R
 - Seta para frente: Gira para cima.
 - Seta para trás: Gira para baixo.
 - Espaço: Acelera na direção atual.
-- Back-face culling: Para otimizar a renderização, habilitamos a seleção do face culling através do checkbox. Caso habilitado, o face culling é ativado a partir da função abcg::glEnable(GL_CULL_FACE). O Face Culling consiste em descartar todos os triângulos que não estão de frente para a câmera.
-- Front Face: Checkbox que permite escolher a orientação dos vértices: CW (sentido horário) ou CCW (sentido anti horário). Habilitado através da função abcg::glFrontFace(GL_CW) e abcg::glFrontFace(GL_CCW) conforme escolha do usuário.
+- Back-face culling: Para otimizar a renderização, habilitamos a seleção do face culling através do checkbox. Caso habilitado, o face culling é ativado a partir da função <b>abcg::glEnable(GL_CULL_FACE)</b>. O Face Culling consiste em descartar todos os triângulos que não estão de frente para a câmera.
+- Front Face: Checkbox que permite escolher a orientação dos vértices: CW (sentido horário) ou CCW (sentido anti horário). Habilitado através da função <b>abcg::glFrontFace(GL_CW)</b> e <b>abcg::glFrontFace(GL_CCW)</b> conforme escolha do usuário.
 - Texture: Seletor de textura
 - UV Mapping: Mapeamento de textura.
 - Arquivo: 
@@ -58,6 +58,8 @@ __Link para a aplicação:__  https://comp-ufabc-cg.github.io/Atividade3-Paulo-R
    - Os eventos de <b>SDLK_a</b> e <b>SDLK_d</b> refletem em movimentar a câmera para os lados (chamada de movimentação truck) (esquerda e direita, respectivamente) na direção ±û. Sendo, -1.0f para a esquerda e +1.0f para a direita. Os valores são atribuídos a variável responsável pela movimentação nesta direção: <b>m_truckSpeed</b>.
   - Os eventos de <b>SDLK_LEFT</b> e <b>SDLK_RIGHT</b> refletem em movimentar a câmera em torno do próprio eixo y (chamada de movimentação Pan), realizada no vetor ^v (sem movimentar pelo cenário). Sendo atribuídos -1.0f para a esquerda e +1.0f para a direita. Os valores são atribuídos a variável responsável pela movimentação neste vetor: <b>m_panSpeed</b>.
   - O evento de <b>SDLK_SPACE</b> reflete em correr para frente ao pressionar W + Espaço. Para isto, é atribuído 4.0f ao <b>m_dollySpeed</b>.
+  - O evento de <b>SDLK_UP</b> reflete em girar para cima ao pressionar a seta para frente. Para isto, atualiza a variável <b>m_verticalSpeed</b>, atribuindo +1.0f
+  - O evento de <b>SDLK_DOWN</b> reflete em girar para baixo ao pressionar a seta para baixo. Para isto, atualiza a variável <b>m_verticalSpeed</b>, atribuindo -1.0f.
 
 
 ![image](https://user-images.githubusercontent.com/30665585/144721323-a6f9a77e-21f8-4e9d-baa4-27dd440e8277.png)
