@@ -57,13 +57,12 @@ __Link para a aplicação:__  https://comp-ufabc-cg.github.io/Atividade3-Paulo-R
    - Os eventos de <b>SDLK_w</b> e <b>SDLK_s</b> refletem em movimentar a câmera para frente e para a trás (chamada de movimentação dolly) na direção ± ^n. Sendo, +1.0f para a frente e -1.0f para a trás. Os valores são atribuídos a variável responsável pela movimentação nesta direção: <b>m_dollySpeed</b>.
    - Os eventos de <b>SDLK_a</b> e <b>SDLK_d</b> refletem em movimentar a câmera para os lados (chamada de movimentação truck) (esquerda e direita, respectivamente) na direção ±û. Sendo, -1.0f para a esquerda e +1.0f para a direita. Os valores são atribuídos a variável responsável pela movimentação nesta direção: <b>m_truckSpeed</b>.
   - Os eventos de <b>SDLK_LEFT</b> e <b>SDLK_RIGHT</b> refletem em movimentar a câmera em torno do próprio eixo y (chamada de movimentação Pan), realizada no vetor ^v (sem movimentar pelo cenário). Sendo atribuídos -1.0f para a esquerda e +1.0f para a direita. Os valores são atribuídos a variável responsável pela movimentação neste vetor: <b>m_panSpeed</b>.
-  - O evento de <b>SDLK_SPACE</b> reflete em correr para frente ao pressionar W + Espaço. Para isto, é atribuído 4.0f ao <b>m_dollySpeed</b>.
   - O evento de <b>SDLK_UP</b> reflete em girar para cima ao pressionar a seta para frente. Para isto, atualiza a variável <b>m_verticalSpeed</b>, atribuindo +1.0f
   - O evento de <b>SDLK_DOWN</b> reflete em girar para baixo ao pressionar a seta para baixo. Para isto, atualiza a variável <b>m_verticalSpeed</b>, atribuindo -1.0f.
+  - O evento de <b>SDLK_SPACE</b> reflete em acelerar na direção atual. Ex: W+Espaço, resulta em acelerar +3.0f na direção para frente.
 
-
+Imagem com explicação dos eixos:
 ![image](https://user-images.githubusercontent.com/30665585/144721323-a6f9a77e-21f8-4e9d-baa4-27dd440e8277.png)
-<br>Fonte imagem: https://www.brunodorta.com.br/cg/lookatproject.html
   
   - Para a implementação da movimentação da câmera é necessário utilizar os espaços do OpenGL: Espaço do objeto, espaço do mundo e espaço da câmera.
     - Espaço do objeto: É o local da definição do obj importado na aplicação. Segue o <b>RHS (right-handed coordinate system - em português: Regra da mão direita)</b>. O objeto é renderizado no centro da tela. A renderização é realizada pela função <b>OpenGLWindow::loadModel</b>. O modelo padrão (default), carregado assim que a aplicação é executada é a casa medieval (medieval.obj) com a textura difusa (através da chamada a função <b>loadDiffuseTexture</b>).
