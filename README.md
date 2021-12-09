@@ -31,17 +31,15 @@ __Link para a aplicação:__  https://comp-ufabc-cg.github.io/Atividade3-Paulo-R
 - Texture: Seletor de textura
 - UV Mapping: Mapeamento de textura.
 - Arquivo: 
- - Load 3D Model: Carrega um modelo 3D. A aplicação permite a seleção de um dos 4 objetos da pasta, conforme abaixo: <br>
+  - Load 3D Model: Carrega um modelo 3D. A aplicação permite a seleção de um dos 4 objetos da pasta, conforme abaixo: <br>
 ![image](https://user-images.githubusercontent.com/30665585/145311931-cb574a38-a607-44c5-88cd-cf04f9c49197.png)
- - Load Diffuse Texture: Carrega uma textura 3D. A aplicação permite a selação de uma das texturas da pasta, conforme abaixo: <br>
+  - Load Diffuse Texture: Carrega uma textura 3D. A aplicação permite a selação de uma das texturas da pasta, conforme abaixo: <br>
 ![image](https://user-images.githubusercontent.com/30665585/145312022-f19fa84e-4a60-48ef-bd4c-a8545db20673.png)
  - Light properties: Permite alterar os parâmetros de luz (Ia,Id,Is) e parâmetros do objeto: Ka,Kd,Ks, conforme abaixo. Adicionalmente, é possível alterar o brilho (shininess): <br>
  ![image](https://user-images.githubusercontent.com/30665585/145312299-0d15c173-2463-48dd-81cf-b3da3466dde0.png)
-
-
-
+- O manual pode ser habilitado a qualquer momento a partir do checkbox "Exibir Manual" que exibe na tela o modo de operação da aplicação. <br>
 ![image](https://user-images.githubusercontent.com/30665585/145311356-38674c86-c8c3-4c2f-a4c3-22f8ca8628aa.png) <BR>
-O manual pode ser habilitado a qualquer momento a partir do checkbox "Exibir Manual" que exibe na tela o modo de operação da aplicação.
+
 
 <br>__Motivação:__ 
    - Criar uma aplicação para explorar um acervo de objetos 3D com utilização de textura e iluminação. A exploração é feita a partir da visão em primeira pessoa.
