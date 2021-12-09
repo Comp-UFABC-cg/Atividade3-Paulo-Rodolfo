@@ -15,6 +15,9 @@ __Link para a aplicação:__  https://comp-ufabc-cg.github.io/Atividade3-Paulo-R
 
 <br>__Aplicação:__ Explorador 3D
 
+
+
+
 <br>__Funcionalidades (Manual de uso):__
 - Tecla A: Movimenta para a esquerda
 - Tecla D: Movimenta para a direita
@@ -23,9 +26,25 @@ __Link para a aplicação:__  https://comp-ufabc-cg.github.io/Atividade3-Paulo-R
 - Seta para direita: Olha para a direita (movimentando em torno do eixo y)
 - Seta para esquerda: Olha para a esquerda (movimentando em torno do eixo y)
 - Espaço: Corre para frente (W + espaço).
+- Back-face culling: Para otimizar a renderização, habilitamos a seleção do face culling através do checkbox. Caso habilitado, o face culling é ativado a partir da função abcg::glEnable(GL_CULL_FACE). O Face Culling consiste em descartar todos os triângulos que não estão de frente para a câmera.
+- Front Face: Checkbox que permite escolher a orientação dos vértices: CW (sentido horário) ou CCW (sentido anti horário). Habilitado através da função abcg::glFrontFace(GL_CW) e abcg::glFrontFace(GL_CCW) conforme escolha do usuário.
+- Texture: Seletor de textura
+- UV Mapping: Mapeamento de textura.
+- Arquivo: 
+ - Load 3D Model: Carrega um modelo 3D. A aplicação permite a seleção de um dos 4 objetos da pasta, conforme abaixo: <br>
+![image](https://user-images.githubusercontent.com/30665585/145311931-cb574a38-a607-44c5-88cd-cf04f9c49197.png)
+ - Load Diffuse Texture: Carrega uma textura 3D. A aplicação permite a selação de uma das texturas da pasta, conforme abaixo: <br>
+![image](https://user-images.githubusercontent.com/30665585/145312022-f19fa84e-4a60-48ef-bd4c-a8545db20673.png)
+ - Light properties: Permite alterar os parâmetros de luz (Ia,Id,Is) e parâmetros do objeto: Ka,Kd,Ks, conforme abaixo. Adicionalmente, é possível alterar o brilho (shininess): <br>
+ ![image](https://user-images.githubusercontent.com/30665585/145312299-0d15c173-2463-48dd-81cf-b3da3466dde0.png)
+
+
+
+![image](https://user-images.githubusercontent.com/30665585/145311356-38674c86-c8c3-4c2f-a4c3-22f8ca8628aa.png) <BR>
+O manual pode ser habilitado a qualquer momento a partir do checkbox "Exibir Manual" que exibe na tela o modo de operação da aplicação.
 
 <br>__Motivação:__ 
-   - Criar uma aplicação para explorar um objeto 3D com sua textura e iluminação. A exploração é feita a partir da visão em primeira pessoa.
+   - Criar uma aplicação para explorar um acervo de objetos 3D com utilização de textura e iluminação. A exploração é feita a partir da visão em primeira pessoa.
 
 <br>__Teoria e Implementação:__
 
