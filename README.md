@@ -61,7 +61,7 @@ __Link para a aplicação:__  https://comp-ufabc-cg.github.io/Atividade3-Paulo-R
   - O evento de <b>SDLK_DOWN</b> reflete em girar para baixo ao pressionar a seta para baixo. Para isto, atualiza a variável <b>m_verticalSpeed</b>, atribuindo -1.0f.
   - O evento de <b>SDLK_SPACE</b> reflete em acelerar na direção atual. Ex: W+Espaço, resulta em acelerar +3.0f na direção para frente.
 
-Imagem com explicação dos eixos:
+Imagem com explicação dos eixos:<br>
 ![image](https://user-images.githubusercontent.com/30665585/144721323-a6f9a77e-21f8-4e9d-baa4-27dd440e8277.png)
   
   - Para a implementação da movimentação da câmera é necessário utilizar os espaços do OpenGL: Espaço do objeto, espaço do mundo e espaço da câmera.
