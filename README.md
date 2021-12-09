@@ -26,7 +26,7 @@ __Link para a aplicação:__  https://comp-ufabc-cg.github.io/Atividade3-Paulo-R
 - Tecla S: Movimenta para a trás
 - Seta para direita: Olha para a direita (movimentando em torno do eixo y)
 - Seta para esquerda: Olha para a esquerda (movimentando em torno do eixo y)
-- Espaço: Acelera para frente (W + espaço).
+- Espaço: Acelera na direção atual.
 - Back-face culling: Para otimizar a renderização, habilitamos a seleção do face culling através do checkbox. Caso habilitado, o face culling é ativado a partir da função abcg::glEnable(GL_CULL_FACE). O Face Culling consiste em descartar todos os triângulos que não estão de frente para a câmera.
 - Front Face: Checkbox que permite escolher a orientação dos vértices: CW (sentido horário) ou CCW (sentido anti horário). Habilitado através da função abcg::glFrontFace(GL_CW) e abcg::glFrontFace(GL_CCW) conforme escolha do usuário.
 - Texture: Seletor de textura
@@ -80,13 +80,21 @@ __Link para a aplicação:__  https://comp-ufabc-cg.github.io/Atividade3-Paulo-R
      - Texture: Utilização de shader que utiliza textura em conjunto com o modelo de reflexão Blinn-Phong.
      - Blinnphong: Utilização do modelo Blinn-Phong.
      - Phong: Utilização do modelo Phong.
-     - Gourad: Utilização do modelo Gourad.
+     - Gourad: Utilização do sombreamento Gourad.
      - Normal: Visualização de vetores normais como cores. 
      - Depth: Utilização do modelo depth.<br>
    O modelo de <b>Blinn-Phong</b> (Blinn 1977) é uma modificação do modelo de Phong. Este modelo é mais eficiente que o modelo de Phong. A diferença visível entre os dois é referente a forma do brilho especular: No Phong é sempre redondo na superfície plana, já no Blinn-Phong é redondo quando a superfície é vista de frente e alongado verticalmente quando a direção da visão e a direção à fonte de luz estão rentes à superfície. <br>
    Dado a simplicidade do modelo e maior eficiência se comparado ao Phong, sugerimos a sua utilização em nossa aplicação pois é o mais utilizado em aplicações de tempo real. Entretanto, o usuário pode escolher o modelo desejado. <br>
    O modelo está implementado em <b>texture.frag</b> (função: BlinnPhong) e <b>blinnphong.frag</b> (além de seus arquivos de cabeçalho de mesmo nome cuja extensão é .hpp). <br>
-   Para o cálculo de normais: Utilizamos a função <b>Model::computeNormals</b> que calcula os vetores normais para cada vértice. Esta função está implementada dentro de model.cpp. Caso o objeto já possua as normais calculadas, a identificação booleana <b>(m_hasNormals)</b> não irá calcular as normais (poupa processamento e otimiza o código). Por fim, o <b>normal.vert</b> converte as coordenadas do vértice resultante (cada um deles) em uma cor RGB.
+   Para o cálculo de normais: Utilizamos a função <b>Model::computeNormals</b> que calcula os vetores normais para cada vértice. Esta função está implementada dentro de model.cpp. Caso o objeto já possua as normais calculadas, a identificação booleana <b>(m_hasNormals)</b> não irá calcular as normais (poupa processamento e otimiza o código). Por fim, o <b>normal.vert</b> converte as coordenadas do vértice resultante (cada um deles) em uma cor RGB. <br>
+   O modelo Phong é implementado através de <b> phong.frag </b> e <b>phong.vert </b>. É um modelo de iluminação local que através de mapeamento empírico calcula a quantidade de luz refletida de um ponto P de uma superfície em direção v^ até a câmera. Sua equação é dada abaixo:
+![image](https://user-images.githubusercontent.com/30665585/145314339-d3947b2e-32d1-4286-972d-da0915965caf.png) <br>
+alfa (a): constante de espalhamento de brilho especular.
+m: número de fontes de luz,
+Ka,Kd,Ks: Coeficientes de reflexão do material (propriedades do material).
+Ia,Id,Is: Intensidade da luz.
+
+   
  - Textura:
      - Conforme citado acima, utilizamos a textura em conjunto com o modelo de reflexão Blinn-Phong.
      - O carregamento das texturas é feito a partir da função importada da biblioteca abcg: <b>abcg::opengl::loadTexture</b>.
