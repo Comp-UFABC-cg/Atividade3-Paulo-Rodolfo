@@ -26,7 +26,7 @@ __Link para a aplicação:__  https://comp-ufabc-cg.github.io/Atividade3-Paulo-R
 - Tecla S: Movimenta para a trás
 - Seta para direita: Olha para a direita (movimentando em torno do eixo y)
 - Seta para esquerda: Olha para a esquerda (movimentando em torno do eixo y)
-- Espaço: Corre para frente (W + espaço).
+- Espaço: Acelera para frente (W + espaço).
 - Back-face culling: Para otimizar a renderização, habilitamos a seleção do face culling através do checkbox. Caso habilitado, o face culling é ativado a partir da função abcg::glEnable(GL_CULL_FACE). O Face Culling consiste em descartar todos os triângulos que não estão de frente para a câmera.
 - Front Face: Checkbox que permite escolher a orientação dos vértices: CW (sentido horário) ou CCW (sentido anti horário). Habilitado através da função abcg::glFrontFace(GL_CW) e abcg::glFrontFace(GL_CCW) conforme escolha do usuário.
 - Texture: Seletor de textura
