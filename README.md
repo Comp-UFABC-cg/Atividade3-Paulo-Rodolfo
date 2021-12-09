@@ -85,7 +85,7 @@ __Link para a aplicação:__  https://comp-ufabc-cg.github.io/Atividade3-Paulo-R
      - Depth: Utilização do modelo depth.<br>
    O modelo de <b>Blinn-Phong</b> (Blinn 1977) é uma modificação do modelo de Phong. Este modelo é mais eficiente que o modelo de Phong. A diferença visível entre os dois é referente a forma do brilho especular: No Phong é sempre redondo na superfície plana, já no Blinn-Phong é redondo quando a superfície é vista de frente e alongado verticalmente quando a direção da visão e a direção à fonte de luz estão rentes à superfície. <br>
    Dado a simplicidade do modelo e maior eficiência se comparado ao Phong, sugerimos a sua utilização em nossa aplicação pois é o mais utilizado em aplicações de tempo real. Entretanto, o usuário pode escolher o modelo desejado. <br>
-   O modelo está implementado em <b>texture.frag</b> (função: BlinnPhong) e <br>blinnphong.frag</b> (além de seus arquivos de cabeçalho de mesmo nome cuja extensão é .hpp). <br>
+   O modelo está implementado em <b>texture.frag</b> (função: BlinnPhong) e <b>blinnphong.frag</b> (além de seus arquivos de cabeçalho de mesmo nome cuja extensão é .hpp). <br>
    Para o cálculo de normais: Utilizamos a função <b>Model::computeNormals</b> que calcula os vetores normais para cada vértice. Esta função está implementada dentro de model.cpp. Caso o objeto já possua as normais calculadas, a identificação booleana <b>(m_hasNormals)</b> não irá calcular as normais (poupa processamento e otimiza o código). Por fim, o <b>normal.vert</b> converte as coordenadas do vértice resultante (cada um deles) em uma cor RGB.
  - Textura:
      - Conforme citado acima, utilizamos a textura em conjunto com o modelo de reflexão Blinn-Phong.
