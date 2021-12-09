@@ -69,7 +69,7 @@ Imagem com orientação dos eixos:<br>
     - Espaço do mundo: É o frame no qual renderizamos o objeto. Em nossa aplicação podemos renderizar um objeto por vez dentro do frame (mundo). O espaço do mundo também segue a orientação RHS.
     - Espaço da câmera: É o frame da câmera da aplicação (que simula o ponto de vista em primeira pessoa e possibilita a navegação pelo mundo).
  - Câmera: 
-    - Implementada em câmera.cpp e câmera.hpp calcula a matriz de visão (é uma mudança de frame: do espaço do mundo para o espaço da câmera). A matriz de visão é a inversa da matriz M (que converte as coordenadas do espaço da câmera para o espaço do mundo). Ou seja, <b>Mview = M^-1</b>. A sua fórmula é a inversa pois a finalidade é justamente o oposto (queremos converter as coordenadas do espaço do mundo para o espaço da câmera). Isto é implementado através da função <br>glm::lookAt</br> (importada da biblioteca GLM), o cálculo, portanto, é realizado conforme abaixo: <br>
+    - Implementada em câmera.cpp e câmera.hpp calcula a matriz de visão (é uma mudança de frame: do espaço do mundo para o espaço da câmera). A matriz de visão é a inversa da matriz M (que converte as coordenadas do espaço da câmera para o espaço do mundo). Ou seja, <b>Mview = M^-1</b>. A sua fórmula é a inversa pois a finalidade é justamente o oposto (queremos converter as coordenadas do espaço do mundo para o espaço da câmera). Isto é implementado através da função <b>glm::lookAt</b> (importada da biblioteca GLM), o cálculo, portanto, é realizado conforme abaixo: <br>
     ![image](https://user-images.githubusercontent.com/30665585/145130652-9f043382-13ef-4c68-9897-b1727c2fc180.png) <br>
     
     - Os parâmetros <b>m_eye</b>, <b>m_at</b> e <b>m_up</b> equivalem, respectivamente a posição da câmera, posição para onde a câmera está olhando e direção para cima da câmera. As posições iniciais são descritas abaixo:
@@ -79,7 +79,7 @@ Imagem com orientação dos eixos:<br>
     - As funções dolly, truck, pan são utilizadas dentro do <b>OpenGLWindow</b> para capturar e refletir (através da atualização das variáveis <b>m_eye</b> e <b>m_up</b>) a movimentação da entrada do teclado. A finalidade dessas funções foi descrita no início do relatório. A implementação delas foi realizada dentro de camera.cpp.    
  - Iluminação:
     - Conceitualmente, a interação de luz entre as superfícies dos objetos e a fonte de luz é modelada matemáticamente através da equação de renderização (Kajiya 1986).
-    - Na aplicação existem três opções de iluminação (dentro da opção shader):
+    - Na aplicação existem seis opções de iluminação (dentro da opção shader):
      - Texture: Utilização de shader que utiliza textura em conjunto com o modelo de reflexão Blinn-Phong.
      - Blinnphong: Utilização do modelo Blinn-Phong.
      - Phong: Utilização do modelo Phong.
