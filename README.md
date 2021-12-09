@@ -116,6 +116,16 @@ Ia,Id,Is: Intensidade da luz.<br>
        Resultado da utilização de textura: <br>
 ![image](https://user-images.githubusercontent.com/30665585/145146090-260f6793-a9fb-468a-8ddf-415aa097cb49.png) <br>
 
+<br>__Demonstração de Imagens:__ 
+- Casa visão cima: <br>
+![image](https://user-images.githubusercontent.com/30665585/145318078-35efbce8-1872-4e89-a85b-efa9ee87e96e.png)
+- Casa visão lado: <br>
+![image](https://user-images.githubusercontent.com/30665585/145318158-376a742f-7118-4d0c-89d7-c7fd790a4cf9.png)
+- Casa visão debaixo: <br>
+![image](https://user-images.githubusercontent.com/30665585/145318256-26fb6794-39a4-4088-92ce-4619f771132c.png)
+
+
+
 <br>__Referências:__ <br>
 1) Terra: https://www.cgtrader.com/items/2408222/download-page
 2) Alien - https://comp-ufabc-cg.github.io/Atividade3-Paulo-Rodolfo/public/ <br>
