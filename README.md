@@ -43,7 +43,7 @@ __Link para a aplicação:__  https://comp-ufabc-cg.github.io/Atividade3-Paulo-R
 
 
 <br>__Motivação:__ 
-   - Criar uma aplicação para explorar um acervo de objetos 3D com utilização de textura e iluminação. A exploração é feita a partir da visão em primeira pessoa.
+   - Criar uma aplicação para explorar um acervo de objetos 3D com utilização de textura e iluminação. A exploração é feita a partir da visão em primeira pessoa (simulando a visão de um drone).
 
 <br>__Teoria e Implementação:__
 
@@ -85,7 +85,8 @@ __Link para a aplicação:__  https://comp-ufabc-cg.github.io/Atividade3-Paulo-R
      - Depth: Utilização do modelo depth.<br>
    O modelo de <b>Blinn-Phong</b> (Blinn 1977) é uma modificação do modelo de Phong. Este modelo é mais eficiente que o modelo de Phong. A diferença visível entre os dois é referente a forma do brilho especular: No Phong é sempre redondo na superfície plana, já no Blinn-Phong é redondo quando a superfície é vista de frente e alongado verticalmente quando a direção da visão e a direção à fonte de luz estão rentes à superfície. <br>
    Dado a simplicidade do modelo e maior eficiência se comparado ao Phong, sugerimos a sua utilização em nossa aplicação pois é o mais utilizado em aplicações de tempo real. Entretanto, o usuário pode escolher o modelo desejado. <br>
-   O modelo está implementado em <b>texture.frag</b> (função: BlinnPhong) e <b>blinnphong.frag</b> (além de seus arquivos de cabeçalho de mesmo nome cuja extensão é .hpp). <br>
+   O modelo está implementado em <b>texture.frag</b> (função: BlinnPhong) e <b>blinnphong.frag</b> (além de seus arquivos de cabeçalho de mesmo nome cuja extensão é .hpp). Sua equação é dada abaixo:<br>
+ ![image](https://user-images.githubusercontent.com/30665585/145314817-dc01b93f-d6a4-4aa9-be31-6d6478d76bc0.png)
    Para o cálculo de normais: Utilizamos a função <b>Model::computeNormals</b> que calcula os vetores normais para cada vértice. Esta função está implementada dentro de model.cpp. Caso o objeto já possua as normais calculadas, a identificação booleana <b>(m_hasNormals)</b> não irá calcular as normais (poupa processamento e otimiza o código). Por fim, o <b>normal.vert</b> converte as coordenadas do vértice resultante (cada um deles) em uma cor RGB. <br>
    O modelo Phong é implementado através de <b> phong.frag </b> e <b>phong.vert </b>. É um modelo de iluminação local que através de mapeamento empírico calcula a quantidade de luz refletida de um ponto P de uma superfície em direção v^ até a câmera. Sua equação é dada abaixo: <br>
 ![image](https://user-images.githubusercontent.com/30665585/145314339-d3947b2e-32d1-4286-972d-da0915965caf.png) <br>
@@ -93,10 +94,11 @@ alfa (a): constante de espalhamento de brilho especular.
 m: número de fontes de luz,
 Ka,Kd,Ks: Coeficientes de reflexão do material (propriedades do material).
 Ia,Id,Is: Intensidade da luz.
+    O sombreamento de Gourad (1971) é implementado através de <b>gourad.frag</b> e <b>gourad.vert</b>. Consiste em calcular uma cor para cada vértice.
+    O modelo depth é o shader padrão. Faz com que quanto mais longe o vértice (em relação a z), menor é a sua intensidade. É implementado através de <b>depth.frag</b> e <b>depth.vert</b>. <br>
 
-   
  - Textura:
-     - Conforme citado acima, utilizamos a textura em conjunto com o modelo de reflexão Blinn-Phong.
+     - Utilizamos a textura em conjunto com o modelo de reflexão Blinn-Phong.
      - O carregamento das texturas é feito a partir da função importada da biblioteca abcg: <b>abcg::opengl::loadTexture</b>.
      - Nossos modelos possuem o .mtl, que é a descrição das propriedades do objeto. Especifica os seguintes parâmetros: <b>Ns</b> (brilho especular), <b>Ka</b> (propriedade de reflexão do ambiente), <b>Kd</b> (difusa) e <b>Ks</b> (especular).
      - Em <b>Model::loadObj</b> prioriza-se as propriedades do material (caso houver). Caso não possua, são setados valores padrão dos parâmetros citados acima.
