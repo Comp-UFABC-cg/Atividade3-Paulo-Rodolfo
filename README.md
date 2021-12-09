@@ -15,7 +15,8 @@ __Link para a aplicação:__  https://comp-ufabc-cg.github.io/Atividade3-Paulo-R
 
 <br>__Aplicação:__ Explorador 3D
 
-
+- Print da tela da aplicação: <br>
+![image](https://user-images.githubusercontent.com/30665585/145312745-9c2b67de-3e32-4221-9ef5-47e8e086ef60.png)
 
 
 <br>__Funcionalidades (Manual de uso):__
@@ -96,8 +97,8 @@ __Link para a aplicação:__  https://comp-ufabc-cg.github.io/Atividade3-Paulo-R
        - Esférico: É o mapeamento equivalente a envolver uma esfera.<br>
        - Mapeamento UV Unwrap: Define diretamente quais coordenadas (u,v) são pertencentes a cada vértice da malha geométrica (mesh).<br>
        Todos mapeamentos são armazenados na variáveis <b> m_mappingMode </b> em <b>openglwindow.cpp</b>.  <br>
+       Resultado da utilização de textura: <br>
 ![image](https://user-images.githubusercontent.com/30665585/145146090-260f6793-a9fb-468a-8ddf-415aa097cb49.png) <br>
-Resultado da textura
 
 <br>__Referências:__ <br>
 1) Terra: https://www.cgtrader.com/items/2408222/download-page
