@@ -24,6 +24,9 @@ __Link para a aplicação:__  https://comp-ufabc-cg.github.io/Atividade3-Paulo-R
 - Seta para esquerda: Olha para a esquerda (movimentando em torno do eixo y)
 - Espaço: Corre para frente (W + espaço).
 
+<br>__Motivação:__ 
+   - Criar uma aplicação para explorar um objeto 3D com sua textura e iluminação. A exploração é feita a partir da visão em primeira pessoa.
+
 <br>__Teoria e Implementação:__
 
 
@@ -79,8 +82,12 @@ __Link para a aplicação:__  https://comp-ufabc-cg.github.io/Atividade3-Paulo-R
 ![image](https://user-images.githubusercontent.com/30665585/145146090-260f6793-a9fb-468a-8ddf-415aa097cb49.png) <br>
 Resultado da textura
 
-Links Objetos 3D:
-Alien - https://comp-ufabc-cg.github.io/Atividade3-Paulo-Rodolfo/public/ <br>
-Casa Medieval - https://www.cgtrader.com/free-3d-models/exterior/house/medieval-house-ba1c8fd4-d6ee-4666-83de-23c1684fe6aa <br>
-Mustang - https://www.cgtrader.com/items/2729539/download-page <br>
+<br>__Referências:__ <br>
+1) Terra: https://www.cgtrader.com/items/2408222/download-page
+2) Alien - https://comp-ufabc-cg.github.io/Atividade3-Paulo-Rodolfo/public/ <br>
+3) Casa Medieval - https://www.cgtrader.com/free-3d-models/exterior/house/medieval-house-ba1c8fd4-d6ee-4666-83de-23c1684fe6aa <br>
+4) Mustang - https://www.cgtrader.com/items/2729539/download-page <br>
+5) Site da disciplina do professor Bruno Dorta https://www.brunodorta.com.br/cg/ 
+
+
 
