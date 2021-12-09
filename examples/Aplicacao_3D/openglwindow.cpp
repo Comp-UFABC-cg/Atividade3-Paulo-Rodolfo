@@ -65,6 +65,16 @@ void OpenGLWindow::handleEvent(SDL_Event& ev) {
       m_panSpeed = 1.0f;
       m_cameraLight.mousePress(glm::ivec2(m_panSpeed, 0.0f));
     }
+    if (ev.key.keysym.sym == SDLK_DOWN)
+    {
+      m_verticalSpeed = -1.0f;
+      m_cameraLight.mousePress(glm::ivec2(m_verticalSpeed, 0.0f));
+    }
+    if (ev.key.keysym.sym == SDLK_UP)
+    {
+      m_verticalSpeed = 1.0f;
+      m_cameraLight.mousePress(glm::ivec2(m_verticalSpeed, 0.0f));
+    }
      
   // Fim evento camera
   }
@@ -333,10 +343,9 @@ void OpenGLWindow::paintUI() {
     ImGui::Text("Tecla S: Andar para trás");
     ImGui::Text("Seta esquerda: Girar para a esquerda");
     ImGui::Text("Seta direita: Girar para a direita");
-    //ImGui::Text("Seta frente: Girar para frente");
-    //ImGui::Text("Seta trás: Girar para trás");
+    ImGui::Text("Seta frente: Girar para cima");
+    ImGui::Text("Seta trás: Girar para baixo");
     
-
     ImGui::End();
   }
   

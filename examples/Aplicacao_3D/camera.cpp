@@ -53,10 +53,11 @@ void Camera::vertical(float speed) {
   glm::mat4 transform{glm::mat4(1.0f)};
 
   // TO DO - CAMERA VERTICAL
+  m_at.y += speed;
+  //m_eye -= left * speed;
   //balanceiaVisao();
-  speed = speed;
 
-  //computeViewMatrix();
+  computeViewMatrix();
 }
 
 void Camera:: balanceiaVisao()
