@@ -77,11 +77,14 @@ __Link para a aplicação:__  https://comp-ufabc-cg.github.io/Atividade3-Paulo-R
  - Iluminação:
     - Conceitualmente, a interação de luz entre as superfícies dos objetos e a fonte de luz é modelada matemáticamente através da equação de renderização (Kajiya 1986).
     - Na aplicação existem três opções de iluminação (dentro da opção shader):
-     - Textura: Utilização de shader que utiliza textura em conjunto com o modelo de reflexão Blinn-Phong.
-     - Iluminação: Utilização do modelo Blinn-Phong.
-     - Normal: Visualização de vetores normais como cores.
+     - Texture: Utilização de shader que utiliza textura em conjunto com o modelo de reflexão Blinn-Phong.
+     - Blinnphong: Utilização do modelo Blinn-Phong.
+     - Phong: Utilização do modelo Phong.
+     - Gourad: Utilização do modelo Gourad.
+     - Normal: Visualização de vetores normais como cores. <br>
+     - Depth: Utilização do modelo depth.
    O modelo de <b>Blinn-Phong</b> (Blinn 1977) é uma modificação do modelo de Phong. Este modelo é mais eficiente que o modelo de Phong. A diferença visível entre os dois é referente a forma do brilho especular: No Phong é sempre redondo na superfície plana, já no Blinn-Phong é redondo quando a superfície é vista de frente e alongado verticalmente quando a direção da visão e a direção à fonte de luz estão rentes à superfície. <br>
-   Dado a simplicidade do modelo e maior eficiência se comparado ao Phong, implementamos em nossa aplicação pois é o mais utilizado em aplicações de tempo real. <br>
+   Dado a simplicidade do modelo e maior eficiência se comparado ao Phong, sugerimos a sua utilização em nossa aplicação pois é o mais utilizado em aplicações de tempo real. Entretanto, o usuário pode escolher o modelo desejado. <br>
    O modelo está implementado em <b>texture.frag</b> (função: BlinnPhong) e <br>blinnphong.frag</b> (além de seus arquivos de cabeçalho de mesmo nome cuja extensão é .hpp). <br>
    Para o cálculo de normais: Utilizamos a função <b>Model::computeNormals</b> que calcula os vetores normais para cada vértice. Esta função está implementada dentro de model.cpp. Caso o objeto já possua as normais calculadas, a identificação booleana <b>(m_hasNormals)</b> não irá calcular as normais (poupa processamento e otimiza o código). Por fim, o <b>normal.vert</b> converte as coordenadas do vértice resultante (cada um deles) em uma cor RGB.
  - Textura:
