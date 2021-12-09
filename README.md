@@ -129,7 +129,7 @@ Ia,Id,Is: Intensidade da luz.<br>
 
 <br>__Referências:__ <br>
 1) Terra: https://www.cgtrader.com/items/2408222/download-page
-2) Alien - https://comp-ufabc-cg.github.io/Atividade3-Paulo-Rodolfo/public/ <br>
+2) Alien - https://www.cgtrader.com/items/2100846/download-page <br>
 3) Casa Medieval - https://www.cgtrader.com/free-3d-models/exterior/house/medieval-house-ba1c8fd4-d6ee-4666-83de-23c1684fe6aa <br>
 4) Mustang - https://www.cgtrader.com/items/2729539/download-page <br>
 5) Site da disciplina do professor Bruno Dorta https://www.brunodorta.com.br/cg/ 
