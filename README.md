@@ -116,7 +116,7 @@ Ia,Id,Is: Intensidade da luz.<br>
        Resultado da utilização de textura: <br>
 ![image](https://user-images.githubusercontent.com/30665585/145146090-260f6793-a9fb-468a-8ddf-415aa097cb49.png) <br>
 
-<br>__Demonstração de Imagens:__ 
+<br>__Demonstração de imagens que podemos obter com a câmera livre:__ 
 - Casa visão cima: <br>
 ![image](https://user-images.githubusercontent.com/30665585/145318078-35efbce8-1872-4e89-a85b-efa9ee87e96e.png)
 - Casa visão lado: <br>
